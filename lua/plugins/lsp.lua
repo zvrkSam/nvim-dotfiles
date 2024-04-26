@@ -22,16 +22,8 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        templ = {
-          -- root_dir = function(...)
-          --   return require("lspconfig.util").root_pattern("go.work", "go.mod", ".git")(...)
-          -- end,
-        },
-        astro = {
-          -- root_dir = function(...)
-          --   return require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")(...)
-          -- end,
-        },
+        templ = {},
+        astro = {},
         cssls = {
           settings = {
             css = {

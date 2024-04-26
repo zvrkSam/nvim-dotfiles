@@ -35,16 +35,6 @@ return {
     },
   },
 
-  -- {
-  --   "echasnovski/mini.nvim",
-  --   version = "*",
-  --   opts = {
-  --     windows = {
-  --       width_preview = 50,
-  --     },
-  --   },
-  -- },
-
   -- Oil
 
   {
@@ -86,13 +76,6 @@ return {
             "node_modules",
             ".git",
           },
-          -- never_show = {
-          --   "node_modules",
-          --   ".git",
-          -- },
-          -- always_show = {
-          --   ".gitignore",
-          -- },
         },
       },
     },
@@ -111,8 +94,7 @@ return {
     opts = {},
   },
 
-  -- mini.pairs
-  -- If you wish to have auto pairs then enable the plugin or remove the code block
+  -- mini.pairs | If you wish to have auto pairs then enable the plugin or remove the code block
 
   -- {
   --   "echasnovski/mini.pairs",

@@ -112,14 +112,6 @@ return {
           },
           opts = { skip = true },
         },
-        -- {
-        --   filter = {
-        --     event = "msg_show",
-        --     king = "",
-        --     find = "written",
-        --   },
-        --   opts = { skip = true },
-        -- },
       }
     end,
   },
