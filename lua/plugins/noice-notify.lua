@@ -98,6 +98,11 @@ return {
         },
       }
 
+      opts.messages = {
+        -- Disables info messages
+        view = false,
+      }
+
       opts.routes = {
         {
           filter = {
