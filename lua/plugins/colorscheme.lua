@@ -1,6 +1,3 @@
--- vim.g.nightflyItalics = false
--- vim.g.nightflyTransparent = true
-
 return {
   {
     "folke/tokyonight.nvim",
@@ -74,7 +71,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
+    lazy = true,
     opts = {
       variant = "moon",
       dark_variant = "moon",
