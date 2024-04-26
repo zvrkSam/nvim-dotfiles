@@ -114,10 +114,10 @@ return {
   -- mini.pairs
   -- If you wish to have auto pairs then enable the plugin or remove the code block
 
-  {
-    "echasnovski/mini.pairs",
-    enabled = false,
-  },
+  -- {
+  --   "echasnovski/mini.pairs",
+  --   enabled = true,
+  -- },
 
   -- whichkey
 

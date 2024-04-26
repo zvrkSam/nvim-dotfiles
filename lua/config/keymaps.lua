@@ -39,3 +39,4 @@ vim.keymap.set("i", "<c-z>", "<esc>zz", { noremap = true, silent = true })
 -- Text manipulation
 -- Change the first letter of word from lower to upper and vice versa
 vim.keymap.set("i", "<a-d>", "<esc>b~ea", { noremap = true, silent = true })
+vim.keymap.set("n", "<a-d>", "<esc>b~e", { noremap = true, silent = true })

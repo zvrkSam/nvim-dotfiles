@@ -36,7 +36,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = true,
+    lazy = false,
     opts = {
       no_italic = true,
       transparent_background = true,
@@ -68,6 +68,19 @@ return {
       },
       integrations = {
         noice = true,
+      },
+    },
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    opts = {
+      variant = "moon",
+      dark_variant = "moon",
+      styles = {
+        italic = false,
+        transparency = true,
       },
     },
   },
@@ -112,24 +125,6 @@ return {
       },
     },
   },
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = false,
-    opts = {
-      variant = "moon",
-      dark_variant = "moon",
-      styles = {
-        italic = false,
-        transparency = true,
-      },
-    },
-  },
-  {
-    -- "bluz71/vim-nightfly-colors",
-    -- lazy = false,
-    -- name = "nightfly",
-  },
   -- {
   --   "folke/styler.nvim",
   --   config = function()
@@ -144,10 +139,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin-frappe",
+      colorscheme = "catppuccin-frappe",
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "tokyonight",
-      colorscheme = "rose-pine",
+      -- colorscheme = "rose-pine",
       -- colorscheme = "nightfly",
       -- colorscheme = "kanagawa-wave",
       -- colorscheme = "onedark",

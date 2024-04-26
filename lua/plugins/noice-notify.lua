@@ -5,7 +5,7 @@ return {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     opts = {
-      timeout = 5000,
+      -- timeout = 5000,
       stages = "fade",
       -- default | minimal | simple | compact | wrapped-compact
       render = "compact",
