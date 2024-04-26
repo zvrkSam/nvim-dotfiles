@@ -5,17 +5,15 @@
 -- open url under cursor
 vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>", { silent = true })
 
--- toggleterm
-vim.keymap.set("n", "<leader>oo", "<cmd>ToggleTerm<cr>", { desc = "ToggleTerm", silent = true })
-
 -- telescope | search bookmarks
 vim.keymap.set("n", "<leader>ob", "<cmd>BrowserBookmarks<cr>", { desc = "Search browser bookmarks", silent = true })
 
 -- gopls sometimes doesnt pick newly imported packages so manual restart is required
 vim.keymap.set("n", "<leader>oL", "<cmd>LspRestart<cr>", { desc = "Lsp restart", silent = true })
 
--- ZenMode
+-- ZenMode and Twilight
 vim.keymap.set("n", "<leader>oz", "<cmd>ZenMode<cr>", { desc = "Zen Mode", silent = true })
+vim.keymap.set("n", "<leader>ot", "<cmd>Twilight<cr>", { desc = "Twilight Mode", silent = true })
 
 -- save all files
 vim.keymap.set("n", "<leader>os", "<cmd>wa<cr>", { desc = "Save All files", noremap = true, silent = true })
