@@ -1,17 +1,17 @@
 return {
 
   -- lualine
-
-  {
-    "nvim-lualine/lualine.nvim",
-    opts = {
-      sections = {
-        lualine_z = {},
-      },
-      -- theme = "tokyonight",
-      theme = "catppuccin",
-    },
-  },
+  --
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   opts = {
+  --     sections = {
+  --       lualine_z = {},
+  --     },
+  --     -- theme = "tokyonight",
+  --     theme = "catppuccin",
+  --   },
+  -- },
 
   -- devicons
 
