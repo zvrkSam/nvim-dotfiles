@@ -21,6 +21,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      diagnostics = {
+        signs = false,
+      },
       servers = {
         templ = {},
         astro = {},
