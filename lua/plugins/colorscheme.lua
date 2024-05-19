@@ -1,3 +1,5 @@
+-- To lookup colors use: Telescope highlights
+
 return {
   {
     "folke/tokyonight.nvim",
@@ -57,6 +59,8 @@ return {
             ["@keyword.export.tsx"] = { fg = colors.lavender },
             ["@keyword.export.typescript"] = { fg = colors.lavender },
             ["@operator"] = { fg = colors.pink },
+            ["@markup.link.label"] = { fg = "#9684fc" },
+            ["@markup.heading.5.markdown"] = { fg = colors.blue },
             CursorLineNr = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlinePopupTitle = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlineIcon = { fg = colors.mauve },
