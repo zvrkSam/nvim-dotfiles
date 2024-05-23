@@ -113,7 +113,7 @@ return {
     lazy = true,
     opts = {
       -- dark (default) | darker (best) | cool | deep | warm | warmer
-      style = "darker",
+      style = "cool",
       transparent = true,
       ending_tildes = false,
       -- toggle_style_key = "<leader>od",
