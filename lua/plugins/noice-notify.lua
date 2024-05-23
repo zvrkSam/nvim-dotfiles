@@ -80,13 +80,13 @@ return {
       opts.views = {
         cmdline_popupmenu = {
           position = {
-            row = 40,
+            row = 31,
             col = "50%",
           },
         },
         cmdline_popup = {
           position = {
-            row = 37,
+            row = 28,
             col = "50%",
           },
         },

@@ -1,22 +1,9 @@
 return {
-
-  -- lualine
-  --
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   opts = {
-  --     sections = {
-  --       lualine_z = {},
-  --     },
-  --     -- theme = "tokyonight",
-  --     theme = "catppuccin",
-  --   },
-  -- },
-
   -- devicons
 
   {
     "nvim-tree/nvim-web-devicons",
+    event = "VeryLazy",
     opts = {
       strict = true,
       override_by_extension = {
@@ -39,6 +26,7 @@ return {
 
   {
     "stevearc/oil.nvim",
+    event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       default_file_explorer = true,

@@ -5,7 +5,7 @@ return {
     "folke/tokyonight.nvim",
     lazy = true,
     opts = {
-      style = "night",
+      style = "storm",
       transparent = true,
       styles = {
         comments = { italic = false },
@@ -35,7 +35,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
+    lazy = true,
     opts = {
       no_italic = true,
       transparent_background = true,
@@ -113,7 +113,7 @@ return {
     lazy = true,
     opts = {
       -- dark (default) | darker (best) | cool | deep | warm | warmer
-      style = "cool",
+      style = "darker",
       transparent = true,
       ending_tildes = false,
       -- toggle_style_key = "<leader>od",
@@ -126,25 +126,12 @@ return {
       },
     },
   },
-  -- {
-  --   "folke/styler.nvim",
-  --   config = function()
-  --     require("styler").setup({
-  --       themes = {
-  --         go = { colorscheme = "catppuccin-frappe" },
-  --         lua = { colorscheme = "catppuccin-frappe" },
-  --       },
-  --     })
-  --   end,
-  -- },
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin-frappe",
-      -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "tokyonight",
       -- colorscheme = "rose-pine",
-      -- colorscheme = "nightfly",
       -- colorscheme = "kanagawa-wave",
       -- colorscheme = "onedark",
     },
