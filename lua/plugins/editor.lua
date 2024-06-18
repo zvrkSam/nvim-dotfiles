@@ -7,11 +7,11 @@ return {
     opts = {
       strict = true,
       override_by_extension = {
-        ["astro"] = {
-          icon = "",
-          color = "#EF8547",
-          name = "Astro",
-        },
+        -- ["astro"] = {
+        --   icon = "",
+        --   color = "#EF8547",
+        --   name = "Astro",
+        -- },
         ["go"] = {
           icon = "󰊭",
           color = "#00ADD8",
@@ -30,6 +30,13 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       default_file_explorer = true,
+      skip_confirm_for_simple_edits = true,
+      view_options = {
+        show_hidden = true,
+        is_always_hidden = function(name, _)
+          return name == "node_modules" or name == ".git"
+        end,
+      },
       float = {
         padding = 4,
       },

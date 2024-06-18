@@ -5,8 +5,8 @@ return {
     "folke/tokyonight.nvim",
     lazy = true,
     opts = {
-      style = "storm",
-      transparent = true,
+      style = "night",
+      -- transparent = true,
       styles = {
         comments = { italic = false },
         keywords = { italic = false },
@@ -38,7 +38,7 @@ return {
     lazy = true,
     opts = {
       no_italic = true,
-      transparent_background = true,
+      -- transparent_background = true,
       color_overrides = {
         all = {
 
@@ -108,6 +108,16 @@ return {
     end,
   },
   {
+    "oxfist/night-owl.nvim",
+    lazy = true,
+    config = function()
+      require("night-owl").setup({
+        italics = false,
+        transparent_background = true,
+      })
+    end,
+  },
+  {
     "navarasu/onedark.nvim",
     name = "onedark",
     lazy = true,
@@ -129,10 +139,12 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-frappe",
-      -- colorscheme = "tokyonight",
-      -- colorscheme = "rose-pine",
+      -- colorscheme = "catppuccin-frappe",
+      -- colorscheme = "catppuccin-mocha",
+      colorscheme = "tokyonight",
       -- colorscheme = "kanagawa-wave",
+      -- colorscheme = "night-owl",
+      -- colorscheme = "rose-pine",
       -- colorscheme = "onedark",
     },
   },
