@@ -6,7 +6,7 @@ return {
     lazy = true,
     opts = {
       style = "night",
-      -- transparent = true,
+      transparent = true,
       styles = {
         comments = { italic = false },
         keywords = { italic = false },
@@ -20,11 +20,6 @@ return {
         colors.git.add = colors.green
         colors.git.change = colors.yellow
         colors.git.delete = colors.red
-        colors.gitSigns.add = colors.green
-        colors.gitSigns.change = colors.yellow
-        colors.gitSigns.delete = colors.red
-        colors.gitSigns.topdelete = colors.red
-        colors.gitSigns.changedelete = colors.yellow
         vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.magenta })
       end,
       on_highlights = function(hl, c)
@@ -37,8 +32,9 @@ return {
     name = "catppuccin",
     lazy = true,
     opts = {
+      flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
       no_italic = true,
-      -- transparent_background = true,
+      transparent_background = true,
       color_overrides = {
         all = {
 
@@ -123,7 +119,7 @@ return {
     lazy = true,
     opts = {
       -- dark (default) | darker (best) | cool | deep | warm | warmer
-      style = "cool",
+      style = "darker",
       transparent = true,
       ending_tildes = false,
       -- toggle_style_key = "<leader>od",
@@ -139,9 +135,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin-frappe",
-      -- colorscheme = "catppuccin-mocha",
-      colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
+      -- colorscheme = "tokyonight",
       -- colorscheme = "kanagawa-wave",
       -- colorscheme = "night-owl",
       -- colorscheme = "rose-pine",

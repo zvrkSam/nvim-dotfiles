@@ -1,27 +1,4 @@
 return {
-  -- devicons
-
-  {
-    "nvim-tree/nvim-web-devicons",
-    event = "VeryLazy",
-    opts = {
-      strict = true,
-      override_by_extension = {
-        -- ["astro"] = {
-        --   icon = "",
-        --   color = "#EF8547",
-        --   name = "Astro",
-        -- },
-        ["go"] = {
-          icon = "󰊭",
-          color = "#00ADD8",
-          name = "Go",
-          size = 24,
-        },
-      },
-    },
-  },
-
   -- Oil
 
   {
@@ -102,7 +79,8 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      window = {
+      -- preset = "modern",
+      win = {
         border = "single",
       },
     },
