@@ -8,15 +8,3 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.wo.conceallevel = 0
   end,
 })
-
-local function augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_config_" .. name, { clear = true })
-end
-
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = augroup("commentstring"),
-  pattern = { "templ" },
-  callback = function()
-    vim.opt.commentstring = "// %s"
-  end,
-})
