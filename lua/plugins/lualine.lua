@@ -13,27 +13,6 @@ return {
     end
   end,
   opts = function()
-    -- vim.o.laststatus = vim.g.lualine_laststatus
-
-    -- local harpoon = require("harpoon.")
-    --
-    -- local function harpoon_component()
-    --   local total_marks = harpoon.get_lenght()
-    --
-    --   if total_marks == 0 then
-    --     return ""
-    --   end
-    --
-    --   local current_mark = "-"
-    --
-    --   local mark_idx = harpoon.get_current_index()
-    --   if mark_idx ~= nil then
-    --     current_mark = tostring(mark_idx)
-    --   end
-    --
-    --   return string.format(" %s%d", current_mark, total_marks)
-    -- end
-
     return {
       options = {
         globalstatus = true,
@@ -48,11 +27,6 @@ return {
           { "branch" },
           {
             "diff",
-            -- symbols = {
-            --   added = icons.git.added,
-            --   modified = icons.git.modified,
-            --   removed = icons.git.removed,
-            -- },
             source = function()
               local gitsigns = vim.b.gitsigns_status_dict
               if gitsigns then
@@ -64,14 +38,11 @@ return {
               end
             end,
           },
+          { "diagnostics" },
           {
-            "diagnostics",
-            -- symbols = {
-            --   error = icons.diagnostics.Error,
-            --   warn = icons.diagnostics.Warn,
-            --   info = icons.diagnostics.Info,
-            --   hint = icons.diagnostics.Hint,
-            -- },
+            function()
+              return require("arrow.statusline").text_for_statusline()
+            end,
           },
         },
         lualine_c = {
@@ -95,9 +66,6 @@ return {
             cond = require("lazy.status").has_updates,
             color = LazyVim.ui.fg("Special"),
           },
-          -- { "location", separator = ":", padding = { left = 0, right = 0 }, color = LazyVim.ui.fg("Statement") },
-          -- { "progress", separator = "|", padding = { left = 0, right = 1 }, color = LazyVim.ui.fg("Statement") },
-          -- harpoon_component(),
           -- stylua: ignore
           {
             function()
