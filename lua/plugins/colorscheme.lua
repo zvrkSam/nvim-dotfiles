@@ -24,6 +24,7 @@ return {
       end,
       on_highlights = function(hl, c)
         hl.WinSeparator = { fg = c.terminal_black }
+        hl.DiagnosticUnnecessary = { fg = "#70728d" }
       end,
     },
   },
@@ -60,6 +61,16 @@ return {
             CursorLineNr = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlinePopupTitle = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlineIcon = { fg = colors.mauve },
+            TodoFgTODO = { fg = colors.yellow },
+            TodoBgTODO = { fg = colors.mantle, bg = colors.yellow, style = { "bold" } },
+            TodoFgHACK = { fg = colors.mauve },
+            TodoBgHACK = { fg = colors.mantle, bg = colors.mauve, style = { "bold" } },
+            TodoFgWARN = { fg = colors.red },
+            TodoBgWARN = { fg = colors.mantle, bg = colors.red, style = { "bold" } },
+            TodoFgNOTE = { fg = colors.blue },
+            TodoBgNOTE = { fg = colors.mantle, bg = colors.blue, style = { "bold" } },
+            TodoFgTEST = { fg = colors.sapphire },
+            TodoBgTEST = { fg = colors.mantle, bg = colors.sapphire, style = { "bold" } },
           }
         end,
       },
@@ -135,8 +146,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
-      -- colorscheme = "tokyonight",
+      colorscheme = "tokyonight",
+      -- colorscheme = "catppuccin",
       -- colorscheme = "kanagawa-wave",
       -- colorscheme = "night-owl",
       -- colorscheme = "rose-pine",
