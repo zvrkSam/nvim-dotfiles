@@ -1,17 +1,6 @@
 return {
   { "akinsho/bufferline.nvim", enabled = false },
+  { "ThePrimeagen/harpoon", enabled = false },
 
   -- these two are realated to Markdown
-  { "lukas-reineke/headlines.nvim", enabled = false, dependencies = "nvim-treesitter/nvim-treesitter" },
-  { "mfussenegger/nvim-lint", enabled = false },
-
-  {
-    "MeanderingProgrammer/markdown.nvim",
-    enabled = false,
-    opts = {
-      heading = {
-        enabled = false,
-      },
-    },
-  },
 }

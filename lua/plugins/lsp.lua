@@ -19,7 +19,10 @@
 
 return {
   {
+    -- Allow vscode style snippets to be used with native neovim snippets vim.snippet
+    -- Disabled for now
     "garymjr/nvim-snippets",
+    enabled = false,
     keys = {
       {
         "<Tab>",
