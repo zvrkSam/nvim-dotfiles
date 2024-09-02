@@ -24,6 +24,10 @@ vim.keymap.set("i", "<c-z>", "<esc>zz", { noremap = true, silent = true })
 vim.keymap.set("i", "<a-d>", "<esc>b~ea", { noremap = true, silent = true })
 vim.keymap.set("n", "<a-d>", "<esc>b~e", { noremap = true, silent = true })
 
+-- Cursor manipulation
+-- Jump to end of of the line while in insert mode
+vim.keymap.set("i", "<a-w>", "<c-o>A", { noremap = true, silent = true })
+
 -- Resizing of windows
 vim.keymap.set("n", "<a-.>", "<c-w>10<")
 vim.keymap.set("n", "<a-,>", "<c-w>10>")
