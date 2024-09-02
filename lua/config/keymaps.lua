@@ -2,6 +2,13 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Telescope lookup specific file type
+vim.keymap.set("n", "<leader>fG", ":TelescopeGo<cr>", { desc = "Find go files", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fl", ":TelescopeLua<cr>", { desc = "Find lua files", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fm", ":TelescopeMD<cr>", { desc = "Find markdown files", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fM", ":TelescopeMDX<cr>", { desc = "Find mdx files", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fa", ":TelescopeAstro<cr>", { desc = "Find astro files", noremap = true, silent = true })
+
 -- go to defenition in vertical and horizontal view
 vim.keymap.set("n", "g|", "<cmd>vertical winc ]<cr>", { desc = "Go to vertical defenition", silent = true })
 vim.keymap.set("n", "g-", "<cmd>horizontal winc ]<cr>", { desc = "Go to horizontal defenition", silent = true })
