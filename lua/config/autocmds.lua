@@ -9,37 +9,18 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_user_command("TelescopeLua", function()
-  require("telescope.builtin").find_files({
-    find_command = { "rg", "--files", "--glob", "*.lua" },
-    prompt_title = "Find Lua Files",
-  })
-end, {})
+local function create_telescope_command(command_name, file_pattern, prompt_title)
+  vim.api.nvim_create_user_command(command_name, function()
+    require("telescope.builtin").find_files({
+      find_command = { "rg", "--files", "--glob", file_pattern },
+      prompt_title = prompt_title,
+    })
+  end, {})
+end
 
-vim.api.nvim_create_user_command("TelescopeGo", function()
-  require("telescope.builtin").find_files({
-    find_command = { "rg", "--files", "--glob", "*.go" },
-    prompt_title = "Find Go Files",
-  })
-end, {})
-
-vim.api.nvim_create_user_command("TelescopeMD", function()
-  require("telescope.builtin").find_files({
-    find_command = { "rg", "--files", "--glob", "*.md" },
-    prompt_title = "Find Markdown Files",
-  })
-end, {})
-
-vim.api.nvim_create_user_command("TelescopeMDX", function()
-  require("telescope.builtin").find_files({
-    find_command = { "rg", "--files", "--glob", "*.mdx" },
-    prompt_title = "Find MDX Files",
-  })
-end, {})
-
-vim.api.nvim_create_user_command("TelescopeAstro", function()
-  require("telescope.builtin").find_files({
-    find_command = { "rg", "--files", "--glob", "*.astro" },
-    prompt_title = "Find Astro Files",
-  })
-end, {})
+create_telescope_command("TelescopeGo", "*.go", "Find golang Files")
+create_telescope_command("TelescopeMD", "*.md", "Find markdown Files")
+create_telescope_command("TelescopeMDX", "*.mdx", "Find mdx Files")
+create_telescope_command("TelescopeTSX", "*.tsx", "Find tsx Files")
+create_telescope_command("TelescopeTS", "*.ts", "Find ts Files")
+create_telescope_command("TelescopeAstro", "*.astro", "Find astro Files")

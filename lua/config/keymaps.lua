@@ -4,9 +4,10 @@
 
 -- Telescope lookup specific file type
 vim.keymap.set("n", "<leader>fG", ":TelescopeGo<cr>", { desc = "Find go files", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fl", ":TelescopeLua<cr>", { desc = "Find lua files", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fm", ":TelescopeMD<cr>", { desc = "Find markdown files", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fM", ":TelescopeMDX<cr>", { desc = "Find mdx files", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fj", ":TelescopeTSX<cr>", { desc = "Find tsx files", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fJ", ":TelescopeTS<cr>", { desc = "Find ts files", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fa", ":TelescopeAstro<cr>", { desc = "Find astro files", noremap = true, silent = true })
 
 -- go to defenition in vertical and horizontal view
