@@ -33,7 +33,7 @@ return {
     name = "catppuccin",
     lazy = true,
     opts = {
-      flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
+      flavour = "frappe", -- latte, frappe (when alacritty is transparent), macchiato, mocha
       no_italic = true,
       transparent_background = true,
       color_overrides = {
@@ -146,8 +146,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
-      -- colorscheme = "catppuccin",
+      -- colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
       -- colorscheme = "kanagawa-wave",
       -- colorscheme = "night-owl",
       -- colorscheme = "rose-pine",
