@@ -41,7 +41,16 @@ return {
           { "diagnostics" },
           {
             function()
-              return require("arrow.statusline").text_for_statusline()
+              local arrow = require("arrow.statusline")
+              local text = arrow.text_for_statusline()
+              local is_on_arrow = arrow.is_on_arrow_file()
+              local icon = "󰸖"
+
+              if (text and text ~= "") or is_on_arrow then
+                return icon .. " " .. (text or "")
+              else
+                return ""
+              end
             end,
           },
         },
