@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Telescope pull-up notes
+vim.keymap.set("n", "<leader>fn", ":SearchNotes<cr>", { desc = "Lookup notes", noremap = true, silent = true })
+
 -- Telescope lookup specific file type
 vim.keymap.set("n", "<leader>fG", ":TelescopeGo<cr>", { desc = "Find go files", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fm", ":TelescopeMD<cr>", { desc = "Find markdown files", noremap = true, silent = true })
