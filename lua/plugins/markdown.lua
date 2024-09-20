@@ -1,8 +1,6 @@
 return {
-  { "lukas-reineke/headlines.nvim", enabled = false, dependencies = "nvim-treesitter/nvim-treesitter" },
-  { "mfussenegger/nvim-lint", enabled = false },
   {
-    "MeanderingProgrammer/markdown.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     enabled = false,
     -- Background of headlines is annoying
     opts = {
@@ -11,4 +9,6 @@ return {
       },
     },
   },
+  { "lukas-reineke/headlines.nvim", enabled = false, dependencies = "nvim-treesitter/nvim-treesitter" },
+  { "mfussenegger/nvim-lint", enabled = false },
 }

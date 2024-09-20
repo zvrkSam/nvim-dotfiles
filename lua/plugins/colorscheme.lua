@@ -144,10 +144,26 @@ return {
     },
   },
   {
+    "eldritch-theme/eldritch.nvim",
+    name = "eldritch",
+    lazy = true,
+    opts = {
+      transparent = true,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+      lualine_bold = true,
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "tokyonight",
-      colorscheme = "catppuccin",
+      colorscheme = "tokyonight",
+      -- colorscheme = "catppuccin",
+      -- colorscheme = "eldritch",
       -- colorscheme = "kanagawa-wave",
       -- colorscheme = "night-owl",
       -- colorscheme = "rose-pine",
