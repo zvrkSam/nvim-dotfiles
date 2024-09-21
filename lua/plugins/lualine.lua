@@ -87,7 +87,9 @@ return {
           },
         },
         lualine_x = {},
-        lualine_y = {},
+        lualine_y = {
+          { "location" },
+        },
         lualine_z = {},
       },
       extensions = { "neo-tree", "lazy" },
