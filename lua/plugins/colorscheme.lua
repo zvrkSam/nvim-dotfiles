@@ -27,6 +27,14 @@ return {
       on_highlights = function(hl, c)
         hl.WinSeparator = { fg = c.terminal_black }
         hl.DiagnosticUnnecessary = { fg = "#70728d" }
+        hl.TodoFgTODO = { fg = c.yellow }
+        hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
+        hl.TodoFgTEST = { fg = c.blue1 }
+        hl.TodoBgTEST = { fg = c.bg_dark, bg = c.blue1, bold = true }
+        hl.TodoFgWARN = { fg = c.red }
+        hl.TodoBgWARN = { fg = c.bg_dark, bg = c.red, bold = true }
+        hl.TodoFgHACK = { fg = "#f570d9" }
+        hl.TodoBgHACK = { fg = c.bg_dark, bg = "#f570d9", bold = true }
       end,
     },
   },
