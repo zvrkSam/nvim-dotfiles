@@ -2,9 +2,12 @@ return {
   "nvim-telescope/telescope.nvim",
   opts = {
     defaults = {
-      layout_strategy = "flex",
+      -- there a bug with layout_strategy = "flex"
+      -- flip_columns are affected by it
+      -- layout_strategy = "flex",
+      layout_strategy = "vertical",
       layout_config = {
-        flip_columns = 150,
+        -- flip_columns = 150,
         vertical = {
           preview_height = 0.6,
         },
