@@ -6,12 +6,12 @@
 vim.keymap.set("n", "<leader>fn", ":SearchNotes<cr>", { desc = "Lookup notes", noremap = true, silent = true })
 
 -- Telescope lookup specific file type
-vim.keymap.set("n", "<leader>fG", ":TelescopeGo<cr>", { desc = "Find go files", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fm", ":TelescopeMD<cr>", { desc = "Find markdown files", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fM", ":TelescopeMDX<cr>", { desc = "Find mdx files", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fj", ":TelescopeTSX<cr>", { desc = "Find tsx files", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fJ", ":TelescopeTS<cr>", { desc = "Find ts files", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fa", ":TelescopeAstro<cr>", { desc = "Find astro files", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fG", ":TelescopeGo<cr>", { desc = "Find Files (go)", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fm", ":TelescopeMD<cr>", { desc = "Find Files (md)", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fM", ":TelescopeMDX<cr>", { desc = "Find Files (mdx)", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fj", ":TelescopeTSX<cr>", { desc = "Find Files (tsx)", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fJ", ":TelescopeTS<cr>", { desc = "Find Files (ts)", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fa", ":TelescopeAstro<cr>", { desc = "Find Files (astro)", noremap = true, silent = true })
 
 -- go to defenition in vertical and horizontal view
 vim.keymap.set("n", "g|", "<cmd>vertical winc ]<cr>", { desc = "Go to vertical defenition", silent = true })
