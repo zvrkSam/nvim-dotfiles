@@ -4,7 +4,6 @@ return {
   {
     "stevearc/oil.nvim",
     event = "VeryLazy",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       default_file_explorer = true,
       skip_confirm_for_simple_edits = true,
@@ -14,10 +13,10 @@ return {
           return name == "node_modules" or name == ".git"
         end,
       },
-      float = {
-        padding = 4,
+      keymaps = {
+        ["<c-c>"] = false,
+        ["q"] = "actions.close",
       },
-      preview = {},
     },
   },
 
