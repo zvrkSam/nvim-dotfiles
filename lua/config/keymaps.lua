@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Delete buffer
+vim.keymap.set("n", "<leader>d", ":bdelete<cr>", { desc = "Delete buffer", noremap = true, silent = true })
+
 -- Telescope pull-up notes
 vim.keymap.set("n", "<leader>fn", ":SearchNotes<cr>", { desc = "Lookup notes", noremap = true, silent = true })
 
@@ -13,7 +16,7 @@ vim.keymap.set("n", "<leader>fj", ":TelescopeTSX<cr>", { desc = "Find Files (tsx
 vim.keymap.set("n", "<leader>fJ", ":TelescopeTS<cr>", { desc = "Find Files (ts)", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fa", ":TelescopeAstro<cr>", { desc = "Find Files (astro)", noremap = true, silent = true })
 
--- go to defenition in vertical and horizontal view
+-- Go to defenition in vertical and horizontal view
 vim.keymap.set("n", "g|", "<cmd>vertical winc ]<cr>", { desc = "Go to vertical defenition", silent = true })
 vim.keymap.set("n", "g-", "<cmd>horizontal winc ]<cr>", { desc = "Go to horizontal defenition", silent = true })
 
@@ -38,26 +41,26 @@ vim.keymap.set("n", "<a-,>", "<c-w>10>")
 vim.keymap.set("n", "<a-t>", "<c-W>+10")
 vim.keymap.set("n", "<a-s>", "<c-W>-10")
 
--- open url under cursor
+-- Open url under cursor
 vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>", { silent = true })
 
--- SPECIAL COMMANDS --
+-- MY SPECIAL COMMANDS --
 -- <leader>o --
 
--- telescope | search bookmarks
+-- Telescope | search bookmarks
 vim.keymap.set("n", "<leader>ob", "<cmd>BrowserBookmarks<cr>", { desc = "Search browser bookmarks", silent = true })
 
--- gopls sometimes doesnt pick newly imported packages so manual restart is required
+-- Gopls sometimes doesnt pick newly imported packages so manual restart is required
 vim.keymap.set("n", "<leader>oL", "<cmd>LspRestart<cr>", { desc = "Restart gopls", silent = true })
 
 -- ZenMode and Twilight
 vim.keymap.set("n", "<leader>oz", "<cmd>ZenMode<cr>", { desc = "Zen Mode", silent = true })
 vim.keymap.set("n", "<leader>ot", "<cmd>Twilight<cr>", { desc = "Twilight Mode", silent = true })
 
--- save all files
+-- Save all files
 vim.keymap.set("n", "<leader>os", "<cmd>wa<cr>", { desc = "Save All files", noremap = true, silent = true })
 
--- save file to arrow
+-- Save file to arrow
 vim.keymap.set("n", "<leader>ow", require("arrow.persist").toggle, { desc = "Save to arrow", silent = true })
 
 -- Codeium turn off / on
