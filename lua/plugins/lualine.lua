@@ -13,12 +13,32 @@ return {
     end
   end,
   opts = function()
+    -- Function to get the number of open buffers using the :ls command
+    local function get_buffer_count()
+      local buffers = vim.fn.execute("ls")
+      local count = 0
+      -- Match only lines that represent buffers, typically starting with a number followed by a space
+      for line in string.gmatch(buffers, "[^\r\n]+") do
+        if string.match(line, "^%s*%d+") then
+          count = count + 1
+        end
+      end
+      return count
+    end
+
+    -- Lualine component for buffer count
+    local buffer_count = function()
+      return string.format("%s", get_buffer_count())
+    end
+
+    local colors = require("tokyonight.colors").setup()
+
     return {
       options = {
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
         refresh = {
-          statusline = 100,
+          statusline = 300,
         },
       },
       sections = {
@@ -55,6 +75,12 @@ return {
           },
         },
         lualine_c = {
+          {
+            buffer_count,
+            separator = "",
+            color = { fg = colors.blue },
+            padding = { left = 1, right = 0 },
+          },
           -- LazyVim.lualine.root_dir(),
           -- { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path(), separator = "" },
