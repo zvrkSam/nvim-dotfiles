@@ -16,8 +16,12 @@ return {
       -- list of all the colors for tokyonight
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(colors)
+        -- colors.green1 = "#ff4da3" -- pretty good monokai vibes
+        -- colors.green1 = "#ff66b0"
+        -- colors.green1 = "#f570d9" -- pretty good
         -- colors.green1 = "#ff80be"
-        colors.green1 = "#f570d9"
+        -- colors.green1 = "#836cad"
+        colors.green1 = "#6183bb"
         colors.bg_statusline = colors.none
         colors.git.add = colors.green
         colors.git.change = colors.yellow
