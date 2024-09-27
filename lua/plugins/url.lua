@@ -6,7 +6,6 @@ return {
   },
   {
     "sontungexpt/url-open",
-    -- enabled = false,
     event = "VeryLazy",
     cmd = "URLOpenUnderCursor",
     config = function()
