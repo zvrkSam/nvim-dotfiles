@@ -27,6 +27,8 @@ vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open Oil", silent = true })
 vim.keymap.set("i", "<c-z>", "<esc>zz", { noremap = true, silent = true })
 
 -- Text manipulation
+vim.keymap.set("i", "<a-p>", "<c-r>+", { desc = "Paste in insert mode", noremap = true, silent = true })
+
 -- Change the first letter of word from lower to upper and vice versa
 vim.keymap.set("i", "<a-d>", "<esc>b~ea", { noremap = true, silent = true })
 vim.keymap.set("n", "<a-d>", "<esc>b~e", { noremap = true, silent = true })
