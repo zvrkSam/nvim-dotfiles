@@ -114,7 +114,7 @@ return {
         },
         lualine_x = {},
         lualine_y = {
-          { "location" },
+          -- { "location" },
         },
         lualine_z = {},
       },
