@@ -6,6 +6,7 @@ return {
   },
   {
     "sontungexpt/url-open",
+    -- enabled = false,
     event = "VeryLazy",
     cmd = "URLOpenUnderCursor",
     config = function()
@@ -15,5 +16,17 @@ return {
       end
       url_open.setup({})
     end,
+    opts = {
+      extra_patterns = {
+        {
+          pattern = "https://www%.youtube%.com/@([%w-_]+)/videos",
+          prefix = "https://www.youtube.com/@",
+          suffix = "/videos",
+          file_patterns = nil,
+          excluded_file_patterns = nil,
+          extra_condition = nil,
+        },
+      },
+    },
   },
 }
