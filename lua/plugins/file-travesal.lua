@@ -57,6 +57,7 @@ return {
   {
     "otavioschwanck/arrow.nvim",
     opts = {
+      leader_key = "<leader>a",
       always_show_path = true,
       separate_by_branch = true,
     },

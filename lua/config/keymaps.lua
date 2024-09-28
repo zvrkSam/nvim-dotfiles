@@ -63,7 +63,12 @@ vim.keymap.set("n", "<leader>ot", "<cmd>Twilight<cr>", { desc = "Twilight Mode",
 vim.keymap.set("n", "<leader>os", "<cmd>wa<cr>", { desc = "Save All files", noremap = true, silent = true })
 
 -- Save file to arrow
-vim.keymap.set("n", "<leader>ow", require("arrow.persist").toggle, { desc = "Save to arrow", silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>A",
+  require("arrow.persist").toggle,
+  { desc = "Arrow File Mappings (save)", silent = true }
+)
 
 -- Codeium turn off / on
 vim.keymap.set("n", "<leader>oc", "<cmd>CodeiumToggle<cr>", { desc = "Codeium Toggle", silent = true })

@@ -28,7 +28,7 @@ return {
 
     -- Lualine component for buffer count
     local buffer_count = function()
-      return string.format("%s", get_buffer_count())
+      return string.format(" %s", get_buffer_count())
     end
 
     local colors = require("tokyonight.colors").setup()
@@ -59,6 +59,8 @@ return {
             end,
           },
           { "diagnostics" },
+        },
+        lualine_c = {
           {
             function()
               local arrow = require("arrow.statusline")
@@ -72,9 +74,8 @@ return {
                 return ""
               end
             end,
+            color = { fg = colors.green },
           },
-        },
-        lualine_c = {
           {
             buffer_count,
             separator = "",
