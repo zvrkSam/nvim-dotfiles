@@ -26,8 +26,20 @@ return {
       return count
     end
 
+    local function is_telescope_open()
+      for _, win in ipairs(vim.api.nvim_list_wins()) do
+        if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "TelescopePrompt" then
+          return true
+        end
+      end
+      return false
+    end
+
     -- Lualine component for buffer count
     local buffer_count = function()
+      if is_telescope_open() then
+        return ""
+      end
       return string.format(" %s", get_buffer_count())
     end
 
