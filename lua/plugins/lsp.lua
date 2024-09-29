@@ -22,7 +22,7 @@ return {
     -- Allow vscode style snippets to be used with native neovim snippets vim.snippet
     -- Disabled for now
     "garymjr/nvim-snippets",
-    enabled = false,
+    -- enabled = false,
     keys = {
       {
         "<Tab>",
@@ -73,6 +73,10 @@ return {
       inlay_hints = { enabled = false },
       diagnostics = {
         signs = false,
+        float = {
+          border = "rounded",
+          source = "always",
+        },
       },
       servers = {
         templ = {},
