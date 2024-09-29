@@ -107,28 +107,6 @@ return {
     },
   },
   {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
-    lazy = true,
-    config = function()
-      require("kanagawa").setup({
-        keywordStyle = { italic = false },
-        commentStyle = { italic = false },
-        -- typeStyle = { bold = true },
-        transparent = true,
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = "none",
-              },
-            },
-          },
-        },
-      })
-    end,
-  },
-  {
     "oxfist/night-owl.nvim",
     lazy = true,
     config = function()
@@ -178,7 +156,6 @@ return {
       colorscheme = "tokyonight",
       -- colorscheme = "catppuccin",
       -- colorscheme = "eldritch",
-      -- colorscheme = "kanagawa-wave",
       -- colorscheme = "night-owl",
       -- colorscheme = "rose-pine",
       -- colorscheme = "onedark",
