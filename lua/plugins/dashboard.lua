@@ -16,7 +16,7 @@ return {
           ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     
            ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     
     ]]
-    logo = string.rep("\n", 15) .. logo .. "\n\n"
+    logo = string.rep("\n", 12) .. logo .. "\n\n"
     opts.config.header = vim.split(logo, "\n")
     opts.theme = "doom"
 
