@@ -32,7 +32,13 @@ map("n", "-", "<cmd>Oil<cr>", { desc = "Open Oil", silent = true })
 map("i", "<c-z>", "<esc>zz", { noremap = true, silent = true })
 
 -- Text manipulation
-map("i", "<a-p>", "<c-r>+", { desc = "Paste in insert mode", noremap = true, silent = true })
+-- Paste in insert mode and perseve formating
+map(
+  "i",
+  "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>",
+  "<c-r>+",
+  { desc = "Paste in insert mode", noremap = true, silent = true }
+)
 
 -- Change the first letter of word from lower to upper and vice versa
 map("i", "<a-d>", "<esc>b~ea", { noremap = true, silent = true })
