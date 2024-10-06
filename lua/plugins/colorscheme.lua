@@ -45,7 +45,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = true,
+    lazy = false,
     opts = {
       flavour = "frappe", -- latte, frappe (when alacritty is transparent), macchiato, mocha
       no_italic = true,
@@ -96,7 +96,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = true,
+    lazy = false,
     opts = {
       variant = "moon",
       dark_variant = "moon",
@@ -107,19 +107,9 @@ return {
     },
   },
   {
-    "oxfist/night-owl.nvim",
-    lazy = true,
-    config = function()
-      require("night-owl").setup({
-        italics = false,
-        transparent_background = true,
-      })
-    end,
-  },
-  {
     "navarasu/onedark.nvim",
     name = "onedark",
-    lazy = true,
+    lazy = false,
     opts = {
       -- dark (default) | darker (best) | cool | deep | warm | warmer
       style = "darker",
@@ -138,7 +128,7 @@ return {
   {
     "eldritch-theme/eldritch.nvim",
     name = "eldritch",
-    lazy = true,
+    lazy = false,
     opts = {
       transparent = true,
       styles = {
@@ -156,7 +146,6 @@ return {
       colorscheme = "tokyonight",
       -- colorscheme = "catppuccin",
       -- colorscheme = "eldritch",
-      -- colorscheme = "night-owl",
       -- colorscheme = "rose-pine",
       -- colorscheme = "onedark",
     },
