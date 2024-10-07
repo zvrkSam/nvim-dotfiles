@@ -44,7 +44,7 @@ return {
       pattern = "LazyVimStarted",
       callback = function()
         local colors = require("tokyonight.colors").setup()
-        -- vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#7951A0" }) -- goes well with dragon image
+        -- vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#7951A0" }) -- goes well with images
         vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#8D6FAB" }) -- goes well with text messages
         vim.api.nvim_set_hl(0, "DashboardFooter", { fg = colors.fg_dark })
         vim.api.nvim_set_hl(0, "DashboardDesc", { fg = colors.purple })
