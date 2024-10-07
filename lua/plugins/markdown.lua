@@ -6,7 +6,7 @@ return {
     -- Background of headlines is annoying
     opts = {
       heading = {
-        enabled = false,
+        width = "block",
       },
     },
   },
