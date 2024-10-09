@@ -4,7 +4,7 @@ return {
   opts = {
     preset = "helix",
     delay = function(ctx)
-      return ctx.plugin and 0 or 400
+      return ctx.plugin and 0 or 1000
     end,
   },
 }
