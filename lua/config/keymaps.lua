@@ -54,7 +54,7 @@ map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mapp
 map("n", "<C-x>", "<Del>", { noremap = true, silent = true })
 map("i", "<C-x>", "<Del>", { noremap = true, silent = true })
 
--- PASTE IN INSERT MODE AND PERSEVE FORMATING
+-- Paste in insert mode and perseve formating
 map(
   "i",
   "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>",
@@ -86,7 +86,7 @@ map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser boo
 map("n", "<leader>oc", "<cmd>CodeiumToggle<CR>", { desc = "Codeium Toggle", silent = true })
 
 -- Gopls sometimes doesnt pick newly imported packages so manual restart is required
-map("n", "<leader>oL", "<cmd>LspRestart<CR>", { desc = "Restart gopls", silent = true })
+map("n", "<leader>og", "<cmd>LspRestart<CR>", { desc = "Restart gopls", silent = true })
 
 -- Save all files
 map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
@@ -94,3 +94,6 @@ map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true,
 -- ZenMode and Twilight
 map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Zen Mode", silent = true })
 map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Twilight Mode", silent = true })
+
+-- LazyExtras
+map("n", "<leader>ol", "<cmd>LazyExtras<CR>", { desc = "Twilight Mode", silent = true })
