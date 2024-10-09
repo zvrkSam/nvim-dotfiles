@@ -5,9 +5,13 @@ return {
     require("hlchunk").setup({
       chunk = {
         enable = true,
+        style = {
+          { fg = "#7aa2f7" },
+        },
       },
       indent = {
         enable = true,
+        chars = { "┊" },
       },
     })
   end,
