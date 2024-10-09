@@ -2,6 +2,7 @@
 -- g+x to open link on that line
 return {
   {
+    -- TODO: make a better plugin then this
     "dhruvmanila/browser-bookmarks.nvim",
   },
   {
