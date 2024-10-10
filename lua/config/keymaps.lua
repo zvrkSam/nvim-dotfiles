@@ -51,8 +51,8 @@ map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mapp
 ------------------------------------
 
 -- <Delete> key functionality
-map("n", "<C-x>", "<Del>", { noremap = true, silent = true })
-map("i", "<C-x>", "<Del>", { noremap = true, silent = true })
+map("n", "<A-x>", "<Del>", { noremap = true, silent = true })
+map("i", "<A-x>", "<Del>", { noremap = true, silent = true })
 
 -- Paste in insert mode and perseve formating
 map(
