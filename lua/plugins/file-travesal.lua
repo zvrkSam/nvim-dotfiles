@@ -56,6 +56,7 @@ return {
 
   {
     "otavioschwanck/arrow.nvim",
+    lazy = true,
     opts = {
       leader_key = "R",
       always_show_path = true,

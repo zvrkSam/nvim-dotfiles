@@ -87,6 +87,7 @@ return {
               end
             end,
             color = { fg = colors.green },
+            separator = "",
           },
           {
             buffer_count,
