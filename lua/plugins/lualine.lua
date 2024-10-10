@@ -96,7 +96,7 @@ return {
           },
           -- LazyVim.lualine.root_dir(),
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { LazyVim.lualine.pretty_path(), separator = "" },
+          { LazyVim.lualine.pretty_path(), padding = { left = -1 }, separator = "" },
           -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get() end,
