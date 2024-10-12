@@ -4,6 +4,7 @@ return {
   {
     -- TODO: make a better plugin then this
     "dhruvmanila/browser-bookmarks.nvim",
+    event = "VeryLazy",
   },
   {
     "sontungexpt/url-open",
