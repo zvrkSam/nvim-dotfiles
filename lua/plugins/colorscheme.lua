@@ -31,6 +31,7 @@ return {
       on_highlights = function(hl, c)
         hl.WinSeparator = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = "#70728d" }
+        hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
