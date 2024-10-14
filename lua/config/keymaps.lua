@@ -28,7 +28,8 @@ map("n", "<A-s>", "<c-W>-10")
 map("n", "-", "<cmd>Oil<CR>", { desc = "Open Oil", silent = true })
 
 -- Telescope pull-up notes
-map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Lookup notes", noremap = true, silent = true })
+map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Notes (find)", noremap = true, silent = true })
+map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Notes (grep)", noremap = true, silent = true })
 
 -- Telescope lookup specific file type
 map("n", "<leader>fG", ":TelescopeGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
