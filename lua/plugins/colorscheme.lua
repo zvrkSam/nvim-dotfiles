@@ -29,7 +29,7 @@ return {
         vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.magenta })
       end,
       on_highlights = function(hl, c)
-        hl.WinSeparator = { fg = c.terminal_black }
+        hl.WinSeparator = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = "#70728d" }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
