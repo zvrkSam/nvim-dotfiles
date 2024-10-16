@@ -16,7 +16,7 @@ return {
       -- list of all the colors for tokyonight
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(colors)
-        colors.green1 = "#3A63A7"
+        colors.green1 = "#4D73B1"
         colors.bg_statusline = colors.none
         colors.git.add = colors.green
         colors.git.change = colors.yellow
@@ -48,7 +48,6 @@ return {
       transparent_background = true,
       color_overrides = {
         all = {
-
           -- teal = "#9684fc",
           teal = "#FAE3B0",
         },
