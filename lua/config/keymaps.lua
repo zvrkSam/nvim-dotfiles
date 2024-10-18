@@ -85,7 +85,7 @@ map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
 map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser bookmarks", silent = true })
 
 -- Codeium turn off / on
-map("n", "<leader>oc", "<cmd>CodeiumToggle<CR>", { desc = "Codeium Toggle", silent = true })
+map("n", "<leader>oc", "<cmd>CodeiumToggle<CR>", { desc = "Toggle Codeium", silent = true })
 
 -- Gopls sometimes doesnt pick newly imported packages so manual restart is required
 map("n", "<leader>og", "<cmd>LspRestart<CR>", { desc = "Restart gopls", silent = true })
@@ -94,8 +94,8 @@ map("n", "<leader>og", "<cmd>LspRestart<CR>", { desc = "Restart gopls", silent =
 map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
 
 -- ZenMode and Twilight
-map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Zen Mode", silent = true })
-map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Twilight Mode", silent = true })
+map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
+map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Toggle Twilight Mode", silent = true })
 
 -- LazyExtras
 map("n", "<leader>ol", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
