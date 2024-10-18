@@ -88,7 +88,7 @@ map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser boo
 map("n", "<leader>oc", "<cmd>CodeiumToggle<CR>", { desc = "Toggle Codeium", silent = true })
 
 -- Gopls sometimes doesnt pick newly imported packages so manual restart is required
-map("n", "<leader>og", "<cmd>LspRestart<CR>", { desc = "Restart lsp", silent = true })
+map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Restart lsp", silent = true })
 
 -- Save all files
 map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
@@ -98,7 +98,7 @@ map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode", silent = 
 map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Toggle Twilight Mode", silent = true })
 
 -- LazyExtras
-map("n", "<leader>ol", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
+map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
 
 -- Precognition
 map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precognition", silent = true })
