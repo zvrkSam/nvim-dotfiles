@@ -97,4 +97,4 @@ map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Zen Mode", silent = true })
 map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Twilight Mode", silent = true })
 
 -- LazyExtras
-map("n", "<leader>ol", "<cmd>LazyExtras<CR>", { desc = "Twilight Mode", silent = true })
+map("n", "<leader>ol", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
