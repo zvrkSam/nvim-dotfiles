@@ -43,7 +43,7 @@ return {
     name = "catppuccin",
     lazy = true,
     opts = {
-      flavour = "frappe", -- latte, frappe (when alacritty is transparent), macchiato, mocha
+      flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
       no_italic = true,
       transparent_background = true,
       color_overrides = {

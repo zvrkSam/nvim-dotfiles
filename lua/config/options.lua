@@ -20,7 +20,8 @@ vim.o.termguicolors = true
 
 opt.cursorlineopt = "number"
 
-opt.signcolumn = "no"
+-- Enabled ONLY for precognition, to get better with motions
+-- opt.signcolumn = "no"
 
 -- Sets borders and popus to transparent
 opt.pumblend = 0
