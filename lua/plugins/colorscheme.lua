@@ -41,6 +41,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    enabled = false,
     lazy = true,
     opts = {
       flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
@@ -91,6 +92,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    enabled = false,
     lazy = true,
     opts = {
       variant = "moon",
@@ -104,6 +106,7 @@ return {
   {
     "navarasu/onedark.nvim",
     name = "onedark",
+    enabled = false,
     lazy = true,
     opts = {
       -- dark (default) | darker (best) | cool | deep | warm | warmer
@@ -123,6 +126,7 @@ return {
   {
     "eldritch-theme/eldritch.nvim",
     name = "eldritch",
+    enabled = false,
     lazy = true,
     opts = {
       transparent = true,
