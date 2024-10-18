@@ -4,6 +4,7 @@ return {
   {
     -- TODO: make a better plugin then this
     "dhruvmanila/browser-bookmarks.nvim",
+    enabled = false,
     event = "VeryLazy",
   },
   {

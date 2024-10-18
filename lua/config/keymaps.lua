@@ -99,3 +99,6 @@ map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Twilight Mode", silent = t
 
 -- LazyExtras
 map("n", "<leader>ol", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
+
+-- Precognition
+map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precognition", silent = true })
