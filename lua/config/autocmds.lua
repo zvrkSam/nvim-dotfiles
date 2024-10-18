@@ -9,6 +9,23 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+--- Buffers ---
+
+local function delete_all_buffers(command_name)
+  vim.api.nvim_create_user_command(command_name, function()
+    local bufs = vim.api.nvim_list_bufs()
+    local current_buf = vim.api.nvim_get_current_buf()
+
+    for _, i in ipairs(bufs) do
+      if i ~= current_buf then
+        vim.api.nvim_buf_delete(i, {})
+      end
+    end
+  end, {})
+end
+
+--- Telescope ---
+
 local telescope = require("telescope.builtin")
 
 local function search_by_file_type(command_name, file_pattern, prompt_title)
@@ -39,6 +56,7 @@ local function grep_notes(command_name, dir, prompt_title)
   end, {})
 end
 
+delete_all_buffers("DeleteAllBuf")
 search_by_file_type("TelescopeGo", "*.go", "Find golang Files")
 search_by_file_type("TelescopeMD", "*.md", "Find markdown Files")
 search_by_file_type("TelescopeMDX", "*.mdx", "Find mdx Files")

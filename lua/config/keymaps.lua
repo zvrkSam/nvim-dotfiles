@@ -10,6 +10,7 @@ local map = vim.keymap.set
 
 -- Delete buffer
 map("n", "<leader>d", ":bdelete<CR>", { desc = "Delete buffer", noremap = true, silent = true })
+map("n", "<leader>D", ":DeleteAllBuf<CR>", { desc = "Delete all buffers", noremap = true, silent = true })
 
 -- Delete window
 map("n", "<leader>W", ":close<CR>", { desc = "Delete window", noremap = true, silent = true })
