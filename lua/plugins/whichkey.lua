@@ -1,3 +1,8 @@
+local wk = require("which-key")
+wk.add({
+  { "<leader>o", icon = "󰒍", group = "misc options", desc = "misc options" },
+})
+
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
