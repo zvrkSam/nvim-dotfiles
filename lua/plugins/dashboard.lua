@@ -43,13 +43,12 @@ return {
     vim.api.nvim_create_autocmd("User", {
       pattern = "LazyVimStarted",
       callback = function()
-        local colors = require("tokyonight.colors").setup()
-        -- vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#7951A0" }) -- goes well with images
-        vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#8D6FAB" }) -- goes well with text messages
-        vim.api.nvim_set_hl(0, "DashboardFooter", { fg = colors.fg_dark })
-        vim.api.nvim_set_hl(0, "DashboardDesc", { fg = colors.purple })
-        vim.api.nvim_set_hl(0, "DashboardIcon", { fg = "#c2a4f8" })
-        vim.api.nvim_set_hl(0, "DashboardKey", { fg = "#FD7132" })
+        local c = require("tokyonight.colors").setup()
+        vim.api.nvim_set_hl(0, "DashboardHeader", { fg = c.magenta })
+        vim.api.nvim_set_hl(0, "DashboardFooter", { fg = c.fg_dark })
+        vim.api.nvim_set_hl(0, "DashboardDesc", { fg = c.green1 })
+        vim.api.nvim_set_hl(0, "DashboardIcon", { fg = c.purple })
+        vim.api.nvim_set_hl(0, "DashboardKey", { fg = c.red })
       end,
     })
   end,

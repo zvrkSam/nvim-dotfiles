@@ -1,4 +1,5 @@
 -- To lookup colors use: Telescope highlights
+local indigo = "#7F85FF"
 
 return {
   {
@@ -16,7 +17,7 @@ return {
       -- list of all the colors for tokyonight
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(colors)
-        colors.green1 = "#7F85FF"
+        colors.green1 = indigo
         colors.bg_statusline = colors.none
         colors.git.add = colors.green
         colors.git.change = colors.yellow
@@ -27,6 +28,9 @@ return {
         hl.WinSeparator = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = "#70728d" }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
+        hl.WhichKeyTitle = { fg = indigo }
+        hl.WhichKeyBorder = { fg = indigo }
+        hl.TelescopeBorder = { fg = indigo }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
