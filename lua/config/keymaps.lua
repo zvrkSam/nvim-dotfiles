@@ -88,7 +88,7 @@ map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser boo
 map("n", "<leader>oc", "<cmd>CodeiumToggle<CR>", { desc = "Toggle Codeium", silent = true })
 
 -- Gopls sometimes doesnt pick newly imported packages so manual restart is required
-map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Restart lsp", silent = true })
+map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
 
 -- Save all files
 map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
