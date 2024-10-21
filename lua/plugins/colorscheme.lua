@@ -28,9 +28,11 @@ return {
         hl.WinSeparator = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = "#70728d" }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
-        hl.WhichKeyTitle = { fg = indigo }
+        hl.WhichKeyTitle = { fg = c.green }
         hl.WhichKeyBorder = { fg = indigo }
         hl.TelescopeBorder = { fg = indigo }
+        hl.TelescopeTitle = { fg = c.green }
+        hl.NoiceCmdlinePopupBorder = { fg = indigo }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
