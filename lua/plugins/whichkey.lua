@@ -1,15 +1,18 @@
-local wk = require("which-key")
-wk.add({
-  { "<leader>o", icon = "󰒍", group = "misc options", desc = "misc options" },
-})
-
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  opts = {
-    preset = "helix",
-    delay = function(ctx)
+  opts = function(_, opts)
+    opts.preset = "helix"
+    opts.delay = function(ctx)
       return ctx.plugin and 0 or 1000
-    end,
-  },
+    end
+    return opts
+  end,
+  config = function(_, opts)
+    local wk = require("which-key")
+    wk.setup(opts)
+    wk.add({
+      { "<leader>o", icon = "󰒍", group = "misc options", desc = "misc options" },
+    })
+  end,
 }
