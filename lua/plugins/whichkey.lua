@@ -12,7 +12,16 @@ return {
     local wk = require("which-key")
     wk.setup(opts)
     wk.add({
-      { "<leader>o", icon = "󰒍", group = "misc options", desc = "misc options" },
+      {
+        "<leader>o",
+        icon = { icon = "", color = "yellow" },
+        group = "misc options",
+        desc = "misc options",
+      },
+      {
+        "<leader>ol",
+        icon = { icon = "󰒍", color = "red" },
+      },
     })
   end,
 }
