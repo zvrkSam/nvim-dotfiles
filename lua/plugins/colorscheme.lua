@@ -1,4 +1,3 @@
--- To lookup colors use: Telescope highlights
 local indigo = "#7F85FF"
 
 return {
@@ -25,6 +24,7 @@ return {
         vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.magenta })
       end,
       on_highlights = function(hl, c)
+        hl["@tag.delimiter"] = { fg = c.purple }
         hl.WinSeparator = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = "#70728d" }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
