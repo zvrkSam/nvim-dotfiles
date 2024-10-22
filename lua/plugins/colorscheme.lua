@@ -19,7 +19,7 @@ return {
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(colors)
         colors.green1 = indigo
-        colors.bg_statusline = colors.none
+        colors.bg_statusline = colors.none -- makes lualine transparent
         colors.git.add = colors.green
         colors.git.change = colors.yellow
         colors.git.delete = colors.red
@@ -37,8 +37,8 @@ return {
         hl.TelescopeBorder = { fg = indigo }
         hl.TelescopeTitle = { fg = c.green }
         hl.NoiceCmdlinePopupBorder = { fg = indigo }
-        hl.NoicePopupmenuSelected = { fg = c.purple, bg = c.bg }
-        hl.NoicePopupmenuMatch = { fg = c.magenta }
+        hl.NoicePopupmenuSelected = { fg = c.red }
+        hl.NoicePopupmenuMatch = { fg = indigo }
         hl.NoiceMini = { fg = c.purple }
         hl.NoiceFormatProgressDone = { bg = c.purple, fg = c.bg }
         hl.NoiceFormatProgressTodo = { bg = c.none, fg = c.fg }
