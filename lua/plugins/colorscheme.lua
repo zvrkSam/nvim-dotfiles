@@ -1,4 +1,6 @@
 local indigo = "#7F85FF"
+local pink = "#F570D9"
+local visible_gray = "#70728D"
 
 return {
   {
@@ -27,7 +29,7 @@ return {
         hl["@tag.delimiter"] = { fg = c.purple }
         hl.WinSeparator = { fg = c.green }
         hl.FloatBorder = { fg = indigo }
-        hl.DiagnosticUnnecessary = { fg = "#70728d" }
+        hl.DiagnosticUnnecessary = { fg = visible_gray }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl.WhichKeyTitle = { fg = c.green }
         hl.WhichKeyBorder = { fg = indigo }
@@ -40,8 +42,8 @@ return {
         hl.TodoBgTEST = { fg = c.bg_dark, bg = c.blue1, bold = true }
         hl.TodoFgWARN = { fg = c.red }
         hl.TodoBgWARN = { fg = c.bg_dark, bg = c.red, bold = true }
-        hl.TodoFgHACK = { fg = "#f570d9" }
-        hl.TodoBgHACK = { fg = c.bg_dark, bg = "#f570d9", bold = true }
+        hl.TodoFgHACK = { fg = pink }
+        hl.TodoBgHACK = { fg = c.bg_dark, bg = pink, bold = true }
       end,
     },
   },
