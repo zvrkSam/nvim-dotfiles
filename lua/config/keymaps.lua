@@ -36,8 +36,8 @@ map("n", "<leader>fN", ":SearchNotes<CR>", { desc = "Notes (find)", noremap = tr
 map("n", "<leader>fG", ":TelescopeGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
 map("n", "<leader>fm", ":TelescopeMD<CR>", { desc = "Find Files (md)", noremap = true, silent = true })
 map("n", "<leader>fM", ":TelescopeMDX<CR>", { desc = "Find Files (mdx)", noremap = true, silent = true })
-map("n", "<leader>fj", ":TelescopeTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
-map("n", "<leader>fJ", ":TelescopeTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
+map("n", "<leader>ft", ":TelescopeTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
+map("n", "<leader>fT", ":TelescopeTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
 map("n", "<leader>fa", ":TelescopeAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
 
 -- lazyterm remap
