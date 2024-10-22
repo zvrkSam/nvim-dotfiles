@@ -40,6 +40,11 @@ map("n", "<leader>fj", ":TelescopeTSX<CR>", { desc = "Find Files (tsx)", noremap
 map("n", "<leader>fJ", ":TelescopeTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
 map("n", "<leader>fa", ":TelescopeAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
 
+-- lazyterm remap
+local lazyterm = function() LazyVim.terminal(nil, { cwd = LazyVim.root() }) end
+map("n", "<leader>f/", lazyterm, { desc = "Terminal (Root Dir)" })
+map("n", "<leader>f?", function() LazyVim.terminal() end, { desc = "Terminal (cwd)" })
+
 -- Go to defenition in vertical and horizontal view
 map("n", "g|", "<cmd>vertical winc ]<CR>", { desc = "Go to vertical defenition", silent = true })
 map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defenition", silent = true })
