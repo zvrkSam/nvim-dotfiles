@@ -26,6 +26,7 @@ return {
       on_highlights = function(hl, c)
         hl["@tag.delimiter"] = { fg = c.purple }
         hl.WinSeparator = { fg = c.green }
+        hl.FloatBorder = { fg = indigo }
         hl.DiagnosticUnnecessary = { fg = "#70728d" }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl.WhichKeyTitle = { fg = c.green }
