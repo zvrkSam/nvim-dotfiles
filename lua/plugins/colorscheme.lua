@@ -29,6 +29,7 @@ return {
         hl["@tag.delimiter"] = { fg = c.purple }
         hl.WinSeparator = { fg = c.green }
         hl.FloatBorder = { fg = indigo }
+        hl.FloatTitle = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = visible_gray }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl.WhichKeyTitle = { fg = c.green }
@@ -36,6 +37,15 @@ return {
         hl.TelescopeBorder = { fg = indigo }
         hl.TelescopeTitle = { fg = c.green }
         hl.NoiceCmdlinePopupBorder = { fg = indigo }
+        hl.NoicePopupmenuSelected = { fg = c.purple, bg = c.bg }
+        hl.NoicePopupmenuMatch = { fg = c.magenta }
+        hl.NoiceMini = { fg = c.purple }
+        hl.NoiceFormatProgressDone = { bg = c.purple, fg = c.bg }
+        hl.NoiceFormatProgressTodo = { bg = c.none, fg = c.fg }
+        hl.NoiceLspProgressSpinner = { fg = c.green }
+        hl.NoiceLspProgressTitle = { fg = c.green }
+        hl.NoiceLspProgressClient = { fg = c.purple }
+        hl.NoiceCmdlinePopupTitleCmdline = { fg = c.green }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
