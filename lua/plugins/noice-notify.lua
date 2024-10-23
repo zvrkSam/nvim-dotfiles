@@ -5,18 +5,17 @@ return {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     opts = {
-      -- timeout = 5000,
-      stages = "fade",
+      stages = "static",
       -- default | minimal | simple | compact | wrapped-compact
       render = "compact",
-      top_down = false,
+      top_down = true,
     },
     -- This is only for onedark theme
-    config = function()
-      require("notify").setup({
-        background_colour = "#000000",
-      })
-    end,
+    -- config = function()
+    --   require("notify").setup({
+    --     background_colour = "#000000",
+    --   })
+    -- end,
   },
 
   -- noice
