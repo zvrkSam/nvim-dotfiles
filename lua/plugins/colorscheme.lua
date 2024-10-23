@@ -28,9 +28,12 @@ return {
         vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.magenta })
       end,
       on_highlights = function(hl, c)
+        hl.Visual = { bg = c.bg_highlight, bold = true }
         hl["@tag.delimiter"] = { fg = c.purple }
+        hl["@tag.tsx"] = { fg = pink }
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = bracket_gray }
+        hl["@variable.builtin"] = { fg = c.red }
         -- hl["@keyword.import"] = { fg = purple }
         hl.WinSeparator = { fg = c.green }
         hl.FloatBorder = { fg = indigo }
@@ -51,6 +54,7 @@ return {
         hl.NoiceLspProgressTitle = { fg = c.green }
         hl.NoiceLspProgressClient = { fg = c.purple }
         hl.NoiceCmdlinePopupTitleCmdline = { fg = c.green }
+        hl.NoiceConfirmBorder = { fg = indigo }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
