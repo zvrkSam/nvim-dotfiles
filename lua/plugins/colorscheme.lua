@@ -1,9 +1,7 @@
 local indigo = "#7F85FF"
 local pink = "#F570D9"
--- local purple = "#8F85FF"
-local purple = "#FF8F90"
--- local purple = "#FF9697"
 local visible_gray = "#70728D"
+local bracket_gray = "#9BA5D5"
 
 return {
   {
@@ -22,7 +20,7 @@ return {
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(colors)
         colors.green1 = indigo
-        colors.blue5 = purple
+        colors.blue5 = pink
         colors.bg_statusline = colors.none -- makes lualine transparent
         colors.git.add = colors.green
         colors.git.change = colors.yellow
@@ -32,6 +30,7 @@ return {
       on_highlights = function(hl, c)
         hl["@tag.delimiter"] = { fg = c.purple }
         hl["@punctuation.delimiter"] = { fg = c.fg }
+        hl["@punctuation.bracket"] = { fg = bracket_gray }
         -- hl["@keyword.import"] = { fg = purple }
         hl.WinSeparator = { fg = c.green }
         hl.FloatBorder = { fg = indigo }
