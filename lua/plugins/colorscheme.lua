@@ -170,6 +170,19 @@ return {
     },
   },
   {
+    -- Setup instructions
+    -- https://github.com/projekt0n/github-nvim-theme
+    -- there is a lualine instructions too
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = false,
+    opts = {
+      options = {
+        transparent = true,
+      },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "tokyonight",
@@ -177,6 +190,7 @@ return {
       -- colorscheme = "rose-pine",
       -- colorscheme = "onedark",
       -- colorscheme = "eldritch",
+      -- colorscheme = "github_dark_default",
     },
   },
 }
