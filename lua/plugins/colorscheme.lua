@@ -1,4 +1,5 @@
-local indigo = "#7F85FF"
+-- local indigo = "#7F85FF" -- for transparent background
+local indigo = "#878DFF" -- for non transparent background
 local pink = "#F570D9"
 local visible_gray = "#70728D"
 local bracket_gray = "#9BA5D5"
@@ -69,7 +70,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    enabled = false,
+    -- enabled = false,
     lazy = true,
     opts = {
       flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
@@ -78,9 +79,10 @@ return {
       color_overrides = {
         all = {
           -- teal = "#9684fc",
-          teal = "#FAE3B0",
+          -- teal = "#FAE3B0",
         },
       },
+      -- If you were to do catppuccin again redo all of these colors
       highlight_overrides = {
         all = function(colors)
           return {
