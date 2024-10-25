@@ -9,6 +9,7 @@ return {
       -- default | minimal | simple | compact | wrapped-compact
       render = "compact",
       top_down = true,
+      timeout = 4000,
     },
     -- This is only for onedark theme
     -- config = function()
