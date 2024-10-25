@@ -100,6 +100,9 @@ map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = tr
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
 
+-- Delete all marks
+map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = true })
+
 -- Precognition
 map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precognition", silent = true })
 
