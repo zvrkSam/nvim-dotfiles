@@ -1,6 +1,7 @@
 -- local indigo = "#7F85FF" -- for transparent background
 local indigo = "#878DFF" -- for non transparent background
 local pink = "#F570D9"
+-- local bright_green = "#B9FF84"
 local visible_gray = "#70728D"
 local bracket_gray = "#9BA5D5"
 
@@ -45,6 +46,8 @@ return {
         hl.WhichKeyBorder = { fg = indigo }
         hl.TelescopeBorder = { fg = indigo }
         hl.TelescopeTitle = { fg = c.green }
+        hl.TelescopeSelection = { fg = c.purple, bold = true }
+        hl.TelescopeMatching = { fg = c.green, bold = true }
         hl.NoiceCmdlinePopupBorder = { fg = indigo }
         hl.NoicePopupmenuSelected = { fg = c.red }
         hl.NoicePopupmenuMatch = { fg = indigo }
@@ -120,20 +123,6 @@ return {
     },
   },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    enabled = false,
-    lazy = true,
-    opts = {
-      variant = "moon",
-      dark_variant = "moon",
-      styles = {
-        italic = false,
-        transparency = true,
-      },
-    },
-  },
-  {
     "navarasu/onedark.nvim",
     name = "onedark",
     enabled = false,
@@ -154,28 +143,13 @@ return {
     },
   },
   {
-    "eldritch-theme/eldritch.nvim",
-    name = "eldritch",
-    enabled = false,
-    lazy = true,
-    opts = {
-      transparent = true,
-      styles = {
-        comments = { italic = false },
-        keywords = { italic = false },
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-      lualine_bold = true,
-    },
-  },
-  {
     -- Setup instructions
     -- https://github.com/projekt0n/github-nvim-theme
     -- there is a lualine instructions too
     "projekt0n/github-nvim-theme",
     name = "github-theme",
-    lazy = false,
+    enabled = false,
+    lazy = true,
     opts = {
       options = {
         transparent = true,
@@ -187,9 +161,7 @@ return {
     opts = {
       colorscheme = "tokyonight",
       -- colorscheme = "catppuccin",
-      -- colorscheme = "rose-pine",
       -- colorscheme = "onedark",
-      -- colorscheme = "eldritch",
       -- colorscheme = "github_dark_default",
     },
   },
