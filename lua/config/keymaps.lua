@@ -71,6 +71,10 @@ map(
   { desc = "Paste in insert mode", noremap = true, silent = true }
 )
 
+-- Change inside word | quote
+map({ "n", "x" }, "<C-c>", "ciw", { noremap = true, silent = true })
+map("n", "<C-\\>", 'ci"', { noremap = true, silent = true })
+
 -- Change the first letter of word from lower to upper and vice versa
 map("i", "<A-d>", "<esc>b~ea", { noremap = true, silent = true })
 map("n", "<A-d>", "<esc>b~e", { noremap = true, silent = true })
