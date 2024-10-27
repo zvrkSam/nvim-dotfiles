@@ -1,7 +1,6 @@
--- local indigo = "#7F85FF" -- for transparent background
-local indigo = "#878DFF" -- for non transparent background
+local indigo = "#7F85FF" -- for transparent background
+-- local indigo = "#878DFF" -- for non transparent background
 local pink = "#F570D9"
--- local bright_green = "#B9FF84"
 local visible_gray = "#70728D"
 local bracket_gray = "#9BA5D5"
 
@@ -48,6 +47,8 @@ return {
         hl.TelescopeTitle = { fg = c.green }
         hl.TelescopeSelection = { fg = c.purple, bold = true }
         hl.TelescopeMatching = { fg = c.green, bold = true }
+        hl.Macro = { fg = indigo }
+        hl.NoiceCmdlineIcon = { fg = indigo }
         hl.NoiceCmdlinePopupBorder = { fg = indigo }
         hl.NoicePopupmenuSelected = { fg = c.red }
         hl.NoicePopupmenuMatch = { fg = indigo }
@@ -76,13 +77,13 @@ return {
     -- enabled = false,
     lazy = true,
     opts = {
-      flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
+      flavour = "frappe", -- latte, frappe (when alacritty is transparent), macchiato, mocha
       no_italic = true,
       transparent_background = true,
       color_overrides = {
         all = {
           -- teal = "#9684fc",
-          -- teal = "#FAE3B0",
+          teal = "#FAE3B0",
         },
       },
       -- If you were to do catppuccin again redo all of these colors
