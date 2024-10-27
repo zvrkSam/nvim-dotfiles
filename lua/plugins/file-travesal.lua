@@ -58,8 +58,9 @@ return {
     "otavioschwanck/arrow.nvim",
     lazy = true,
     opts = {
-      leader_key = "R",
-      always_show_path = true,
+      show_icons = true,
+      leader_key = "\\",
+      always_show_path = false,
       separate_by_branch = true,
     },
   },
