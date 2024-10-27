@@ -119,3 +119,17 @@ map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true,
 -- ZenMode and Twilight
 map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
 map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Toggle Twilight Mode", silent = true })
+
+map("n", "<leader>oy", function()
+  local diagnostics = vim.diagnostic.get(0)
+  local lines = {}
+  for _, d in ipairs(diagnostics) do
+    table.insert(lines, d.message)
+  end
+  vim.fn.setreg("+", table.concat(lines, "\n"))
+
+  require("notify")("Diagnostics yanked to clipboard!", "info", {
+    title = "Diagnostics",
+    timeout = 2000,
+  })
+end, { desc = "Yank diagnostics" })
