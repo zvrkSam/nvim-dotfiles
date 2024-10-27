@@ -103,6 +103,9 @@ map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = t
 -- Delete all marks
 map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = true })
 
+-- Notifications in Telescope view
+map("n", "<leader>on", "<cmd>Telescope notify<CR>", { desc = "Notifications", silent = true })
+
 -- Precognition
 map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precognition", silent = true })
 
