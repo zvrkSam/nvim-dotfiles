@@ -50,7 +50,7 @@ return {
         hl.Macro = { fg = indigo }
         hl.NoiceCmdlineIcon = { fg = indigo }
         hl.NoiceCmdlinePopupBorder = { fg = indigo }
-        hl.NoicePopupmenuSelected = { fg = c.red }
+        hl.NoicePopupmenuSelected = { fg = c.red, bold = true }
         hl.NoicePopupmenuMatch = { fg = indigo }
         hl.NoiceMini = { fg = c.purple }
         hl.NoiceFormatProgressDone = { bg = c.green, fg = c.bg }
