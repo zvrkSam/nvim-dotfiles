@@ -60,7 +60,7 @@ return {
     opts = {
       show_icons = true,
       leader_key = "\\",
-      always_show_path = false,
+      always_show_path = true,
       separate_by_branch = true,
     },
   },
