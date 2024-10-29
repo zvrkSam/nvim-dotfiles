@@ -22,6 +22,10 @@ return {
         "<leader>ol",
         icon = { icon = "󰒍", color = "red" },
       },
+      {
+        "<leader>oo",
+        icon = { icon = "󰖟", color = "azure" },
+      },
     })
   end,
 }
