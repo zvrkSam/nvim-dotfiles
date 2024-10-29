@@ -85,9 +85,6 @@ map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 ----- MISC COMMANDS -----
 -------------------------
 
--- Open url under cursor
-map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
-
 -- Search bookmarks
 map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser bookmarks", silent = true })
 
@@ -105,6 +102,12 @@ map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = t
 
 -- Notifications in Telescope view
 map("n", "<leader>on", "<cmd>Telescope notify<CR>", { desc = "Notifications", silent = true })
+
+-- Open url under cursor (anywhere on the current line)
+map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
+
+-- Open URLOpenUnderCursor (manual trigger, when normal gx doesnt pickup)
+map("n", "<leader>oo", "<cmd>URLOpenUnderCursor<CR>", { desc = "Open URL", silent = true })
 
 -- Precognition
 map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precognition", silent = true })
