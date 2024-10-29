@@ -1,8 +1,16 @@
-local indigo = "#7F85FF" -- for transparent background
--- local indigo = "#878DFF" -- for non transparent background
-local pink = "#F570D9"
-local visible_gray = "#70728D"
-local bracket_gray = "#9BA5D5"
+local tn = {
+  indigo = "#7F85FF", -- for transparent background (abit more darker)
+  -- indigo = "#878DFF" -- for non transparent background
+  pink = "#F570D9",
+  visible_gray = "#70728D",
+  bracket_gray = "#9BA5D5",
+}
+
+local cat = {
+  teal = "#FAE3B0",
+  lav = "#AB9DFD",
+  purple = "#9684FC",
+}
 
 return {
   {
@@ -20,8 +28,8 @@ return {
       -- list of all the colors for tokyonight
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(colors)
-        colors.green1 = indigo
-        colors.blue5 = pink
+        colors.green1 = tn.indigo
+        colors.blue5 = tn.pink
         colors.bg_statusline = colors.none -- makes lualine transparent
         colors.git.add = colors.green
         colors.git.change = colors.yellow
@@ -31,27 +39,27 @@ return {
       on_highlights = function(hl, c)
         hl.Visual = { bg = c.bg_highlight, bold = true }
         hl["@tag.delimiter"] = { fg = c.purple }
-        hl["@tag.tsx"] = { fg = pink }
+        hl["@tag.tsx"] = { fg = tn.pink }
         hl["@punctuation.delimiter"] = { fg = c.fg }
-        hl["@punctuation.bracket"] = { fg = bracket_gray }
+        hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
         -- hl["@keyword.import"] = { fg = purple }
         hl.WinSeparator = { fg = c.green }
-        hl.FloatBorder = { fg = indigo }
+        hl.FloatBorder = { fg = tn.indigo }
         hl.FloatTitle = { fg = c.green }
-        hl.DiagnosticUnnecessary = { fg = visible_gray }
+        hl.DiagnosticUnnecessary = { fg = tn.visible_gray }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl.WhichKeyTitle = { fg = c.green }
-        hl.WhichKeyBorder = { fg = indigo }
-        hl.TelescopeBorder = { fg = indigo }
+        hl.WhichKeyBorder = { fg = tn.indigo }
+        hl.TelescopeBorder = { fg = tn.indigo }
         hl.TelescopeTitle = { fg = c.green }
         hl.TelescopeSelection = { fg = c.purple, bold = true }
         hl.TelescopeMatching = { fg = c.green, bold = true }
-        hl.Macro = { fg = indigo }
-        hl.NoiceCmdlineIcon = { fg = indigo }
-        hl.NoiceCmdlinePopupBorder = { fg = indigo }
+        hl.Macro = { fg = tn.indigo }
+        hl.NoiceCmdlineIcon = { fg = tn.indigo }
+        hl.NoiceCmdlinePopupBorder = { fg = tn.indigo }
         hl.NoicePopupmenuSelected = { fg = c.red, bold = true }
-        hl.NoicePopupmenuMatch = { fg = indigo }
+        hl.NoicePopupmenuMatch = { fg = tn.indigo }
         hl.NoiceMini = { fg = c.purple }
         hl.NoiceFormatProgressDone = { bg = c.green, fg = c.bg }
         hl.NoiceFormatProgressTodo = { bg = c.purple, fg = c.bg }
@@ -59,15 +67,15 @@ return {
         hl.NoiceLspProgressTitle = { fg = c.green }
         hl.NoiceLspProgressClient = { fg = c.purple }
         hl.NoiceCmdlinePopupTitleCmdline = { fg = c.green }
-        hl.NoiceConfirmBorder = { fg = indigo }
+        hl.NoiceConfirmBorder = { fg = tn.indigo }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
         hl.TodoBgTEST = { fg = c.bg_dark, bg = c.blue1, bold = true }
         hl.TodoFgWARN = { fg = c.red }
         hl.TodoBgWARN = { fg = c.bg_dark, bg = c.red, bold = true }
-        hl.TodoFgHACK = { fg = pink }
-        hl.TodoBgHACK = { fg = c.bg_dark, bg = pink, bold = true }
+        hl.TodoFgHACK = { fg = tn.pink }
+        hl.TodoBgHACK = { fg = c.bg_dark, bg = tn.pink, bold = true }
       end,
     },
   },
@@ -82,25 +90,25 @@ return {
       transparent_background = true,
       color_overrides = {
         all = {
-          -- teal = "#9684fc",
-          teal = "#FAE3B0",
+          -- teal = cat.purple,
+          teal = cat.teal,
         },
       },
       -- If you were to do catppuccin again redo all of these colors
       highlight_overrides = {
         all = function(colors)
           return {
-            -- ["@tag.delimiter"] = { fg = "#ab9dfd" },
-            ["@tag.attribute.tsx"] = { fg = "#ab9dfd" },
+            -- ["@tag.delimiter"] = { fg = cat.lav },
+            ["@tag.attribute.tsx"] = { fg = cat.lav },
             ["@tag.delimiter"] = { fg = colors.flamingo },
-            ["@tag.delimiter.astro"] = { fg = "#ab9dfd" },
-            ["@tag.attribute.astro"] = { fg = "#ab9dfd" },
-            ["@tag.delimiter.tsx"] = { fg = "#ab9dfd" },
+            ["@tag.delimiter.astro"] = { fg = cat.lav },
+            ["@tag.attribute.astro"] = { fg = cat.lav },
+            ["@tag.delimiter.tsx"] = { fg = cat.lav },
             ["@tag.tsx"] = { fg = colors.yellow },
             ["@keyword.export.tsx"] = { fg = colors.lavender },
             ["@keyword.export.typescript"] = { fg = colors.lavender },
-            ["@operator"] = { fg = colors.pink },
-            ["@markup.link.label"] = { fg = "#9684fc" },
+            ["@operator"] = { fg = colors.tn.pink },
+            ["@markup.link.label"] = { fg = cat.purple },
             ["@markup.heading.5.markdown"] = { fg = colors.blue },
             CursorLineNr = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlinePopupTitle = { fg = colors.mauve, style = { "bold" } },
