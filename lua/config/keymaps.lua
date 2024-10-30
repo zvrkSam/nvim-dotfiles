@@ -16,10 +16,10 @@ map("n", "<leader>D", ":DeleteAllBuf<CR>", { desc = "Delete all buffers", norema
 map("n", "<leader>W", ":close<CR>", { desc = "Delete window", noremap = true, silent = true })
 
 -- Resizing of windows
-map("n", "<A-.>", "<c-w>10<")
-map("n", "<A-,>", "<c-w>10>")
-map("n", "<A-t>", "<c-W>+10")
-map("n", "<A-s>", "<c-W>-10")
+map("n", "<A-,>", "<c-w>10>") -- horizontal expand ( left )
+map("n", "<A-.>", "<c-w>10<") -- horizontal expand ( right )
+map("n", "<A-t>", "<c-W>+10") -- vertical expand ( top )
+map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
 
 ----------------------------
 ----- TELESCOPE/FILE'S -----
