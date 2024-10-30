@@ -1,4 +1,5 @@
 return {
+
   -- Oil
 
   {
@@ -63,6 +64,13 @@ return {
       always_show_path = true,
       separate_by_branch = true,
     },
+  },
+
+  -- undo-tree
+
+  {
+    "mbbill/undotree",
+    lazy = false,
   },
 
   -- scrollEOF

@@ -115,9 +115,12 @@ map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precogni
 -- Save all files
 map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
 
+-- Undo tree
+map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Twilight Mode", silent = true })
+
 -- ZenMode and Twilight
-map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
 map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Toggle Twilight Mode", silent = true })
+map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
 
 map("n", "<leader>oy", function()
   local diagnostics = vim.diagnostic.get(0)
