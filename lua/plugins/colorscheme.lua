@@ -1,11 +1,14 @@
+-- tokyonight
 local tn = {
   indigo = "#7F85FF", -- for transparent background (abit more darker)
   -- indigo = "#878DFF" -- for non transparent background
   pink = "#F570D9",
+  darker_purple = "#8154D2",
   visible_gray = "#70728D",
   bracket_gray = "#9BA5D5",
 }
 
+-- catppuccin
 local cat = {
   teal = "#FAE3B0",
   lav = "#AB9DFD",
@@ -38,13 +41,14 @@ return {
       end,
       on_highlights = function(hl, c)
         hl.Visual = { bg = c.bg_highlight, bold = true }
-        hl["@tag.delimiter"] = { fg = c.purple }
+        hl["@tag.delimiter"] = { fg = tn.darker_purple }
+        -- hl.Label = { fg = c.blue5 }
         hl["@tag.tsx"] = { fg = tn.pink }
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
-        -- hl["@keyword.import"] = { fg = purple }
-        hl.WinSeparator = { fg = c.green }
+        -- hl["@keyword.import"] = { fg = c.magenta }
+        hl.WinSeparator = { fg = c.purple }
         hl.FloatBorder = { fg = tn.indigo }
         hl.FloatTitle = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = tn.visible_gray }
