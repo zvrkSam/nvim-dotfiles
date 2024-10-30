@@ -3,7 +3,7 @@ local tn = {
   indigo = "#7F85FF", -- for transparent background (abit more darker)
   -- indigo = "#878DFF" -- for non transparent background
   pink = "#F570D9",
-  darker_purple = "#8154D2",
+  darker_purple = "#9C65FF",
   visible_gray = "#70728D",
   bracket_gray = "#9BA5D5",
 }
