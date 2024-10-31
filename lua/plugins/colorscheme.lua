@@ -43,7 +43,7 @@ return {
         hl.Visual = { bg = c.bg_highlight, bold = true }
         hl["@tag.delimiter"] = { fg = tn.darker_purple }
         -- hl.Label = { fg = c.blue5 }
-        hl["@tag.tsx"] = { fg = tn.pink }
+        hl["@tag.tsx"] = { fg = tn.darker_purple }
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
