@@ -33,7 +33,9 @@ map("n", "<leader>fn", ":GrepNotes<CR>", { desc = "Notes (grep)", noremap = true
 map("n", "<leader>fN", ":SearchNotes<CR>", { desc = "Notes (find)", noremap = true, silent = true })
 
 -- Telescope lookup specific file type
-map("n", "<leader>fG", ":TelescopeGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
+map("n", "<leader>fg", ":TelescopeGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
+-- stylua: ignore
+map("n", "<leader>fG", "<cmd>Telescope git_files<CR>", { desc = "Find Files (git-files)", noremap = true, silent = true })
 map("n", "<leader>fm", ":TelescopeMD<CR>", { desc = "Find Files (md)", noremap = true, silent = true })
 map("n", "<leader>fM", ":TelescopeMDX<CR>", { desc = "Find Files (mdx)", noremap = true, silent = true })
 map("n", "<leader>ft", ":TelescopeTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
