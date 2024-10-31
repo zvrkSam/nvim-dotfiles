@@ -55,6 +55,7 @@ return {
 
   -- arrow is like primeagens harpoon but with lualine support out of the box
 
+  -- TODO: Add timeout option for popup menu | like which-key
   {
     "otavioschwanck/arrow.nvim",
     lazy = true,
