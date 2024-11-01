@@ -26,7 +26,7 @@ map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
 ----------------------------
 
 -- Oil
-map("n", "-", "<cmd>Oil<CR>", { desc = "Open Oil", silent = true })
+map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil", silent = true })
 
 -- Telescope pull-up notes
 map("n", "<leader>fn", ":GrepNotes<CR>", { desc = "Notes (grep)", noremap = true, silent = true })
