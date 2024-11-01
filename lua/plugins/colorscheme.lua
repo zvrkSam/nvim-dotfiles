@@ -102,7 +102,6 @@ return {
       highlight_overrides = {
         all = function(colors)
           return {
-            -- ["@tag.delimiter"] = { fg = cat.lav },
             ["@tag.attribute.tsx"] = { fg = cat.lav },
             ["@tag.delimiter"] = { fg = colors.flamingo },
             ["@tag.delimiter.astro"] = { fg = cat.lav },
@@ -111,10 +110,10 @@ return {
             ["@tag.tsx"] = { fg = colors.yellow },
             ["@keyword.export.tsx"] = { fg = colors.lavender },
             ["@keyword.export.typescript"] = { fg = colors.lavender },
-            ["@operator"] = { fg = colors.tn.pink },
+            ["@operator"] = { fg = colors.subtext1 },
             ["@markup.link.label"] = { fg = cat.purple },
             ["@markup.heading.5.markdown"] = { fg = colors.blue },
-            CursorLineNr = { fg = colors.mauve, style = { "bold" } },
+            -- CursorLineNr = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlinePopupTitle = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlineIcon = { fg = colors.mauve },
             TodoFgTODO = { fg = colors.yellow },
