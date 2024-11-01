@@ -1,7 +1,6 @@
 return {
 
   -- Oil
-
   {
     "stevearc/oil.nvim",
     event = "VeryLazy",
@@ -26,7 +25,6 @@ return {
   },
 
   -- neo-tree
-
   {
     "nvim-neo-tree/neo-tree.nvim",
     event = "VeryLazy",
@@ -58,7 +56,6 @@ return {
   },
 
   -- arrow is like primeagens harpoon but with lualine support out of the box
-
   -- TODO: Add timeout option for popup menu | like which-key
   {
     "otavioschwanck/arrow.nvim",
@@ -72,14 +69,12 @@ return {
   },
 
   -- undo-tree
-
   {
     "mbbill/undotree",
     lazy = false,
   },
 
   -- scrollEOF
-
   {
     "Aasim-A/scrollEOF.nvim",
     event = { "CursorMoved", "WinScrolled" },
