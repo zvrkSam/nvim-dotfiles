@@ -14,6 +14,10 @@ return {
           return name == "node_modules" or name == ".git"
         end,
       },
+      float = {
+        max_width = 235,
+        max_height = 65,
+      },
       keymaps = {
         ["<c-c>"] = false,
         ["q"] = "actions.close",
