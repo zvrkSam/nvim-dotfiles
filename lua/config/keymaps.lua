@@ -124,7 +124,7 @@ map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precogni
 map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
 
 -- Undo tree
-map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Twilight Mode", silent = true })
+map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree", silent = true })
 
 -- ZenMode and Twilight
 map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Toggle Twilight Mode", silent = true })
