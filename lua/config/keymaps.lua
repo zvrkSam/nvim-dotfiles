@@ -91,7 +91,13 @@ map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser bookmarks", silent = true })
 
 -- Codeium turn off / on
-map("n", "<leader>oc", "<cmd>CodeiumToggle<CR>", { desc = "Toggle Codeium", silent = true })
+map("n", "<leader>oc", function()
+  require("notify")("Toggling codeium!", "info", {
+    title = "Codeium",
+    timeout = 2000,
+  })
+  vim.cmd("CodeiumToggle")
+end, { desc = "Toggle Codeium", silent = true })
 
 -- LazyExtras
 map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
