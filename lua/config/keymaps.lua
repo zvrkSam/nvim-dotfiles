@@ -88,7 +88,7 @@ map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 -------------------------
 
 -- Search bookmarks
-map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser bookmarks", silent = true })
+-- map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser bookmarks", silent = true })
 
 -- Codeium turn off / on
 map("n", "<leader>oc", function()
