@@ -3,6 +3,7 @@ local tn = {
   indigo = "#7F85FF", -- for transparent background (abit more darker)
   -- indigo = "#878DFF" -- for non transparent background
   pink = "#F570D9",
+  purple = "#9270D0",
   darker_purple = "#9C65FF",
   visible_gray = "#70728D",
   bracket_gray = "#9BA5D5",
@@ -32,6 +33,7 @@ return {
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(colors)
         colors.green1 = tn.indigo
+        colors.purple = tn.purple
         colors.blue5 = tn.pink
         colors.bg_statusline = colors.none -- makes lualine transparent
         colors.git.add = colors.green
