@@ -9,6 +9,11 @@ local tn = {
   bracket_gray = "#9BA5D5",
 }
 
+local stn = {
+  bg = "#24283B",
+  bg_dark = "#1F2335",
+}
+
 -- catppuccin
 local cat = {
   teal = "#FAE3B0",
@@ -74,6 +79,9 @@ return {
         hl.NoiceLspProgressClient = { fg = c.purple }
         hl.NoiceCmdlinePopupTitleCmdline = { fg = c.green }
         hl.NoiceConfirmBorder = { fg = tn.indigo }
+        hl.BlinkCmpMenu = { bg = stn.bg_dark }
+        hl.BlinkCmpMenuBorder = { fg = tn.indigo, bg = c.none }
+        hl.BlinkCmpDocBorder = { fg = tn.indigo }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
