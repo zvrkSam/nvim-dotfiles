@@ -117,9 +117,6 @@ map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
 -- Open URLOpenUnderCursor (manual trigger, when normal gx doesnt pickup)
 map("n", "<leader>oo", "<cmd>URLOpenUnderCursor<CR>", { desc = "Open URL", silent = true })
 
--- Precognition
-map("n", "<leader>op", "<cmd>Precognition toggle<CR>", { desc = "Toggle Precognition", silent = true })
-
 -- Save all files
 map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
 
