@@ -26,6 +26,11 @@ return {
         "<leader>oo",
         icon = { icon = "󰖟", color = "azure" },
       },
+      {
+        "<leader>t",
+        group = "toggleTerm",
+        icon = { icon = "", color = "yellow" },
+      },
     })
   end,
 }
