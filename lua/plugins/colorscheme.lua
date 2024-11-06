@@ -7,6 +7,7 @@ local tn = {
   darker_purple = "#9C65FF",
   visible_gray = "#70728D",
   bracket_gray = "#9BA5D5",
+  gutter = "#555D82",
 }
 
 local stn = {
@@ -48,6 +49,8 @@ return {
       end,
       on_highlights = function(hl, c)
         hl.Visual = { bg = c.bg_highlight, bold = true }
+        hl.LineNrAbove = { fg = tn.gutter }
+        hl.LineNrBelow = { fg = tn.gutter }
         hl["@tag.delimiter"] = { fg = tn.darker_purple }
         -- hl.Label = { fg = c.blue5 }
         hl["@tag.tsx"] = { fg = tn.darker_purple }
