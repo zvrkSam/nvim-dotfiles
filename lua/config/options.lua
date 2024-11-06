@@ -18,10 +18,8 @@ opt.eventignore = "FocusLost"
 
 vim.o.termguicolors = true
 
+-- Highlight the text line of the cursor
 opt.cursorlineopt = "number"
-
--- Enabled ONLY for precognition, to get better with motions
--- opt.signcolumn = "no"
 
 -- Sets borders and popus to transparent
 opt.pumblend = 0
