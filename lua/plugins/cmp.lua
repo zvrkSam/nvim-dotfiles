@@ -34,6 +34,9 @@ return {
         signature_help = {
           border = "rounded",
         },
+        ghost_text = {
+          enabled = false,
+        },
       },
     },
   },
