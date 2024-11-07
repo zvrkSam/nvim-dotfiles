@@ -2,6 +2,7 @@
 local tn = {
   indigo = "#7F85FF", -- for transparent background (abit more darker)
   -- indigo = "#878DFF" -- for non transparent background
+  winseparator = "#4B4D83",
   pink = "#F570D9",
   purple = "#9270D0",
   darker_purple = "#9C65FF",
@@ -58,7 +59,7 @@ return {
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
         -- hl["@keyword.import"] = { fg = c.magenta }
-        hl.WinSeparator = { fg = c.purple }
+        hl.WinSeparator = { fg = tn.winseparator }
         hl.FloatBorder = { fg = tn.indigo }
         hl.FloatTitle = { fg = c.green }
         hl.DiagnosticUnnecessary = { fg = tn.visible_gray }
@@ -99,7 +100,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    -- enabled = false,
+    enabled = false,
     lazy = true,
     opts = {
       flavour = "frappe", -- latte, frappe (when alacritty is transparent), macchiato, mocha
