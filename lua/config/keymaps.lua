@@ -57,6 +57,12 @@ map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defeniti
 -- to toggle arrow menu is the letter R
 map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mappings (save)", silent = true })
 
+-------------------
+----- UTILITY -----
+-------------------
+
+map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true, silent = true })
+
 ------------------------------------
 ----- CURSOR/TEXT MANIPULATION -----
 ------------------------------------
@@ -83,9 +89,9 @@ map("i", "<A-a>", "<c-o>A", { noremap = true, silent = true })
 -- Center text in insert mode
 map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 
--------------------------
------ MISC COMMANDS -----
--------------------------
+----------------------------------
+----- MISC [o]GROUP COMMANDS -----
+----------------------------------
 
 -- Search bookmarks
 -- map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser bookmarks", silent = true })
