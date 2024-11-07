@@ -23,7 +23,6 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       diagnostics = {
-        signs = true,
         float = {
           border = "rounded",
           source = "always",
