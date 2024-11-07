@@ -20,7 +20,7 @@ return {
   },
   {
     "saghen/blink.cmp",
-
+    enabled = false,
     opts = {
       windows = {
         autocomplete = {
