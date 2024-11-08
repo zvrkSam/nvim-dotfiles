@@ -117,6 +117,9 @@ map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = t
 -- Notifications in Telescope view
 map("n", "<leader>on", "<cmd>Telescope notify<CR>", { desc = "Notifications", silent = true })
 
+-- Noice last message
+map("n", "<leader>oN", "<cmd>NoiceLast<CR>", { desc = "Noice last message", silent = true })
+
 -- Open url under cursor (anywhere on the current line)
 map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
 
