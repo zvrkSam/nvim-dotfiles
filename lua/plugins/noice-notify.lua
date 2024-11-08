@@ -5,9 +5,9 @@ return {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     opts = {
-      stages = "static",
       -- default | minimal | simple | compact | wrapped-compact
-      render = "compact",
+      -- render = "wrapped-compact",
+      -- stages = "static",
       top_down = true,
       timeout = 4000,
     },
@@ -24,59 +24,17 @@ return {
   {
     "folke/noice.nvim",
     opts = function(_, opts)
-      table.insert(opts.routes, {
-        filter = {
-          event = "notify",
-          find = "No information available",
-        },
-        opts = { skip = true },
-      })
-
-      local focused = true
-
-      vim.api.nvim_create_autocmd("FocusGained", {
-        callback = function()
-          focused = true
-        end,
-      })
-
-      vim.api.nvim_create_autocmd("FocusLost", {
-        callback = function()
-          focused = false
-        end,
-      })
-
-      table.insert(opts.routes, 1, {
-        filter = {
-          cond = function()
-            return not focused
-          end,
-        },
-        view = "notify_send",
-        opts = { stop = false },
-      })
-
-      opts.commands = {
-        all = {
-          -- options for the message history that you get with `:Noice`
-          view = "split",
-          opts = { enter = true, format = "details" },
-          filter = {},
-        },
-      }
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "markdown",
-        callback = function(event)
-          vim.schedule(function()
-            require("noice.text.markdown").keys(event.buf)
-          end)
-        end,
-      })
+      -- vim.api.nvim_create_autocmd("FileType", {
+      --   pattern = "markdown",
+      --   callback = function(event)
+      --     vim.schedule(function()
+      --       require("noice.text.markdown").keys(event.buf)
+      --     end)
+      --   end,
+      -- })
 
       opts.presets.lsp_doc_border = true
 
-      -- This is my part
       opts.views = {
         cmdline_popup = {
           position = {
@@ -103,20 +61,17 @@ return {
         },
       }
 
-      opts.messages = {
-        -- Disables info messages
-        view = false,
-      }
-
       opts.routes = {
-        {
-          filter = {
-            event = "lsp",
-            kind = "progress",
-            find = "jdtls",
-          },
-          opts = { skip = true },
-        },
+        { filter = { event = "msg_show", find = "written" } },
+        { filter = { event = "msg_show", find = "yanked" } },
+        { filter = { event = "msg_show", find = "%d+L, %d+B" } },
+        { filter = { event = "msg_show", find = "; after #%d+" } },
+        { filter = { event = "msg_show", find = "; before #%d+" } },
+        { filter = { event = "msg_show", find = "%d fewer lines" } },
+        { filter = { event = "msg_show", find = "%d more lines" } },
+        { filter = { event = "msg_show", find = "<ed" } },
+        { filter = { event = "msg_show", find = ">ed" } },
+        { filter = { event = "lsp", kind = "progress", find = "jdtls" } },
       }
     end,
   },
