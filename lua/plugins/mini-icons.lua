@@ -4,7 +4,7 @@ return {
   "echasnovski/mini.icons",
   opts = {
     extension = {
-      go = { glyph = "", hl = "MiniIconsAzure" },
+      go = { glyph = "󰊭", hl = "MiniIconsAzure" },
       templ = { glyph = "", hl = "MiniIconsYellow" },
       sh = { hl = "MiniIconsGreen" },
       mdx = { glyph = "" },
