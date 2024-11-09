@@ -98,10 +98,7 @@ map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 
 -- Codeium turn off / on
 map("n", "<leader>oc", function()
-  require("notify")("Toggling codeium!", "info", {
-    title = "Codeium",
-    timeout = 2000,
-  })
+  require("snacks").notifier.notify("Toggling codeium!", "warn", { title = "AI assistant", timeout = 2000 })
   vim.cmd("CodeiumToggle")
 end, { desc = "Toggle Codeium", silent = true })
 
@@ -137,14 +134,15 @@ map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Toggle Twilight Mode", sil
 map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
 
 map("n", "<leader>oy", function()
-  local diagnostics = vim.diagnostic.get(0)
+  local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+  local diagnostics = vim.diagnostic.get(0, { lnum = line })
   local lines = {}
   for _, d in ipairs(diagnostics) do
     table.insert(lines, d.message)
   end
   vim.fn.setreg("+", table.concat(lines, "\n"))
 
-  require("notify")("Diagnostics yanked to clipboard!", "info", {
+  require("snacks").notifier.notify("Diagnostics yanked to clipboard!", "info", {
     title = "Diagnostics",
     timeout = 2000,
   })
