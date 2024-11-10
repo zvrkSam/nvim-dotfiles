@@ -37,7 +37,7 @@ return {
       }
       opts.win = {
         style = "terminal",
-        -- height = 0.2,
+        height = 0.2,
         keys = {
           gf = function(self)
             local f = vim.fn.findfile(vim.fn.expand("<cfile>"))
