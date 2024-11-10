@@ -143,7 +143,7 @@ map("n", "<leader>oy", function()
   end
   vim.fn.setreg("+", table.concat(lines, "\n"))
 
-  require("snacks").notifier.notify("Diagnostics yanked to clipboard!", "info", {
+  Snacks.notifier.notify("Diagnostics yanked to clipboard!", "info", {
     title = "Diagnostics",
     timeout = 2000,
   })
