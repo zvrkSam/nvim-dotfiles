@@ -98,7 +98,7 @@ map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 
 -- Codeium turn off / on
 map("n", "<leader>oc", function()
-  require("snacks").notifier.notify("Toggling codeium!", "warn", { title = "AI assistant", timeout = 2000 })
+  Snacks.notifier.notify("Toggling codeium!", "warn", { title = "AI assistant", timeout = 2000 })
   vim.cmd("CodeiumToggle")
 end, { desc = "Toggle Codeium", silent = true })
 
