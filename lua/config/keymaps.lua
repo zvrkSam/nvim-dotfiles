@@ -111,8 +111,9 @@ map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = t
 -- Delete all marks
 map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = true })
 
--- Notifications in Telescope view
-map("n", "<leader>on", "<cmd>Telescope notify<CR>", { desc = "Notifications", silent = true })
+-- Show notification history
+-- stylua: ignore
+map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "Notification history", silent = true })
 
 -- Noice last message
 map("n", "<leader>oN", "<cmd>NoiceLast<CR>", { desc = "Noice last message", silent = true })
