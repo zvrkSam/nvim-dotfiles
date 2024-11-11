@@ -9,6 +9,7 @@ local tn = {
   visible_gray = "#70728D",
   bracket_gray = "#9BA5D5",
   gutter = "#555D82",
+  comment = "#5C6693",
 }
 
 local stn = {
@@ -49,6 +50,7 @@ return {
         vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.magenta })
       end,
       on_highlights = function(hl, c)
+        hl.Comment = { fg = tn.comment }
         hl.Visual = { bg = c.bg_highlight, bold = true }
         hl.LineNrAbove = { fg = tn.gutter }
         hl.LineNrBelow = { fg = tn.gutter }
