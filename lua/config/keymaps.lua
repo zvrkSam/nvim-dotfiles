@@ -7,6 +7,8 @@ local map = vim.keymap.set
 -------------------------
 ----- WINDOW/BUFFER -----
 -------------------------
+map("c", "<C-j>", "<Down>", { desc = "Next Command" })
+map("c", "<C-k>", "<Up>", { desc = "Previous Command" })
 
 -- Delete buffer
 map("n", "<leader>d", ":bdelete<CR>", { desc = "Delete buffer", noremap = true, silent = true })
