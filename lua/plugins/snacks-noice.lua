@@ -4,13 +4,6 @@ return {
     priority = 1000,
     lazy = false,
     opts = function(_, opts)
-      opts.bigfile = { enabled = true }
-      opts.notifier = {
-        enabled = true,
-        timeout = 4000,
-        top_down = true,
-        style = "compact", -- compact, minimal, fancy
-      }
       for _, pos in ipairs({ "top", "bottom", "left", "right" }) do
         opts[pos] = opts[pos] or {}
         table.insert(opts[pos], {
@@ -25,6 +18,14 @@ return {
           end,
         })
       end
+
+      opts.bigfile = { enabled = true }
+      opts.notifier = {
+        enabled = true,
+        timeout = 4000,
+        top_down = true,
+        style = "compact", -- compact, minimal, fancy
+      }
       opts.words = {
         enabled = true,
       }
@@ -34,6 +35,9 @@ return {
           width = 0,
           height = 0,
         },
+      }
+      opts.styles["notification.history"] = {
+        width = 0.8,
       }
       opts.win = {
         style = "terminal",
