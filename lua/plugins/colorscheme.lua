@@ -24,6 +24,8 @@ local cat = {
   purple = "#9684FC",
 }
 
+-- :Inspect and see highlights
+-- :Telescope highlights to see all of the highlights
 return {
   {
     "folke/tokyonight.nvim",
