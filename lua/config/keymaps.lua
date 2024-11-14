@@ -118,6 +118,9 @@ map("n", "<leader>oc", function()
   vim.cmd("CodeiumToggle")
 end, { desc = "Toggle Codeium", silent = true })
 
+-- Codeium chat
+map("n", "<leader>oC", "<cmd>CodeiumChat<CR>", { desc = "Codeium chat", silent = true })
+
 -- LazyExtras
 map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
 
