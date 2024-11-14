@@ -37,7 +37,19 @@ return {
         },
       }
       opts.styles["notification.history"] = {
+        width = 0.9,
+      }
+      opts.statuscolumn = {
+        enabled = true,
+      }
+      Snacks.config.style("news", {
+        border = "rounded",
         width = 0.8,
+        height = 0.7,
+      })
+      opts.win = {
+        style = "news",
+        border = "single",
       }
       opts.win = {
         style = "terminal",
