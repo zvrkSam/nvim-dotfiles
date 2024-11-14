@@ -28,8 +28,8 @@ return {
       },
       {
         "<leader>t",
-        group = "toggleTerm",
-        icon = { icon = "", color = "yellow" },
+        group = "Terminal",
+        icon = { icon = "", color = "red" },
       },
     })
   end,
