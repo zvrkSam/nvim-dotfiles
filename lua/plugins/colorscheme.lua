@@ -29,7 +29,7 @@ local cat = {
 return {
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     opts = {
       style = "night",
       transparent = true,
@@ -104,10 +104,10 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    enabled = false,
-    lazy = true,
+    -- enabled = false,
+    lazy = false,
     opts = {
-      flavour = "frappe", -- latte, frappe (when alacritty is transparent), macchiato, mocha
+      flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
       no_italic = true,
       transparent_background = true,
       color_overrides = {
@@ -189,8 +189,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
-      -- colorscheme = "catppuccin",
+      -- colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
       -- colorscheme = "onedark",
       -- colorscheme = "github_dark_default",
     },
