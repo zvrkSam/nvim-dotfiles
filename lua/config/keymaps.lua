@@ -73,6 +73,9 @@ map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true, silent = 
 ----- CURSOR/TEXT MANIPULATION -----
 ------------------------------------
 
+-- Delete word in insert mode
+map("i", "<A-w>", "<c-o>ciw", { noremap = true, silent = true })
+
 -- <Delete> key functionality
 map("n", "<A-x>", "<Del>", { noremap = true, silent = true })
 map("i", "<A-x>", "<Del>", { noremap = true, silent = true })
