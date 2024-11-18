@@ -90,6 +90,14 @@ return {
         hl.BlinkCmpMenu = { bg = stn.bg_dark }
         hl.BlinkCmpMenuBorder = { fg = tn.indigo, bg = c.none }
         hl.BlinkCmpDocBorder = { fg = tn.indigo }
+        hl.SnacksDashboardHeader = { fg = c.magenta }
+        hl.SnacksDashboardFooter = { fg = c.magenta }
+        hl.SnacksDashboardTitle = { fg = tn.purple }
+        hl.SnacksDashboardIcon = { fg = c.magenta }
+        hl.SnacksDashboardDesc = { fg = c.green1 }
+        hl.SnacksDashboardSpecial = { fg = c.green }
+        hl.SnacksDashboardDir = { fg = tn.winseparator }
+        hl.SnacksDashboardFile = { fg = c.green }
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
