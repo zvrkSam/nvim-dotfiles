@@ -7,7 +7,7 @@ local tn = {
   purple = "#9270D0",
   darker_purple = "#9C65FF",
   visible_gray = "#70728D",
-  bracket_gray = "#9BA5D5",
+  bracket_gray = "#9AA6DF",
   gutter = "#555D82",
   comment = "#5C6693",
 }
