@@ -74,6 +74,7 @@ return {
         hl.TelescopeTitle = { fg = c.green }
         hl.TelescopeSelection = { fg = c.purple, bold = true }
         hl.TelescopeMatching = { fg = c.green, bold = true }
+        hl.TreesitterContext = { bg = c.none }
         hl.Macro = { fg = tn.indigo }
         hl.NoiceCmdlineIcon = { fg = tn.indigo }
         hl.NoiceCmdlinePopupBorder = { fg = tn.indigo }
