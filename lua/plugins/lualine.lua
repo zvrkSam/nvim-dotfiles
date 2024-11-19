@@ -48,7 +48,7 @@ return {
     return {
       options = {
         globalstatus = true,
-        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "snacks_dashboard" } },
         refresh = {
           statusline = 300,
         },
