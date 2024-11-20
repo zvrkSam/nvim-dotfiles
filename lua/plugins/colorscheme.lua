@@ -113,7 +113,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    -- enabled = false,
+    enabled = false,
     lazy = false,
     opts = {
       flavour = "mocha", -- latte, frappe (when alacritty is transparent), macchiato, mocha
