@@ -27,6 +27,8 @@ map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
 ----- TERMINAL -----
 --------------------
 
+-- TODO: Add lazydocker and sqlclient
+
 map({ "n", "t" }, "<A-F>", function()
   local current_dir = vim.fn.expand("%:p:h")
   if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
@@ -51,6 +53,18 @@ map({ "n", "t" }, "<A-F>", function()
     })
   end
 end, { desc = "Toggle floating terminal" })
+
+map({ "n", "t" }, "<leader>tb", function()
+  Snacks.terminal.toggle("btop", {
+    win = {
+      style = "terminal",
+      relative = "editor",
+      width = 0.90,
+      height = 0.92,
+      border = "rounded",
+    },
+  })
+end, { desc = "Open btop" })
 
 ----------------------------
 ----- TELESCOPE/FILE'S -----
