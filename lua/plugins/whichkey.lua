@@ -14,9 +14,9 @@ return {
     wk.add({
       {
         "<leader>o",
-        icon = { icon = "", color = "yellow" },
         group = "misc options",
         desc = "misc options",
+        icon = { icon = "", color = "yellow" },
       },
       {
         "<leader>ol",
