@@ -1,4 +1,4 @@
--- tokyonight
+-- tokyonight - night
 local tn = {
   indigo = "#7F85FF", -- for transparent background (abit more darker)
   -- indigo = "#878DFF" -- for non transparent background
@@ -12,6 +12,7 @@ local tn = {
   comment = "#5C6693",
 }
 
+-- tokyonight - storm
 local stn = {
   bg = "#24283B",
   bg_dark = "#1F2335",
@@ -41,41 +42,47 @@ return {
       },
       -- list of all the colors for tokyonight
       -- https://github.com/folke/tokyonight.nvim/discussions/453
-      on_colors = function(colors)
-        colors.green1 = tn.indigo
-        colors.purple = tn.purple
-        colors.blue5 = tn.pink
-        colors.bg_statusline = colors.none -- makes lualine transparent
-        colors.git.add = colors.green
-        colors.git.change = colors.yellow
-        colors.git.delete = colors.red
-        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.magenta })
+      on_colors = function(c)
+        c.green1 = tn.indigo
+        c.purple = tn.purple
+        c.blue5 = tn.pink
+        c.bg_statusline = c.none -- makes lualine transparent
+        c.git.add = c.green
+        c.git.change = c.yellow
+        c.git.delete = c.red
+        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.magenta })
       end,
       on_highlights = function(hl, c)
-        hl.Comment = { fg = tn.comment }
         hl.Visual = { bg = c.bg_highlight, bold = true }
-        hl.LineNrAbove = { fg = tn.gutter }
-        hl.LineNrBelow = { fg = tn.gutter }
+        hl.Comment = { fg = tn.comment }
+        hl.Macro = { fg = tn.indigo }
+        hl.DiagnosticUnnecessary = { fg = tn.visible_gray }
+        hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl["@tag.delimiter"] = { fg = tn.darker_purple }
-        -- hl.Label = { fg = c.blue5 }
         hl["@tag.tsx"] = { fg = tn.darker_purple }
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
-        -- hl["@keyword.import"] = { fg = c.magenta }
+
+        -- UI
+        hl.LineNrAbove = { fg = tn.gutter }
+        hl.LineNrBelow = { fg = tn.gutter }
         hl.WinSeparator = { fg = tn.winseparator }
         hl.FloatBorder = { fg = tn.indigo }
         hl.FloatTitle = { fg = c.green }
-        hl.DiagnosticUnnecessary = { fg = tn.visible_gray }
-        hl.RenderMarkdownCode = { bg = c.bg_highlight }
+
+        -- WhichKey
         hl.WhichKeyTitle = { fg = c.green }
         hl.WhichKeyBorder = { fg = tn.indigo }
+
+        -- Telescope
         hl.TelescopeBorder = { fg = tn.indigo }
         hl.TelescopeTitle = { fg = c.green }
         hl.TelescopeSelection = { fg = c.purple, bold = true }
         hl.TelescopeMatching = { fg = c.green, bold = true }
         hl.TreesitterContext = { bg = c.none }
-        hl.Macro = { fg = tn.indigo }
+
+        -- Noice
         hl.NoiceCmdlineIcon = { fg = tn.indigo }
         hl.NoiceCmdlinePopupBorder = { fg = tn.indigo }
         hl.NoicePopupmenuSelected = { fg = c.red, bold = true }
@@ -88,9 +95,13 @@ return {
         hl.NoiceLspProgressClient = { fg = c.purple }
         hl.NoiceCmdlinePopupTitleCmdline = { fg = c.green }
         hl.NoiceConfirmBorder = { fg = tn.indigo }
+
+        -- BlinkCmp
         hl.BlinkCmpMenu = { bg = stn.bg_dark }
         hl.BlinkCmpMenuBorder = { fg = tn.indigo, bg = c.none }
         hl.BlinkCmpDocBorder = { fg = tn.indigo }
+
+        -- Snacks
         hl.SnacksDashboardHeader = { fg = c.magenta }
         hl.SnacksDashboardFooter = { fg = c.magenta }
         hl.SnacksDashboardTitle = { fg = tn.purple }
@@ -99,6 +110,8 @@ return {
         hl.SnacksDashboardSpecial = { fg = c.green }
         hl.SnacksDashboardDir = { fg = tn.winseparator }
         hl.SnacksDashboardFile = { fg = c.green }
+
+        -- Todo
         hl.TodoFgTODO = { fg = c.yellow }
         hl.TodoBgTODO = { fg = c.bg_dark, bg = c.yellow, bold = true }
         hl.TodoFgTEST = { fg = c.blue1 }
