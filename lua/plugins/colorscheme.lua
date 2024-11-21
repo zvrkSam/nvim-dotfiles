@@ -154,8 +154,12 @@ return {
             ["@markup.link.label"] = { fg = cat.purple },
             ["@markup.heading.5.markdown"] = { fg = colors.blue },
             -- CursorLineNr = { fg = colors.mauve, style = { "bold" } },
+
+            -- Noice
             NoiceCmdlinePopupTitle = { fg = colors.mauve, style = { "bold" } },
             NoiceCmdlineIcon = { fg = colors.mauve },
+
+            -- Todo
             TodoFgTODO = { fg = colors.yellow },
             TodoBgTODO = { fg = colors.mantle, bg = colors.yellow, style = { "bold" } },
             TodoFgHACK = { fg = colors.mauve },
