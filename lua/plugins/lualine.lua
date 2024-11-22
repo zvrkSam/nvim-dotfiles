@@ -50,7 +50,7 @@ return {
         --        
         section_separators = { left = "", right = "" },
         -- │ ┊    
-        component_separators = { left = "", right = "│" },
+        component_separators = { left = "", right = "" },
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "snacks_dashboard" } },
         refresh = {
@@ -61,19 +61,7 @@ return {
         lualine_a = { "mode" },
         lualine_b = {
           { "branch" },
-          {
-            "diff",
-            source = function()
-              local gitsigns = vim.b.gitsigns_status_dict
-              if gitsigns then
-                return {
-                  added = gitsigns.added,
-                  modified = gitsigns.changed,
-                  removed = gitsigns.removed,
-                }
-              end
-            end,
-          },
+          { "diff" },
           { "diagnostics" },
         },
         lualine_c = {
