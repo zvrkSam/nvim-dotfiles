@@ -20,6 +20,7 @@ return {
   {
     "NeogitOrg/neogit",
     event = "VeryLazy",
+    dependencies = { "sindrets/diffview.nvim" },
     opts = {},
   },
 }
