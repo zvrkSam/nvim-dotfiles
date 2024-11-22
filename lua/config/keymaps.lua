@@ -139,6 +139,21 @@ map("i", "<A-a>", "<c-o>A", { noremap = true, silent = true })
 -- Center text in insert mode
 map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 
+---------------
+----- GIT -----
+---------------
+
+-- kind=<type_of_split_to_open>
+map("n", "<leader>nn", "<cmd>Neogit<CR>", { desc = "Neogit", silent = true })
+
+-- NOTE: Diffview exists
+-- :Diffview Open / Close
+-- https://github.com/sindrets/diffview.nvim
+
+-- Open Lazygit in new tmux window
+-- stylua: ignore
+map("n", "<leader>nl", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit<CR>", { desc = "Lazygit in tmux", silent = true })
+
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
@@ -157,13 +172,6 @@ map("n", "<leader>oC", "<cmd>CodeiumChat<CR>", { desc = "Codeium chat", silent =
 
 -- LazyExtras
 map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
-
--- stylua: ignore
-map("n", "<leader>of", function() local neogit = require("neogit") neogit.open({ kind = "floating" }) end, { desc = "Neogit", silent = true })
-
--- Open Lazygit in new tmux window
--- stylua: ignore
-map("n", "<leader>og", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit<CR>", { desc = "Lazygit in tmux", silent = true })
 
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
