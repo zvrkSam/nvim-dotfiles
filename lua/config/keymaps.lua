@@ -160,7 +160,7 @@ map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = tr
 
 -- Open Lazygit in new tmux window
 -- stylua: ignore
-map("n", "<leader>og", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR>", { desc = "Lazygit in tmux", silent = true })
+map("n", "<leader>og", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit<CR>", { desc = "Lazygit in tmux", silent = true })
 
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
