@@ -31,6 +31,11 @@ return {
         group = "Terminal",
         icon = { icon = "", color = "red" },
       },
+      {
+        "<leader>n",
+        group = "neogit+lazygit",
+        icon = { icon = "", color = "azure" },
+      },
     })
   end,
 }
