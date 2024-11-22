@@ -158,6 +158,9 @@ map("n", "<leader>oC", "<cmd>CodeiumChat<CR>", { desc = "Codeium chat", silent =
 -- LazyExtras
 map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
 
+-- stylua: ignore
+map("n", "<leader>of", function() local neogit = require("neogit") neogit.open({ kind = "floating" }) end, { desc = "Neogit", silent = true })
+
 -- Open Lazygit in new tmux window
 -- stylua: ignore
 map("n", "<leader>og", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit<CR>", { desc = "Lazygit in tmux", silent = true })

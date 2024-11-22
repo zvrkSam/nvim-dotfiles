@@ -17,4 +17,9 @@ return {
       -- linehl = true,
     },
   },
+  {
+    "NeogitOrg/neogit",
+    event = "VeryLazy",
+    opts = {},
+  },
 }
