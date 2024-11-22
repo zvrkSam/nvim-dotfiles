@@ -28,6 +28,8 @@ map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
 --------------------
 
 -- TODO: Add lazydocker and sqlclient
+-- think about lazydocker and sqlclient in new tmux window
+-- same way as lazygit is being opened now with <leader>og
 
 map({ "n", "t" }, "<A-F>", function()
   local current_dir = vim.fn.expand("%:p:h")
