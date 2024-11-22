@@ -41,6 +41,7 @@ local function search_by_file_type(command_name, file_pattern, prompt_title)
     telescope.find_files({
       find_command = { "rg", "--files", "--glob", file_pattern },
       prompt_title = prompt_title,
+      group = "mygroup",
     })
   end, {})
 end
@@ -50,6 +51,7 @@ local function search_by_directory(command_name, dir, prompt_title)
     telescope.find_files({
       cwd = vim.fn.expand(dir),
       prompt_title = prompt_title,
+      group = "mygroup",
     })
   end, {})
 end
@@ -66,6 +68,7 @@ local function grep_notes(command_name, dir, prompt_title)
       cwd = vim.fn.expand(dir),
       type_filter = "md",
       prompt_title = prompt_title,
+      group = "mygroup",
     })
   end, {})
 end
