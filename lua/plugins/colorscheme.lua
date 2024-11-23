@@ -50,7 +50,6 @@ return {
         c.git.add = c.green
         c.git.change = c.yellow
         c.git.delete = c.red
-        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.magenta })
       end,
       on_highlights = function(hl, c)
         hl.Visual = { bg = c.bg_highlight, bold = true }
@@ -63,6 +62,11 @@ return {
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
+
+        -- GitSigns
+        hl.GitSignsAdd = { fg = c.green, bold = true }
+        hl.GitSignsChange = { fg = c.yellow, bold = true }
+        hl.GitSignsDelete = { fg = c.red, bold = true }
 
         -- UI
         hl.LineNrAbove = { fg = tn.gutter }
