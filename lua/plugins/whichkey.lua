@@ -36,6 +36,10 @@ return {
         group = "neogit/lazygit",
         icon = { icon = "", color = "azure" },
       },
+      {
+        "<leader>L",
+        group = "Lazy",
+      },
     })
   end,
 }

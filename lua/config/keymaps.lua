@@ -6,6 +6,7 @@ local map = vim.keymap.set
 
 -- Deleted keymaps
 vim.keymap.del("n", "<leader>l", { noremap = true })
+vim.keymap.del("n", "<leader>L", { noremap = true })
 
 -------------------------
 ----- WINDOW/BUFFER -----
@@ -111,7 +112,14 @@ map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mapp
 ----- UTILITY -----
 -------------------
 
+-- Trouble
 map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true, silent = true })
+
+-- Lazy
+map("n", "<leader>Ll", "<cmd>Lazy<CR>", { desc = "Lazy", noremap = true })
+map("n", "<leader>Le", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", noremap = true })
+-- stylua: ignore
+map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVim Changelog", noremap = true })
 
 ------------------------------------
 ----- CURSOR/TEXT MANIPULATION -----
