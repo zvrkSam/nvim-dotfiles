@@ -33,7 +33,7 @@ return {
       },
       {
         "<leader>n",
-        group = "neogit+lazygit",
+        group = "neogit/lazygit",
         icon = { icon = "", color = "azure" },
       },
     })
