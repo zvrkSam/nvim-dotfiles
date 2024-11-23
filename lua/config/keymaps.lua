@@ -4,6 +4,9 @@
 
 local map = vim.keymap.set
 
+-- Deleted keymaps
+vim.keymap.del("n", "<leader>l", { noremap = true })
+
 -------------------------
 ----- WINDOW/BUFFER -----
 -------------------------
@@ -158,9 +161,6 @@ map("n", "<leader>nl", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygi
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
 
--- Search bookmarks
--- map("n", "<leader>ob", "<cmd>BrowserBookmarks<CR>", { desc = "Search browser bookmarks", silent = true })
-
 -- Codeium turn off / on
 map("n", "<leader>oc", function()
   Snacks.notifier.notify("Toggling codeium!", "warn", { title = "AI assistant", timeout = 2000 })
@@ -169,9 +169,6 @@ end, { desc = "Toggle Codeium", silent = true })
 
 -- Codeium chat
 map("n", "<leader>oC", "<cmd>CodeiumChat<CR>", { desc = "Codeium chat", silent = true })
-
--- LazyExtras
-map("n", "<leader>oe", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", silent = true })
 
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
