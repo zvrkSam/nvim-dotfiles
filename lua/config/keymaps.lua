@@ -94,10 +94,10 @@ map("n", "<leader>fa", ":TelescopeAstro<CR>", { desc = "Find Files (astro)", nor
 
 -- lazyterm remap
 -- stylua: ignore
-local lazyterm = function() LazyVim.terminal(nil, { cwd = LazyVim.root() }) end
+local lazyterm = function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end
 map("n", "<leader>f?", lazyterm, { desc = "Terminal (Root Dir)" })
 -- stylua: ignore
-map("n", "<leader>f/", function() LazyVim.terminal() end, { desc = "Terminal (cwd)" })
+map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 
 -- Go to defenition in vertical and horizontal view
 map("n", "g|", "<cmd>vertical winc ]<CR>", { desc = "Go to vertical defenition", silent = true })
