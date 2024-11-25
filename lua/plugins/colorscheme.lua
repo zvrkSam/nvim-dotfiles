@@ -4,12 +4,14 @@ local tn = {
   -- indigo = "#878DFF" -- for non transparent background
   winseparator = "#4B4D83",
   pink = "#F570D9",
+  dark_purple = "#836CAD",
   purple = "#9270D0",
   darker_purple = "#9C65FF",
   visible_gray = "#70728D",
   bracket_gray = "#9AA6DF",
   gutter = "#555D82",
   comment = "#5C6693",
+  white = "#F4F5FF",
 }
 
 -- tokyonight - storm
@@ -67,6 +69,9 @@ return {
         hl.GitSignsAdd = { fg = c.green, bold = true }
         hl.GitSignsChange = { fg = c.yellow, bold = true }
         hl.GitSignsDelete = { fg = c.red, bold = true }
+
+        -- Flash
+        hl.FlashMatch = { bg = tn.darker_purple, fg = tn.white }
 
         -- UI
         hl.LineNrAbove = { fg = tn.gutter }
