@@ -1,10 +1,10 @@
 -- tokyonight - night
 local tn = {
+  pure_black = "#000000",
   indigo = "#7F85FF", -- for transparent background (abit more darker)
   -- indigo = "#878DFF" -- for non transparent background
   winseparator = "#4B4D83",
   pink = "#F570D9",
-  dark_purple = "#836CAD",
   purple = "#9270D0",
   darker_purple = "#9C65FF",
   visible_gray = "#70728D",
@@ -106,9 +106,11 @@ return {
         hl.NoiceConfirmBorder = { fg = tn.indigo }
 
         -- BlinkCmp
-        hl.BlinkCmpMenu = { bg = stn.bg_dark }
+        hl.BlinkCmpMenu = { bg = tn.pure_black }
         hl.BlinkCmpMenuBorder = { fg = tn.indigo, bg = c.none }
+        hl.BlinkCmpMenuSelection = { fg = tn.pink }
         hl.BlinkCmpDocBorder = { fg = tn.indigo }
+        hl.BlinkCmpLabelMatch = { fg = tn.indigo }
 
         -- Snacks
         hl.SnacksDashboardHeader = { fg = c.magenta }
