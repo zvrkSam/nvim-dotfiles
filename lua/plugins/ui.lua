@@ -11,6 +11,8 @@ return {
     event = "VeryLazy",
     opts = { highlight = { backdrop = false } },
   },
+  -- TODO: check in on this
+  { "atiladefreitas/dooing" },
   { "folke/zen-mode.nvim" },
   { "folke/twilight.nvim" },
 }
