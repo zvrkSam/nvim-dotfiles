@@ -106,7 +106,7 @@ return {
         hl.NoiceConfirmBorder = { fg = tn.indigo }
 
         -- BlinkCmp
-        hl.BlinkCmpMenu = { bg = tn.pure_black }
+        hl.BlinkCmpMenu = { bg = c.bg }
         hl.BlinkCmpMenuBorder = { fg = tn.indigo, bg = c.none }
         hl.BlinkCmpMenuSelection = { fg = tn.pink }
         hl.BlinkCmpDocBorder = { fg = tn.indigo }
