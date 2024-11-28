@@ -154,9 +154,6 @@ map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 ----- GIT -----
 ---------------
 
--- kind=<type_of_split_to_open>
-map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h<CR>", { desc = "Neogit", silent = true })
-
 -- NOTE: Diffview exists
 -- :Diffview Open / Close
 -- https://github.com/sindrets/diffview.nvim
@@ -166,6 +163,9 @@ map("n", "<leader>ng", function()
   local git_root = LazyVim.root.git()
   vim.fn.system("tmux new-window -c " .. vim.fn.shellescape(git_root) .. " -- lazygit")
 end, { desc = "Lazygit in tmux (Root Dir)" })
+
+map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h<CR>", { desc = "Neogit", silent = true })
+
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
