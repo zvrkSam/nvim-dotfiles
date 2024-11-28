@@ -155,7 +155,7 @@ map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 ---------------
 
 -- kind=<type_of_split_to_open>
-map("n", "<leader>nn", "<cmd>Neogit<CR>", { desc = "Neogit", silent = true })
+map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h<CR>", { desc = "Neogit", silent = true })
 
 -- NOTE: Diffview exists
 -- :Diffview Open / Close
