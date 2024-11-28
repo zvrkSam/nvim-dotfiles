@@ -162,9 +162,10 @@ map("n", "<leader>nn", "<cmd>Neogit<CR>", { desc = "Neogit", silent = true })
 -- https://github.com/sindrets/diffview.nvim
 
 -- Open Lazygit in new tmux window
--- stylua: ignore
-map("n", "<leader>nl", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit<CR>", { desc = "Lazygit in tmux", silent = true })
-
+map("n", "<leader>ng", function()
+  local git_root = LazyVim.root.git()
+  vim.fn.system("tmux new-window -c " .. vim.fn.shellescape(git_root) .. " -- lazygit")
+end, { desc = "Lazygit in tmux (Root Dir)" })
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
