@@ -164,7 +164,7 @@ map("n", "<leader>ng", function()
   vim.fn.system("tmux new-window -c " .. vim.fn.shellescape(git_root) .. " -- lazygit")
 end, { desc = "Lazygit in tmux (Root Dir)" })
 
-map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h<CR>", { desc = "Neogit", silent = true })
+map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit", silent = true })
 
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
