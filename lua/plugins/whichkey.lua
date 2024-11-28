@@ -13,34 +13,13 @@ return {
     local wk = require("which-key")
     wk.setup(opts)
     wk.add({
-      {
-        "<leader>o",
-        group = "misc options",
-        desc = "misc options",
-        icon = { icon = "", color = "yellow" },
-      },
-      {
-        "<leader>ol",
-        icon = { icon = "󰒍", color = "red" },
-      },
-      {
-        "<leader>oo",
-        icon = { icon = "󰖟", color = "azure" },
-      },
-      {
-        "<leader>t",
-        group = "Terminal",
-        icon = { icon = "", color = "red" },
-      },
-      {
-        "<leader>n",
-        group = "neogit/lazygit",
-        icon = { icon = "", color = "azure" },
-      },
-      {
-        "<leader>L",
-        group = "Lazy",
-      },
+      { "<leader>o", group = "misc options", desc = "misc options", icon = { icon = "", color = "yellow" } },
+      { "<leader>ol", icon = { icon = "󰒍", color = "red" } },
+      { "<leader>oo", icon = { icon = "󰖟", color = "azure" } },
+      { "<leader>t", group = "Terminal", icon = { icon = "", color = "red" } },
+      { "<leader>n", group = "neogit/lazygit", icon = { icon = "", color = "azure" } },
+      { "<leader>L", group = "Lazy" },
+      { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
     })
   end,
 }
