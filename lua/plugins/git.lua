@@ -57,6 +57,12 @@ return {
     "NeogitOrg/neogit",
     event = "VeryLazy",
     dependencies = { "sindrets/diffview.nvim" },
-    opts = {},
+    opts = {
+      commit_editor = { kind = "split" },
+      integrations = {
+        telescope = true,
+        diffview = true,
+      },
+    },
   },
 }
