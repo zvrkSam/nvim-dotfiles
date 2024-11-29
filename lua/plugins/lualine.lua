@@ -12,7 +12,7 @@ return {
       vim.o.laststatus = 0
     end
   end,
-  opts = function()
+  opts = function(_, opts)
     -- Function to get the number of open buffers using the :ls command
     local function get_buffer_count()
       local buffers = vim.fn.execute("ls")
@@ -45,53 +45,58 @@ return {
 
     local colors = require("tokyonight.colors").setup()
 
-    return {
-      options = {
-        --        
-        section_separators = { left = "", right = "" },
-        -- │ ┊    
-        component_separators = { left = "", right = "" },
-        globalstatus = true,
-        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "snacks_dashboard" } },
-        refresh = {
-          statusline = 300,
-        },
+    opts.options = {
+      --        
+      section_separators = { left = "", right = "" },
+      -- │ ┊    
+      component_separators = { left = "", right = "" },
+      globalstatus = true,
+      disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "snacks_dashboard" } },
+      refresh = {
+        statusline = 300,
       },
-      sections = {
-        lualine_a = { "mode" },
-        lualine_b = {
-          { "branch" },
-          { "diff" },
-          { "diagnostics" },
-        },
-        lualine_c = {
-          {
-            function()
-              local arrow = require("arrow.statusline")
-              local text = arrow.text_for_statusline()
-              local is_on_arrow = arrow.is_on_arrow_file()
-              local icon = "󰸖"
+    }
+    opts.sections = {
+      lualine_a = { "mode" },
+      lualine_b = {
+        { "branch" },
+        { "diff" },
+        { "diagnostics" },
+        -- stylua: ignore
+        -- {
+        --   function() return require("noice").api.status.command.get() end,
+        --   cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+        --   color = LazyVim.ui.fg("Statement"),
+        -- },
+      },
+      lualine_c = {
+        {
+          function()
+            local arrow = require("arrow.statusline")
+            local text = arrow.text_for_statusline()
+            local is_on_arrow = arrow.is_on_arrow_file()
+            local icon = "󰸖"
 
-              if (text and text ~= "") or is_on_arrow then
-                return icon .. " " .. (text or "")
-              else
-                return ""
-              end
-            end,
-            color = { fg = colors.green },
-            -- separator = "",
-            separator = "",
-            padding = { left = 1, right = 0 },
-          },
-          {
-            buffer_count,
-            separator = "",
-            color = { fg = colors.blue },
-            padding = { left = 1, right = 0 },
-          },
-          -- LazyVim.lualine.root_dir(),
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { LazyVim.lualine.pretty_path(), padding = { left = -1 }, separator = "" },
+            if (text and text ~= "") or is_on_arrow then
+              return icon .. " " .. (text or "")
+            else
+              return ""
+            end
+          end,
+          color = { fg = colors.green },
+          -- separator = "",
+          separator = "",
+          padding = { left = 1, right = 0 },
+        },
+        {
+          buffer_count,
+          separator = "",
+          color = { fg = colors.blue },
+          padding = { left = 1, right = 0 },
+        },
+        -- LazyVim.lualine.root_dir(),
+        { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+        { LazyVim.lualine.pretty_path(), padding = { left = -1 }, separator = "" },
           -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get() end,
@@ -104,29 +109,38 @@ return {
             cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = LazyVim.ui.fg("Debug"),
           },
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = LazyVim.ui.fg("Special"),
-          },
-          -- stylua: ignore
-          {
-            function()
-              return require("noice").api.status.command.get()
-            end,
-            cond = function()
-              return package.loaded["noice"] and require("noice").api.status.command.has()
-            end,
-            color = LazyVim.ui.fg("Statement"),
-          },
+        {
+          require("lazy.status").updates,
+          cond = require("lazy.status").has_updates,
+          color = LazyVim.ui.fg("Special"),
         },
-        lualine_x = {},
-        lualine_y = {
-          -- { "location" },
-        },
-        lualine_z = {},
       },
-      extensions = { "neo-tree", "lazy" },
+      lualine_x = {},
+      lualine_y = {
+        -- { "location" },
+      },
+      lualine_z = {},
     }
+    opts.extensions = { "neo-tree", "lazy" }
+
+    -- do not add trouble symbols if aerial is enabled
+    -- And allow it to be overriden for some buffer types (see autocmds)
+    if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+      local trouble = require("trouble")
+      local symbols = trouble.statusline({
+        mode = "symbols",
+        groups = {},
+        title = false,
+        filter = { range = true },
+        format = "{kind_icon}{symbol.name:Normal}",
+        hl_group = "lualine_c_normal",
+      })
+      table.insert(opts.sections.lualine_c, {
+        symbols and symbols.get,
+        cond = function()
+          return vim.b.trouble_lualine ~= false and symbols.has()
+        end,
+      })
+    end
   end,
 }
