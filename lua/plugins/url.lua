@@ -8,6 +8,7 @@ return {
     event = "VeryLazy",
   },
   {
+    -- "https://github.com/chrishrb/gx.nvim", -- alternative
     "sontungexpt/url-open",
     event = "VeryLazy",
     cmd = "URLOpenUnderCursor",
