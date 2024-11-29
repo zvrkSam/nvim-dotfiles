@@ -2,8 +2,7 @@
 
 ### Install neovim
 
-- [Follow instructions here](https://github.com/neovim/neovim/blob/master/BUILD.md)
-  - Stable version is preferred
+- Official docs: [BUILD.md](https://github.com/neovim/neovim/blob/master/BUILD.md)
 
 ### My config
 
