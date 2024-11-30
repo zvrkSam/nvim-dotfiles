@@ -138,7 +138,7 @@ return {
       table.insert(opts.sections.lualine_c, {
         symbols and symbols.get,
         cond = function()
-          return vim.b.trouble_lualine ~= false and symbols.has()
+          return vim.b.trouble_lualine ~= false and symbols.has() and vim.bo.filetype ~= "astro"
         end,
       })
     end
