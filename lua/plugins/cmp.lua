@@ -20,8 +20,14 @@ return {
   },
   {
     "saghen/blink.cmp",
-    -- enabled = false,
+    enabled = false,
     opts = {
+      -- keymap = {
+      --   preset = "enter",
+      --   ["<C-c>"] = { "hide" },
+      --   ["<C-k>"] = { "snippet_forward", "fallback" },
+      --   ["<C-j>"] = { "snippet_backward", "fallback" },
+      -- },
       windows = {
         autocomplete = {
           border = "rounded",
