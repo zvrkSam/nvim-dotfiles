@@ -105,7 +105,7 @@ return {
       opts.lsp = { progress = { enabled = false }, hover = { silent = true } }
       opts.presets.lsp_doc_border = true
 
-      -- Suppresing notifications
+      -- Suppresing  notifications
       opts.routes = {
         { filter = { event = "msg_show", find = "written" } },
         { filter = { event = "msg_show", find = "yanked" } },
