@@ -170,15 +170,6 @@ map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogi
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
 
--- Codeium turn off / on
-map("n", "<leader>oc", function()
-  Snacks.notifier.notify("Toggling codeium!", "warn", { title = "AI assistant", timeout = 2000 })
-  vim.cmd("CodeiumToggle")
-end, { desc = "Toggle Codeium", silent = true })
-
--- Codeium chat
-map("n", "<leader>oC", "<cmd>CodeiumChat<CR>", { desc = "Codeium chat", silent = true })
-
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
 
