@@ -74,7 +74,7 @@ return {
         hl.FlashMatch = { bg = tn.darker_purple, fg = tn.white }
 
         -- UI
-        hl.TreesitterContextLineNumber = { fg = tn.visible_gray, bold = true }
+        hl.TreesitterContextLineNumber = { fg = c.fg, bold = true }
         hl.LineNrAbove = { fg = tn.gutter }
         hl.LineNrBelow = { fg = tn.gutter }
         hl.WinSeparator = { fg = tn.winseparator }
