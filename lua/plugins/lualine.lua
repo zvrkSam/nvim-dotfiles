@@ -101,18 +101,19 @@ return {
           {
             function() return require("noice").api.status.mode.get() end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = LazyVim.ui.fg("Constant"),
+            color = function() return { Snacks.util.color("Constant") } end,
           },
           -- stylua: ignore
           {
             function() return "  " .. require("dap").status() end,
-            cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = LazyVim.ui.fg("Debug"),
+            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+            color = function() return { Snacks.util.color("Debug") }end,
           },
+        -- stylua: ignore
         {
           require("lazy.status").updates,
           cond = require("lazy.status").has_updates,
-          color = LazyVim.ui.fg("Special"),
+          color = function() return { Snacks.util.color("Special") } end,
         },
       },
       lualine_x = {},
