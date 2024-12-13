@@ -24,6 +24,8 @@ opt.cursorlineopt = "number"
 -- Sets borders and popus to transparent
 opt.pumblend = 0
 
+vim.g.snacks_animate = false
+
 -- opt.statuscolumn = "%r%s"
 -- netrw is builtin file explorer that comes with neovim
 -- it is disabled in lazy.lua
