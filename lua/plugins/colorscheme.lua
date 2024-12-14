@@ -85,7 +85,11 @@ return {
         hl.WhichKeyTitle = { fg = c.green }
         hl.WhichKeyBorder = { fg = tn.indigo }
 
-        -- Telescope
+        -- Fzf-lua / Telescope
+        hl.FzfLuaBorder = { fg = tn.indigo }
+        hl.FzfLuaTitle = { fg = c.orange }
+        hl.FzfLuaPreviewTitle = { fg = c.green }
+        hl.FzfLuaFzfMatch = { fg = tn.pink, bold = true }
         hl.TelescopeBorder = { fg = tn.indigo }
         hl.TelescopeTitle = { fg = c.green }
         hl.TelescopeSelection = { fg = c.purple, bold = true }
