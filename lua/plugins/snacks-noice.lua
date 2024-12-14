@@ -49,6 +49,7 @@ return {
       })
 
       opts.bigfile = { enabled = true }
+      opts.indent = { enabled = false }
       opts.words = { enabled = true }
       opts.statuscolumn = { enabled = true }
       opts.notifier = { enabled = true, timeout = 4000, top_down = true, style = "compact" }
