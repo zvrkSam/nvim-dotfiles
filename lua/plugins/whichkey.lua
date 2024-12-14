@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   opts = function(_, opts)
     opts.preset = "helix"
-    opts.icons = { mappings = false }
+    -- opts.icons = { mappings = false }
     opts.delay = function(ctx)
       return ctx.plugin and 0 or 1000
     end
