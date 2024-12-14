@@ -54,6 +54,12 @@ return {
       opts.statuscolumn = { enabled = true }
       opts.notifier = { enabled = true, timeout = 4000, top_down = true, style = "compact" }
       opts.styles = { lazygit = { width = 0, height = 0 } }
+      opts.styles["input"] = {
+        relative = "cursor",
+        row = -3,
+        col = 0,
+        keys = { i_esc = { "<esc>", "stopinsert", mode = "i" } },
+      }
       opts.styles["terminal"] = { height = 0.2 }
       opts.styles["notification.history"] = { width = 0.9 }
       opts.styles["news"] = { border = "rounded", width = 0.8, height = 0.7 }
