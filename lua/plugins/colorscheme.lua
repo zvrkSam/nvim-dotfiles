@@ -90,6 +90,7 @@ return {
         hl.FzfLuaTitle = { fg = c.orange }
         hl.FzfLuaPreviewTitle = { fg = c.green }
         hl.FzfLuaFzfMatch = { fg = tn.pink, bold = true }
+        hl.FzfLuaFzfPrompt = { fg = tn.indigo, bold = true }
         hl.TelescopeBorder = { fg = tn.indigo }
         hl.TelescopeTitle = { fg = c.green }
         hl.TelescopeSelection = { fg = c.purple, bold = true }
