@@ -1,6 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    enabled = true,
     opts = {
       defaults = {
         -- there a bug with layout_strategy = "flex"
