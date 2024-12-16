@@ -58,10 +58,11 @@ return {
         relative = "cursor",
         row = -3,
         col = 0,
+        width = 40,
         keys = { i_esc = { "<esc>", "stopinsert", mode = "i" } },
       }
       opts.styles["terminal"] = { height = 0.2 }
-      opts.styles["notification.history"] = { width = 0.9 }
+      opts.styles["notification_history"] = { width = 0.9, height = 0.7 }
       opts.styles["news"] = { border = "rounded", width = 0.8, height = 0.7 }
       opts.dashboard = {
         preset = {
