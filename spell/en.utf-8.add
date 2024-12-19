@@ -143,3 +143,5 @@ init
 Bzip2
 systemctl
 systemd
+undercurl
+wezterm
