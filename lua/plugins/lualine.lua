@@ -97,18 +97,18 @@ return {
         -- LazyVim.lualine.root_dir(),
         { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
         { LazyVim.lualine.pretty_path(), padding = { left = -1 }, separator = "" },
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.mode.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = function() return { Snacks.util.color("Constant") } end,
-          },
-          -- stylua: ignore
-          {
-            function() return "  " .. require("dap").status() end,
-            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = function() return { Snacks.util.color("Debug") }end,
-          },
+        -- stylua: ignore
+        {
+          function() return require("noice").api.status.mode.get() end,
+          cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+          color = function() return { Snacks.util.color("Constant") } end,
+        },
+        -- stylua: ignore
+        {
+          function() return "  " .. require("dap").status() end,
+          cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+          color = function() return { Snacks.util.color("Debug") }end,
+        },
         -- stylua: ignore
         {
           require("lazy.status").updates,
@@ -139,7 +139,10 @@ return {
       table.insert(opts.sections.lualine_c, {
         symbols and symbols.get,
         cond = function()
-          return vim.b.trouble_lualine ~= false and symbols.has() and vim.bo.filetype ~= "astro"
+          return vim.b.trouble_lualine ~= false
+            and symbols.has()
+            and vim.bo.filetype ~= "astro"
+            and vim.bo.filetype ~= "markdown"
         end,
       })
     end
