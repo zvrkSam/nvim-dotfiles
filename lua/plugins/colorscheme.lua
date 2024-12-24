@@ -25,10 +25,11 @@ local tns = {
 return {
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    lazy = false,
     opts = {
       style = "night",
       transparent = true,
+      lualine_bold = true,
       styles = {
         comments = { italic = false },
         keywords = { italic = false },
