@@ -29,7 +29,7 @@ return {
     opts = {
       style = "night",
       transparent = true,
-      lualine_bold = true,
+      -- lualine_bold = true,
       styles = {
         comments = { italic = false },
         keywords = { italic = false },
