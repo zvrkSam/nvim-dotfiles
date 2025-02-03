@@ -32,15 +32,11 @@ local function delete_all_buffers(command_name)
   end, {})
 end
 
---- Telescope ---
-
-local telescope = require("telescope.builtin")
-
 local function search_by_file_type(command_name, file_pattern, prompt_title)
   usercmd(command_name, function()
-    telescope.find_files({
-      find_command = { "rg", "--files", "--glob", file_pattern },
-      prompt_title = prompt_title,
+    Snacks.picker.files({
+      args = { "--glob", file_pattern },
+      title = prompt_title,
       group = "mygroup",
     })
   end, {})
@@ -48,26 +44,20 @@ end
 
 local function search_by_directory(command_name, dir, prompt_title)
   usercmd(command_name, function()
-    telescope.find_files({
-      cwd = vim.fn.expand(dir),
-      prompt_title = prompt_title,
+    Snacks.picker.files({
+      dirs = { dir },
+      title = prompt_title,
       group = "mygroup",
     })
   end, {})
 end
 
--- ctrl+space expands the fuzzy search among the results
--- some more options:
--- https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#default-mappings
--- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes
--- https://github.com/nvim-telescope/telescope-live-grep-args.nvim
--- https://www.reddit.com/r/neovim/comments/zco47a/open_neovim_into_folder_with_telescope_open_in/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 local function grep_notes(command_name, dir, prompt_title)
   usercmd(command_name, function()
-    telescope.live_grep({
-      cwd = vim.fn.expand(dir),
-      type_filter = "md",
-      prompt_title = prompt_title,
+    Snacks.picker.grep({
+      dirs = { dir },
+      ft = "md",
+      title = prompt_title,
       group = "mygroup",
     })
   end, {})
