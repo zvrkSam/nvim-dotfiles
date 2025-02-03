@@ -3,6 +3,13 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    -- stylua: ignore
+    keys = {
+      { "<leader>:", function() Snacks.picker.command_history({ layout = "select" }) end, desc = "Command history" },
+      { "<leader>sc", function() Snacks.picker.command_history({ layout = "select" }) end, desc = "Command history" },
+      { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
+      { "<leader>sk", function() Snacks.picker.keymaps({ layout = "ivy_split" }) end, desc = "keymaps" },
+    },
     opts = function(_, opts)
       ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
       local progress = vim.defaulttable()
@@ -72,20 +79,15 @@ return {
             layout = {
               box = "vertical",
               backdrop = false,
-              width = 0.8,
+              width = 0.85,
               height = 0.9,
               border = "none",
               { win = "preview", height = 0.65, title = "{preview:Preview}", border = "rounded", title_pos = "center" },
               {
                 box = "vertical",
                 { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
-                {
-                  win = "input",
-                  height = 1,
-                  border = "rounded",
-                  title = "{title} {live} {flags}",
-                  title_pos = "center",
-                },
+                -- stylua: ignore
+                { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
               },
             },
           },
