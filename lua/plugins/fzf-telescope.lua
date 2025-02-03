@@ -4,12 +4,8 @@ return {
     enabled = true,
     opts = {
       defaults = {
-        -- there a bug with layout_strategy = "flex"
-        -- flip_columns are affected by it
-        -- layout_strategy = "flex",
         layout_strategy = "vertical",
         layout_config = {
-          -- flip_columns = 150,
           vertical = {
             preview_height = 0.6,
           },
@@ -21,17 +17,17 @@ return {
       },
     },
   },
-  {
-    "ibhagwan/fzf-lua",
-    opts = {
-      winopts = {
-        preview = {
-          vertical = "up:65%",
-        },
-      },
-      files = {
-        fzf_opts = { ["--layout"] = "default" },
-      },
-    },
-  },
+  -- {
+  --   "ibhagwan/fzf-lua",
+  --   opts = {
+  --     winopts = {
+  --       preview = {
+  --         vertical = "up:65%",
+  --       },
+  --     },
+  --     -- files = {
+  --     --   fzf_opts = { ["--layout"] = "default" },
+  --     -- },
+  --   },
+  -- },
 }
