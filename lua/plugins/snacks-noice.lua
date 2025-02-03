@@ -61,6 +61,36 @@ return {
         width = 40,
         keys = { i_esc = { "<esc>", "stopinsert", mode = "i" } },
       }
+      opts.terminal.win.wo = { winbar = "" } -- Disables title bar in terminal
+      opts.picker = {
+        layout = {
+          preset = "telescope",
+        },
+        layouts = {
+          telescope = {
+            reverse = true,
+            layout = {
+              box = "vertical",
+              backdrop = false,
+              width = 0.8,
+              height = 0.9,
+              border = "none",
+              { win = "preview", height = 0.65, title = "{preview:Preview}", border = "rounded", title_pos = "center" },
+              {
+                box = "vertical",
+                { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+                {
+                  win = "input",
+                  height = 1,
+                  border = "rounded",
+                  title = "{title} {live} {flags}",
+                  title_pos = "center",
+                },
+              },
+            },
+          },
+        },
+      }
       opts.styles["terminal"] = { height = 0.2 }
       opts.styles["notification_history"] = { width = 0.9, height = 0.7 }
       opts.styles["news"] = { border = "rounded", width = 0.8, height = 0.7 }
