@@ -59,6 +59,7 @@ local function grep_notes(command_name, dir, prompt_title)
       ft = "md",
       title = prompt_title,
       group = "mygroup",
+      layout = "vtelescope",
     })
   end, {})
 end

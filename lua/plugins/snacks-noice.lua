@@ -9,6 +9,7 @@ return {
       { "<leader>sc", function() Snacks.picker.command_history({ layout = "select" }) end, desc = "Command history" },
       { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "ivy_split" }) end, desc = "keymaps" },
+      { "<leader>/", function() Snacks.picker.grep({ layout = "vtelescope" }) end, desc = "Grep" },
     },
     opts = function(_, opts)
       ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
@@ -75,6 +76,23 @@ return {
         },
         layouts = {
           telescope = {
+            reverse = true,
+            layout = {
+              box = "horizontal",
+              backdrop = false,
+              width = 0.9,
+              height = 0.9,
+              border = "none",
+              {
+                box = "vertical",
+                { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+                -- stylua: ignore
+                { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+              },
+              { win = "preview", title = "{preview:Preview}", width = 0.65, border = "rounded", title_pos = "center" },
+            },
+          },
+          vtelescope = {
             reverse = true,
             layout = {
               box = "vertical",
