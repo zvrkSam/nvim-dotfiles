@@ -8,7 +8,7 @@ local opt = vim.opt
 opt.scrolloff = 20
 
 -- Copy indent from current line when starting a new line (When <CR> or 'o' or 'O')
-opt.autoindent = true
+-- opt.autoindent = true
 
 -- Set this for ToggleTerm terminals to not be discarded when closed
 opt.hidden = true
