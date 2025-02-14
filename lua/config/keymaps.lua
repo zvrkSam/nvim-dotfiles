@@ -171,6 +171,8 @@ map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogi
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
 
+map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
+
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
 
@@ -190,8 +192,14 @@ map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
 -- Open URLOpenUnderCursor (manual trigger, when normal gx doesnt pickup)
 map("n", "<leader>oo", "<cmd>URLOpenUnderCursor<CR>", { desc = "Open URL", silent = true })
 
+-- LSP Symbols
+map("n", "<leader>os", function()
+  local namu = require("namu.namu_symbols")
+  namu.show()
+end, { desc = "LSP Symbols", silent = true })
+
 -- Save all files
-map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
+map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
 
 -- Undo tree
 map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree", silent = true })
