@@ -17,8 +17,6 @@ autocmd({ "FileType" }, {
   group = "mygroup",
 })
 
---- Buffers ---
-
 local function delete_all_buffers(command_name)
   usercmd(command_name, function()
     local bufs = vim.api.nvim_list_bufs()
@@ -64,12 +62,17 @@ local function grep_notes(command_name, dir, prompt_title)
   end, {})
 end
 
+-- Delete all buffers but the current one
 delete_all_buffers("DeleteAllBuf")
-search_by_file_type("TelescopeGo", "*.go", "Find golang files")
-search_by_file_type("TelescopeMD", "*.md", "Find markdown files")
-search_by_file_type("TelescopeMDX", "*.mdx", "Find mdx files")
-search_by_file_type("TelescopeTSX", "*.tsx", "Find tsx files")
-search_by_file_type("TelescopeTS", "*.ts", "Find ts files")
-search_by_file_type("TelescopeAstro", "*.astro", "Find astro files")
+
+-- Find file type
+search_by_file_type("FindGo", "*.go", "Find golang files")
+search_by_file_type("FindMD", "*.md", "Find markdown files")
+search_by_file_type("FindMDX", "*.mdx", "Find mdx files")
+search_by_file_type("FindTSX", "*.tsx", "Find tsx files")
+search_by_file_type("FindTS", "*.ts", "Find ts files")
+search_by_file_type("FindAstro", "*.astro", "Find astro files")
+
+-- Note lookup
 search_by_directory("SearchNotes", "~/dev/notes", "Search markdown notes")
 grep_notes("GrepNotes", "~/dev/notes/", "Grep markdown files")

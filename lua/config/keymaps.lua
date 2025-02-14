@@ -31,10 +31,6 @@ map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
 ----- TERMINAL -----
 --------------------
 
--- TODO: Add lazydocker and sqlclient
--- think about lazydocker and sqlclient in new tmux window
--- same way as lazygit is being opened now with <leader>og
-
 map({ "n", "t" }, "<A-F>", function()
   local current_dir = vim.fn.expand("%:p:h")
   if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
@@ -73,25 +69,25 @@ map({ "n", "t" }, "<leader>tb", function()
 end, { desc = "Open btop" })
 
 ----------------------------
------ TELESCOPE/FILE'S -----
+----- PICKER/FILE'S -----
 ----------------------------
 
 -- Oil
 map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil", silent = true })
 
--- Telescope pull-up notes
+-- Note lookup
 map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Notes (find)", noremap = true, silent = true })
 map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Notes (grep)", noremap = true, silent = true })
 
--- Telescope lookup specific file type
-map("n", "<leader>fg", ":TelescopeGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
+-- Lookup specific file type
+map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
 -- stylua: ignore
-map("n", "<leader>fG", "<cmd>Telescope git_files<CR>", { desc = "Find Files (git-files)", noremap = true, silent = true })
-map("n", "<leader>fm", ":TelescopeMD<CR>", { desc = "Find Files (md)", noremap = true, silent = true })
-map("n", "<leader>fM", ":TelescopeMDX<CR>", { desc = "Find Files (mdx)", noremap = true, silent = true })
-map("n", "<leader>ft", ":TelescopeTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
-map("n", "<leader>fT", ":TelescopeTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
-map("n", "<leader>fa", ":TelescopeAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
+-- map("n", "<leader>fG", "<cmd>Telescope git_files<CR>", { desc = "Find Files (git-files)", noremap = true, silent = true })
+map("n", "<leader>fm", ":FindMD<CR>", { desc = "Find Files (md)", noremap = true, silent = true })
+map("n", "<leader>fM", ":FindMDX<CR>", { desc = "Find Files (mdx)", noremap = true, silent = true })
+map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
+map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
+map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
 
 -- lazyterm remap
 -- stylua: ignore
@@ -150,6 +146,10 @@ map("i", "<A-a>", "<c-o>A", { noremap = true, silent = true })
 -- Center text in insert mode
 map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
 
+-- Keep cursor centered while scrolling up and down
+map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz")
+
 ---------------
 ----- GIT -----
 ---------------
@@ -164,6 +164,7 @@ map("n", "<leader>ng", function()
   vim.fn.system("tmux new-window -c " .. vim.fn.shellescape(git_root) .. " -- lazygit")
 end, { desc = "Lazygit in tmux (Root Dir)" })
 
+-- Neogit
 map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit", silent = true })
 
 ----------------------------------
@@ -195,9 +196,8 @@ map("n", "<leader>os", "<cmd>wa<CR>", { desc = "Save All files", noremap = true,
 -- Undo tree
 map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree", silent = true })
 
--- ZenMode and Twilight
--- map("n", "<leader>ot", "<cmd>Twilight<CR>", { desc = "Toggle Twilight Mode", silent = true })
--- map("n", "<leader>oz", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
+-- Make file executable
+map("n", "<leader>ox", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = true })
 
 map("n", "<leader>oy", function()
   local line = vim.api.nvim_win_get_cursor(0)[1] - 1
