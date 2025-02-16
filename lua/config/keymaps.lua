@@ -160,13 +160,13 @@ map("n", "<C-d>", "<C-d>zz")
 -- https://github.com/sindrets/diffview.nvim
 
 -- Open Lazygit in new tmux window
-map("n", "<leader>ng", function()
+map("n", "<leader>jg", function()
   local git_root = LazyVim.root.git()
   vim.fn.system("tmux new-window -c " .. vim.fn.shellescape(git_root) .. " -- lazygit")
 end, { desc = "Lazygit in tmux (Root Dir)" })
 
 -- Neogit
-map("n", "<leader>nn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit", silent = true })
+map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit", silent = true })
 
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
