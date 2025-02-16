@@ -21,6 +21,7 @@ return {
       { "<leader>t", group = "Terminal", icon = { icon = "", color = "red" } },
       { "<leader>j", group = "Neogit/Lazygit", icon = { icon = "", color = "azure" } },
       { "<leader>L", group = "Lazy" },
+      { "<leader>n", group = "Notes/Markdown", icon = { icon = "󱓧", color = "grey" } },
       { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
     })
   end,
