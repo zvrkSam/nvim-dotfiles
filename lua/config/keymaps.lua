@@ -168,6 +168,27 @@ end, { desc = "Lazygit in tmux (Root Dir)" })
 -- Neogit
 map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit", silent = true })
 
+-----------------
+----- NOTES -----
+-----------------
+
+map("n", "<leader>nc", function()
+  local line = vim.api.nvim_get_current_line()
+
+  local new_line
+  if line:match("%[%s%]") then
+    new_line = line:gsub("%[%s%]", "[x]")
+  elseif line:match("%[x%]") then
+    new_line = line:gsub("%[x%]", "[ ]")
+  else
+    return
+  end
+
+  local row = vim.api.nvim_win_get_cursor(0)[1]
+
+  vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
+end, { desc = "Toggle markdown task" })
+
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
