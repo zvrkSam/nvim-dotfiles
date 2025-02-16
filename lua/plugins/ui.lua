@@ -1,5 +1,10 @@
 return {
   {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = { highlight = { backdrop = false } },
+  },
+  {
     "Wansmer/treesj",
     keys = {
       { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
@@ -7,8 +12,23 @@ return {
     opts = { use_default_keymaps = false, max_join_length = 150 },
   },
   {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = { highlight = { backdrop = false } },
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      chunk = {
+        enable = true,
+        style = {
+          { fg = "#7aa2f7" },
+        },
+      },
+      indent = {
+        enable = true,
+        chars = { "┊" },
+      },
+    },
+  },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    enabled = false,
   },
 }
