@@ -11,6 +11,4 @@ return {
     event = "VeryLazy",
     opts = { highlight = { backdrop = false } },
   },
-  -- { "folke/zen-mode.nvim" },
-  -- { "folke/twilight.nvim" },
 }
