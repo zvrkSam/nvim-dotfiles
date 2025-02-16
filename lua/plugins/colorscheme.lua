@@ -151,6 +151,8 @@ return {
   },
   {
     "thesimonho/kanagawa-paper.nvim",
+    enabled = false,
+    lazy = true,
     opts = {
       transparent = true,
       dimInactive = false,
