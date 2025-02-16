@@ -7,6 +7,7 @@ local map = vim.keymap.set
 -- Deleted keymaps
 vim.keymap.del("n", "<leader>l", { noremap = true })
 vim.keymap.del("n", "<leader>L", { noremap = true })
+vim.keymap.del("n", "<leader>n", { noremap = true })
 
 -------------------------
 ----- WINDOW/BUFFER -----
@@ -179,12 +180,11 @@ map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = t
 -- Delete all marks
 map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = true })
 
--- Show notification history
+-- Notifications
 -- stylua: ignore
-map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "Notification history", silent = true })
-
--- Noice last message
-map("n", "<leader>oN", "<cmd>NoiceLast<CR>", { desc = "Noice last message", silent = true })
+map("n", "<leader>on", function() Snacks.picker.notifications() end, { desc = "Notifications" })
+-- stylua: ignore
+map("n", "<leader>oN", function() Snacks.notifier.show_history() end, { desc = "Notification(win)" })
 
 -- Open url under cursor (anywhere on the current line)
 map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
