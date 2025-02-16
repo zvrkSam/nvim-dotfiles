@@ -147,15 +147,6 @@ return {
   {
     "folke/noice.nvim",
     opts = function(_, opts)
-      -- vim.api.nvim_create_autocmd("FileType", {
-      --   pattern = "markdown",
-      --   callback = function(event)
-      --     vim.schedule(function()
-      --       require("noice.text.markdown").keys(event.buf)
-      --     end)
-      --   end,
-      -- })
-
       opts.views = {
         cmdline_popup = { position = { row = 35, col = "50%" } },
         cmdline_popupmenu = { position = { row = 38, col = "50%" } },
