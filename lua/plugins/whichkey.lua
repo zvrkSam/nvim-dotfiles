@@ -19,7 +19,7 @@ return {
       { "<leader>oo", icon = { icon = "󰖟", color = "azure" } },
       { "<leader>os", icon = { icon = "󰊕", color = "azure" } },
       { "<leader>t", group = "Terminal", icon = { icon = "", color = "red" } },
-      { "<leader>j", group = "neogit/lazygit", icon = { icon = "", color = "azure" } },
+      { "<leader>j", group = "Neogit/Lazygit", icon = { icon = "", color = "azure" } },
       { "<leader>L", group = "Lazy" },
       { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
     })
