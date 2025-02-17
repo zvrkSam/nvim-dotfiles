@@ -66,12 +66,12 @@ end
 delete_all_buffers("DeleteAllBuf")
 
 -- Find file type
+search_by_file_type("FindAstro", "*.astro", "Find astro files")
 search_by_file_type("FindGo", "*.go", "Find golang files")
+search_by_file_type("FindTS", "*.ts", "Find ts files")
+search_by_file_type("FindTSX", "*.tsx", "Find tsx files")
 search_by_file_type("FindMD", "*.md", "Find markdown files")
 search_by_file_type("FindMDX", "*.mdx", "Find mdx files")
-search_by_file_type("FindTSX", "*.tsx", "Find tsx files")
-search_by_file_type("FindTS", "*.ts", "Find ts files")
-search_by_file_type("FindAstro", "*.astro", "Find astro files")
 
 -- Note lookup
 search_by_directory("SearchNotes", "~/dev/notes", "Search markdown notes")
