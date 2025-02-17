@@ -77,8 +77,8 @@ end, { desc = "Open btop" })
 map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil", silent = true })
 
 -- Note lookup
-map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Notes (find)", noremap = true, silent = true })
-map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Notes (grep)", noremap = true, silent = true })
+map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true, silent = true })
+map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true, silent = true })
 
 -- Lookup specific file type
 map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
