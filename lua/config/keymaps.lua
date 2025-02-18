@@ -57,18 +57,6 @@ map({ "n", "t" }, "<A-F>", function()
   end
 end, { desc = "Toggle floating terminal" })
 
-map({ "n", "t" }, "<leader>tb", function()
-  Snacks.terminal.toggle("btop", {
-    win = {
-      style = "terminal",
-      relative = "editor",
-      width = 0.90,
-      height = 0.92,
-      border = "rounded",
-    },
-  })
-end, { desc = "Open btop" })
-
 ----------------------------
 ----- PICKER/FILE'S -----
 ----------------------------
