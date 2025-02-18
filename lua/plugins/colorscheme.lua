@@ -2,6 +2,7 @@
 local tn = {
   pure_black = "#000000",
   indigo = "#7F85FF", -- for transparent background (abit more darker)
+  -- indigo = "#589ED7",
   -- indigo = "#878DFF" -- for non transparent background
   winseparator = "#4B4D83",
   pink = "#F570D9",
@@ -27,7 +28,8 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     opts = {
-      style = "night",
+      style = "moon",
+      -- style = "night",
       transparent = true,
       -- lualine_bold = true,
       styles = {
