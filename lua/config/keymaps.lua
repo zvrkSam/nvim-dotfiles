@@ -193,7 +193,7 @@ map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = t
 -- stylua: ignore
 map("n", "<leader>on", function() Snacks.picker.notifications() end, { desc = "Notifications" })
 -- stylua: ignore
-map("n", "<leader>oN", function() Snacks.notifier.show_history() end, { desc = "Notification(win)" })
+map("n", "<leader>oN", function() Snacks.notifier.show_history() end, { desc = "Notifications(win)" })
 
 -- Open url under cursor (anywhere on the current line)
 map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
