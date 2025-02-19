@@ -182,6 +182,23 @@ end, { desc = "Toggle markdown task" })
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
 
+map("n", "<leader>ob", function()
+  local line = vim.api.nvim_get_current_line()
+  local new_line
+
+  if line:match("false") then
+    new_line = line:gsub("false", "true")
+  elseif line:match("true") then
+    new_line = line:gsub("true", "false")
+  else
+    return
+  end
+
+  local row = vim.api.nvim_win_get_cursor(0)[1]
+
+  vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
+end, { desc = "Toggle boolean" })
+
 map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
 
 -- For all lsp's sometimes manual lsp restart is required
