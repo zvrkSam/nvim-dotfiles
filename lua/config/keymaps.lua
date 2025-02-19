@@ -110,7 +110,8 @@ map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVi
 ----- CURSOR/TEXT MANIPULATION -----
 ------------------------------------
 
--- Delete word in insert mode
+-- Delete word in normal and insert mode
+map("n", "<A-w>", "ciw", { noremap = true, silent = true })
 map("i", "<A-w>", "<c-o>ciw", { noremap = true, silent = true })
 
 -- <Delete> key functionality
