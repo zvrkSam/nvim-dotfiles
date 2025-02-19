@@ -161,10 +161,10 @@ map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogi
 ----- NOTES -----
 -----------------
 
-map("n", "<leader>nc", function()
+map("n", "<leader>nx", function()
   local line = vim.api.nvim_get_current_line()
-
   local new_line
+
   if line:match("%[%s%]") then
     new_line = line:gsub("%[%s%]", "[x]")
   elseif line:match("%[x%]") then
