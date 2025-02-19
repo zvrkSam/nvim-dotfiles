@@ -71,6 +71,7 @@ return {
 
         -- UI
         hl.TreesitterContextLineNumber = { fg = c.fg, bold = true }
+        hl.CursorLineNr = { fg = tn.darker_purple, bold = true }
         hl.LineNrAbove = { fg = tn.gutter }
         hl.LineNrBelow = { fg = tn.gutter }
         hl.WinSeparator = { fg = tn.winseparator }
