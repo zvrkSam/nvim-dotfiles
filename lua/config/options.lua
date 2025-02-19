@@ -11,12 +11,10 @@ opt.scrolloff = 20
 -- opt.autoindent = true
 
 -- Set this for ToggleTerm terminals to not be discarded when closed
-opt.hidden = true
+-- opt.hidden = true
 
 -- Set eventignore so that tmux does not show `activity` every time we change from a window with Neovim
 opt.eventignore = "FocusLost"
-
-vim.o.termguicolors = true
 
 -- Highlight the text line of the cursor
 opt.cursorlineopt = "number"
