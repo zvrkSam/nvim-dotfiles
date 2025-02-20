@@ -56,10 +56,13 @@ return {
         hl.DiagnosticUnnecessary = { fg = tn.visible_gray }
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl["@tag.delimiter"] = { fg = tn.darker_purple }
-        hl["@tag.tsx"] = { fg = tn.darker_purple }
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
+
+        -- Framework specific
+        hl["@tag.tsx"] = { fg = tn.darker_purple }
+        hl["@punctuation.special.astro"] = { fg = tn.bracket_gray }
 
         -- GitSigns
         hl.GitSignsAdd = { fg = c.green, bold = true }
