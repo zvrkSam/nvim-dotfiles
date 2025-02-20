@@ -17,19 +17,6 @@ autocmd({ "FileType" }, {
   group = "mygroup",
 })
 
-local function delete_all_buffers(command_name)
-  usercmd(command_name, function()
-    local bufs = vim.api.nvim_list_bufs()
-    local current_buf = vim.api.nvim_get_current_buf()
-
-    for _, i in ipairs(bufs) do
-      if i ~= current_buf then
-        vim.api.nvim_buf_delete(i, {})
-      end
-    end
-  end, {})
-end
-
 local function search_by_file_type(command_name, file_pattern, prompt_title)
   usercmd(command_name, function()
     Snacks.picker.files({
@@ -61,9 +48,6 @@ local function grep_notes(command_name, dir, prompt_title)
     })
   end, {})
 end
-
--- Delete all buffers but the current one
-delete_all_buffers("DeleteAllBuf")
 
 -- Find file type
 search_by_file_type("FindAstro", "*.astro", "Find astro files")
