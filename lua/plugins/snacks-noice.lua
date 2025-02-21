@@ -164,6 +164,8 @@ return {
         { filter = { event = "msg_show", find = "; before #%d+" } },
         { filter = { event = "msg_show", find = "%d fewer lines" } },
         { filter = { event = "msg_show", find = "%d more lines" } },
+        { filter = { event = "msg_show", find = "%d lines indented" } },
+        { filter = { event = "msg_show", find = "%d lines moved" } },
         { filter = { event = "msg_show", find = "<ed" } },
         { filter = { event = "msg_show", find = ">ed" } },
         { filter = { event = "lsp", kind = "progress", find = "jdtls" } },
