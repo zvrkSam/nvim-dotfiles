@@ -26,7 +26,7 @@ local tns = {
 return {
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     opts = {
       style = "moon",
       -- style = "night",
@@ -169,11 +169,25 @@ return {
     },
   },
   {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    opts = {
+      variant = "auto", -- auto, main, moon, or dawn
+      dark_variant = "moon",
+      styles = {
+        italic = false,
+        transparency = true,
+      },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "oldworld",
       -- colorscheme = "kanagawa-paper",
-      colorscheme = "tokyonight",
+      colorscheme = "rose-pine",
+      -- colorscheme = "tokyonight",
     },
   },
 }
