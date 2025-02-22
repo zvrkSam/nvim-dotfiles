@@ -21,6 +21,10 @@ local tns = {
   bg_dark = "#1F2335",
 }
 
+local tnm = {
+  red = "#FF757F",
+}
+
 -- :Inspect and see highlights
 -- :Telescope highlights to see all of the highlights
 return {
@@ -178,6 +182,12 @@ return {
       styles = {
         italic = false,
         transparency = true,
+      },
+      highlight_groups = {
+        CursorLineNr = { fg = tnm.red, bold = true },
+        GitSignsAdd = { fg = "foam", bold = true },
+        GitSignsChange = { fg = "rose", bold = true },
+        GitSignsDelete = { fg = "love", bold = true },
       },
     },
   },
