@@ -236,7 +236,9 @@ map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree", si
 -- Make file executable
 map("n", "<leader>ox", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = true })
 
-map("n", "<leader>oy", function()
+-- Yank inside function
+map("n", "<leader>oy", "yVa}", { noremap = true, desc = "Yank inside function" })
+
 -- Yank diagnostics to clipboard
 map("n", "<leader>oY", function()
   local line = vim.api.nvim_win_get_cursor(0)[1] - 1
