@@ -237,6 +237,8 @@ map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree", si
 map("n", "<leader>ox", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = true })
 
 map("n", "<leader>oy", function()
+-- Yank diagnostics to clipboard
+map("n", "<leader>oY", function()
   local line = vim.api.nvim_win_get_cursor(0)[1] - 1
   local diagnostics = vim.diagnostic.get(0, { lnum = line })
   local lines = {}
