@@ -13,6 +13,11 @@ return {
     local wk = require("which-key")
     wk.setup(opts)
     wk.add({
+      { "<leader>t", group = "Terminal", icon = { icon = "", color = "red" } },
+      { "<leader>j", group = "Neogit/Lazygit", icon = { icon = "", color = "azure" } },
+      { "<leader>L", group = "Lazy" },
+      { "<leader>n", group = "Notes/Markdown", icon = { icon = "󱓧", color = "grey" } },
+      { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
       { "<leader>o", group = "misc options", desc = "misc options", icon = { icon = "", color = "yellow" } },
       { "<leader>oc", icon = { icon = "", color = "grey" } },
       { "<leader>ol", icon = { icon = "󰒍", color = "red" } },
@@ -26,11 +31,6 @@ return {
       { "<leader>fN", icon = { icon = "", color = "grey" } },
       { "<leader>fm", icon = { icon = "", color = "grey" } },
       { "<leader>fM", icon = { icon = "", color = "grey" } },
-      { "<leader>t", group = "Terminal", icon = { icon = "", color = "red" } },
-      { "<leader>j", group = "Neogit/Lazygit", icon = { icon = "", color = "azure" } },
-      { "<leader>L", group = "Lazy" },
-      { "<leader>n", group = "Notes/Markdown", icon = { icon = "󱓧", color = "grey" } },
-      { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
       { "g1", icon = { icon = "", color = "yellow" } },
       { "g2", icon = { icon = "", color = "yellow" } },
       { "g3", icon = { icon = "", color = "yellow" } },
