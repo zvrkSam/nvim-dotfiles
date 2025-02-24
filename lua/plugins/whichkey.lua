@@ -31,6 +31,10 @@ return {
       { "<leader>L", group = "Lazy" },
       { "<leader>n", group = "Notes/Markdown", icon = { icon = "󱓧", color = "grey" } },
       { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
+      { "g1", icon = { icon = "", color = "yellow" } },
+      { "g2", icon = { icon = "", color = "yellow" } },
+      { "g3", icon = { icon = "", color = "yellow" } },
+      { "g4", icon = { icon = "", color = "yellow" } },
     })
   end,
 }
