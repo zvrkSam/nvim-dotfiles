@@ -174,6 +174,7 @@ return {
   },
   {
     "rose-pine/neovim",
+    enabled = false,
     name = "rose-pine",
     lazy = false,
     opts = {
@@ -196,8 +197,8 @@ return {
     opts = {
       -- colorscheme = "oldworld",
       -- colorscheme = "kanagawa-paper",
-      colorscheme = "rose-pine",
-      -- colorscheme = "tokyonight",
+      -- colorscheme = "rose-pine",
+      colorscheme = "tokyonight",
     },
   },
 }
