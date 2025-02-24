@@ -55,6 +55,7 @@ return {
   },
   {
     "NeogitOrg/neogit",
+    enabled = false,
     event = "VeryLazy",
     dependencies = { "sindrets/diffview.nvim" },
     opts = {
