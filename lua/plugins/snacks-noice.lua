@@ -74,7 +74,12 @@ return {
         layout = {
           preset = "telescope",
         },
-        sources = { explorer = { layout = { layout = { preset = "sidebar", preview = false, position = "right" } } } },
+        sources = {
+          explorer = {
+            hidden = true,
+            layout = { layout = { preset = "sidebar", preview = false, position = "right" } },
+          },
+        },
         layouts = {
           telescope = {
             reverse = true,
