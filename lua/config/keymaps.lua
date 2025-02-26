@@ -112,6 +112,10 @@ map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVi
 ----- CURSOR/TEXT MANIPULATION -----
 ------------------------------------
 
+-- Swap ^ and @ keybindings
+map("n", "@", "^", { noremap = true })
+map("n", "^", "@", { noremap = true })
+
 -- Delete word in normal and insert mode
 map("n", "<A-w>", "ciw", { noremap = true, silent = true })
 map("i", "<A-w>", "<c-o>ciw", { noremap = true, silent = true })
