@@ -24,7 +24,7 @@ opt.pumblend = 0
 
 vim.g.snacks_animate = false
 
-opt.conceallevel = 1
+opt.conceallevel = 0
 opt.signcolumn = "no"
 
 -- opt.statuscolumn = "%r%s"
