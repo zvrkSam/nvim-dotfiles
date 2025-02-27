@@ -71,7 +71,7 @@ return {
         -- GitSigns
         hl.GitSignsAdd = { fg = c.green, bold = true }
         hl.GitSignsChange = { fg = c.yellow, bold = true }
-        hl.GitSignsDelete = { fg = c.red1, bold = true }
+        hl.GitSignsDelete = { fg = tnm.red, bold = true }
 
         -- Flash
         hl.FlashMatch = { bg = tn.darker_purple, fg = tn.white }
