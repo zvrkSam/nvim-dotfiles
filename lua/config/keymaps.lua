@@ -219,12 +219,6 @@ map("n", "<leader>on", function() Snacks.picker.notifications() end, { desc = "N
 -- stylua: ignore
 map("n", "<leader>oN", function() Snacks.notifier.show_history() end, { desc = "Notifications(win)" })
 
--- Open url under cursor (anywhere on the current line)
-map("n", "gx", "<esc>:URLOpenUnderCursor<CR>", { silent = true })
-
--- Open URLOpenUnderCursor (manual trigger, when normal gx doesnt pickup)
-map("n", "<leader>oo", "<cmd>URLOpenUnderCursor<CR>", { desc = "Open URL", silent = true })
-
 -- LSP Symbols
 map("n", "<leader>os", function()
   local namu = require("namu.namu_symbols")
