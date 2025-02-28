@@ -72,6 +72,9 @@ return {
         -- Lua
         hl["@variable.member.lua"] = { fg = tn.indigo }
         hl["@lsp.type.property.lua"] = { fg = tn.indigo }
+        -- Go
+        hl["@lsp.type.namespace.go"] = { fg = c.blue2 }
+        -- hl["@lsp.type.namespace.go"] = { fg = c.magenta }
         -- Toml
         hl["@property.toml"] = { fg = tnm.toml }
 
