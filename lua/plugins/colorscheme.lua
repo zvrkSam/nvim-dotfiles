@@ -13,6 +13,7 @@ local tn = {
   gutter = "#555D82",
   comment = "#5C6693",
   white = "#F4F5FF",
+  fg = "#DFE3F3",
 }
 
 -- tokyonight - storm
@@ -23,6 +24,7 @@ local tns = {
 
 local tnm = {
   red = "#FF757F",
+  toml = "#589ED7",
 }
 
 -- :Inspect and see highlights
@@ -45,9 +47,9 @@ return {
       -- list of all the colors for tokyonight
       -- https://github.com/folke/tokyonight.nvim/discussions/453
       on_colors = function(c)
-        c.green1 = tn.indigo
+        -- c.green1 = tn.indigo
         c.purple = tn.purple
-        c.blue5 = tn.pink
+        -- c.blue5 = tn.pink
         c.bg_statusline = c.none -- makes lualine transparent
         c.git.add = c.green
         c.git.change = c.yellow
@@ -63,6 +65,15 @@ return {
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
         hl["@variable.builtin"] = { fg = c.red }
+
+        -- Language specific
+        -- Markdown
+        hl["@markup.strong.markdown_inline"] = { fg = tn.fg, bold = true }
+        -- Lua
+        hl["@variable.member.lua"] = { fg = tn.indigo }
+        hl["@lsp.type.property.lua"] = { fg = tn.indigo }
+        -- Toml
+        hl["@property.toml"] = { fg = tnm.toml }
 
         -- Framework specific
         hl["@tag.tsx"] = { fg = tn.darker_purple }
@@ -127,7 +138,7 @@ return {
         hl.SnacksDashboardFooter = { fg = c.magenta }
         hl.SnacksDashboardTitle = { fg = tn.purple }
         hl.SnacksDashboardIcon = { fg = c.magenta }
-        hl.SnacksDashboardDesc = { fg = c.green1 }
+        hl.SnacksDashboardDesc = { fg = tn.indigo }
         hl.SnacksDashboardSpecial = { fg = c.green }
         hl.SnacksDashboardDir = { fg = tn.winseparator }
         hl.SnacksDashboardFile = { fg = c.green }
