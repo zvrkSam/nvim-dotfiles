@@ -215,9 +215,9 @@ map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = t
 
 -- Notifications
 -- stylua: ignore
-map("n", "<leader>on", function() Snacks.picker.notifications() end, { desc = "Notifications" })
+map("n", "<leader>oN", function() Snacks.picker.notifications() end, { desc = "Notifications" })
 -- stylua: ignore
-map("n", "<leader>oN", function() Snacks.notifier.show_history() end, { desc = "Notifications(win)" })
+map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "Notifications(win)" })
 
 -- LSP Symbols
 map("n", "<leader>os", function()
