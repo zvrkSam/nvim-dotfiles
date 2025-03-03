@@ -91,6 +91,7 @@ return {
         hl.FlashMatch = { bg = tn.darker_purple, fg = tn.white }
 
         -- UI
+        hl.LazySpecial = { fg = tn.pink }
         hl.TreesitterContextLineNumber = { fg = c.fg, bold = true }
         hl.CursorLineNr = { fg = c.red, bold = true }
         hl.LineNrAbove = { fg = tn.gutter }
