@@ -1,9 +1,7 @@
 -- tokyonight - night
 local tn = {
   pure_black = "#000000",
-  indigo = "#7F85FF", -- for transparent background (abit more darker)
-  -- indigo = "#589ED7",
-  -- indigo = "#878DFF" -- for non transparent background
+  indigo = "#7F85FF",
   winseparator = "#4B4D83",
   pink = "#F570D9",
   purple = "#9270D0",
@@ -14,17 +12,19 @@ local tn = {
   comment = "#5C6693",
   white = "#F4F5FF",
   fg = "#DFE3F3",
+  error = "#E32A4A",
+}
+
+-- tokyonight - moon
+local tnm = {
+  red = "#FF757F",
+  toml = "#589ED7",
 }
 
 -- tokyonight - storm
 local tns = {
   bg = "#24283B",
   bg_dark = "#1F2335",
-}
-
-local tnm = {
-  red = "#FF757F",
-  toml = "#589ED7",
 }
 
 -- :Inspect and see highlights
@@ -49,6 +49,7 @@ return {
       on_colors = function(c)
         -- c.green1 = tn.indigo
         c.purple = tn.purple
+        c.error = tn.error
         -- c.blue5 = tn.pink
         c.bg_statusline = c.none -- makes lualine transparent
         c.git.add = c.green
@@ -70,8 +71,8 @@ return {
         -- Markdown
         hl["@markup.strong.markdown_inline"] = { fg = tn.fg, bold = true }
         -- Go
-        -- hl["@lsp.type.namespace.go"] = { fg = c.blue2 }
-        hl["@lsp.type.namespace.go"] = { fg = c.magenta }
+        hl["@lsp.type.namespace.go"] = { fg = c.blue2 }
+        -- hl["@lsp.type.namespace.go"] = { fg = c.magenta }
         -- Toml
         hl["@property.toml"] = { fg = tnm.toml }
         hl["@property.yaml"] = { fg = tn.indigo, bold = true }
@@ -91,7 +92,7 @@ return {
         -- UI
         hl.LazySpecial = { fg = tn.pink }
         hl.TreesitterContextLineNumber = { fg = c.fg, bold = true }
-        hl.CursorLineNr = { fg = c.red, bold = true }
+        hl.CursorLineNr = { fg = tn.darker_purple, bold = true }
         hl.LineNrAbove = { fg = tn.gutter }
         hl.LineNrBelow = { fg = tn.gutter }
         hl.WinSeparator = { fg = tn.winseparator }
