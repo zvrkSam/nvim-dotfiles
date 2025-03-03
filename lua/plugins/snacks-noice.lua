@@ -79,6 +79,15 @@ return {
             hidden = true,
             layout = { layout = { preset = "sidebar", preview = false, position = "right" } },
           },
+          notifications = {
+            actions = {
+              ---@diagnostic disable-next-line: undefined-field
+              yank_msg = function(_, item, action)
+                vim.fn.setreg(action.reg or vim.v.register, item.item.msg)
+              end,
+            },
+            confirm = { "yank_msg", "close" },
+          },
         },
         layouts = {
           telescope = {
