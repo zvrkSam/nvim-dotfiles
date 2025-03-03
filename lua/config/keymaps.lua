@@ -22,7 +22,7 @@ map("n", "<leader>d", function () Snacks.bufdelete() end, { desc = "Delete buffe
 map("n", "<leader>D", function () Snacks.bufdelete.other() end, { desc = "Delete all buffers", noremap = true })
 
 -- Delete window
-map("n", "<leader>W", ":close<CR>", { desc = "Delete window", noremap = true })
+map("n", "<leader>W", ":close<CR>", { desc = "Delete window", noremap = true, silent = true })
 
 -- Resizing of windows
 map("n", "<A-,>", "<c-w>10>") -- horizontal expand ( left )
