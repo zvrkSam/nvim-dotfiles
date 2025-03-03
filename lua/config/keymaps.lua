@@ -17,12 +17,12 @@ map("c", "<C-k>", "<Up>", { desc = "Previous Command" })
 
 -- Delete buffer
 -- stylua: ignore
-map("n", "<leader>d", function () Snacks.bufdelete() end, { desc = "Delete buffer", noremap = true, silent = true })
+map("n", "<leader>d", function () Snacks.bufdelete() end, { desc = "Delete buffer", noremap = true })
 -- stylua: ignore
-map("n", "<leader>D", function () Snacks.bufdelete.other() end, { desc = "Delete all buffers", noremap = true, silent = true })
+map("n", "<leader>D", function () Snacks.bufdelete.other() end, { desc = "Delete all buffers", noremap = true })
 
 -- Delete window
-map("n", "<leader>W", ":close<CR>", { desc = "Delete window", noremap = true, silent = true })
+map("n", "<leader>W", ":close<CR>", { desc = "Delete window", noremap = true })
 
 -- Resizing of windows
 map("n", "<A-,>", "<c-w>10>") -- horizontal expand ( left )
@@ -64,21 +64,21 @@ end, { desc = "Toggle floating terminal" })
 ----------------------------
 
 -- Oil
-map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil", silent = true })
+map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil" })
 
 -- Note lookup
-map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true, silent = true })
-map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true, silent = true })
+map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true })
+map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true })
 
 -- Lookup specific file type
-map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
+map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", noremap = true })
 -- stylua: ignore
--- map("n", "<leader>fG", "<cmd>Telescope git_files<CR>", { desc = "Find Files (git-files)", noremap = true, silent = true })
-map("n", "<leader>fm", ":FindMD<CR>", { desc = "Find Files (md)", noremap = true, silent = true })
-map("n", "<leader>fM", ":FindMDX<CR>", { desc = "Find Files (mdx)", noremap = true, silent = true })
-map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
-map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
-map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
+-- map("n", "<leader>fG", "<cmd>Telescope git_files<CR>", { desc = "Find Files (git-files)", noremap = true,   })
+map("n", "<leader>fm", ":FindMD<CR>", { desc = "Find Files (md)", noremap = true })
+map("n", "<leader>fM", ":FindMDX<CR>", { desc = "Find Files (mdx)", noremap = true })
+map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", noremap = true })
+map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", noremap = true })
+map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", noremap = true })
 
 -- lazyterm remap
 -- stylua: ignore
@@ -88,19 +88,19 @@ map("n", "<leader>f?", lazyterm, { desc = "Terminal (Root Dir)" })
 map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 
 -- Go to defenition in vertical and horizontal view
-map("n", "g|", "<cmd>vertical winc ]<CR>", { desc = "Go to vertical defenition", silent = true })
-map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defenition", silent = true })
+map("n", "g|", "<cmd>vertical winc ]<CR>", { desc = "Go to vertical defenition" })
+map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defenition" })
 
 -- Save file to arrow
 -- to toggle arrow menu is the letter R
-map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mappings (save)", silent = true })
+map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mappings (save)" })
 
 -------------------
 ----- UTILITY -----
 -------------------
 
 -- Trouble
-map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true, silent = true })
+map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true })
 
 -- Lazy
 map("n", "<leader>Ll", "<cmd>Lazy<CR>", { desc = "Lazy", noremap = true })
@@ -117,30 +117,29 @@ map("n", "@", "^", { noremap = true })
 map("n", "^", "@", { noremap = true })
 
 -- Delete word in normal and insert mode
-map("n", "<A-w>", "ciw", { noremap = true, silent = true })
-map("i", "<A-w>", "<c-o>ciw", { noremap = true, silent = true })
+map("n", "<A-w>", "ciw", { noremap = true })
+map("n", "<A-W>", "ciW", { noremap = true })
+map("i", "<A-w>", "<c-o>ciw", { noremap = true })
 
 -- <Delete> key functionality
-map("n", "<A-x>", "<Del>", { noremap = true, silent = true })
-map("i", "<A-x>", "<Del>", { noremap = true, silent = true })
+map("n", "<A-x>", "<Del>", { noremap = true })
+map("i", "<A-x>", "<Del>", { noremap = true })
 
 -- Paste in insert mode and perseve formating
-map(
-  "i",
-  "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>",
-  "<c-r>+",
-  { desc = "Paste in insert mode", noremap = true, silent = true }
-)
+map("i", "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>", "<c-r>+", {
+  desc = "Paste in insert mode",
+  noremap = true,
+})
 
 -- Change the first letter of word from lower to upper and vice versa
-map("i", "<A-d>", "<esc>b~ea", { noremap = true, silent = true })
-map("n", "<A-d>", "<esc>b~e", { noremap = true, silent = true })
+map("i", "<A-d>", "<esc>b~ea", { noremap = true })
+map("n", "<A-d>", "<esc>b~e", { noremap = true })
 
 -- Jump to end of of the line while in insert mode
-map("i", "<A-a>", "<c-o>A", { noremap = true, silent = true })
+map("i", "<A-a>", "<c-o>A", { noremap = true })
 
 -- Center text in insert mode
-map("i", "<C-z>", "<esc>zz", { noremap = true, silent = true })
+-- map("i", "<C-z>", "<esc>zz", { noremap = true })
 
 -- Keep cursor centered while scrolling up and down
 map("n", "<C-u>", "<C-u>zz")
@@ -161,7 +160,7 @@ map("n", "<C-d>", "<C-d>zz")
 -- end, { desc = "Lazygit in tmux (Root Dir)" })
 
 -- Neogit
--- map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit", silent = true })
+-- map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit",   })
 
 -----------------
 ----- NOTES -----
@@ -188,6 +187,7 @@ end, { desc = "Toggle markdown task" })
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
 
+-- Toggle boolean
 map("n", "<leader>ob", function()
   local line = vim.api.nvim_get_current_line()
   local new_line
@@ -205,13 +205,14 @@ map("n", "<leader>ob", function()
   vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
 end, { desc = "Toggle boolean" })
 
+-- Docstring
 map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
 
 -- For all lsp's sometimes manual lsp restart is required
-map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart", silent = true })
+map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
 
 -- Delete all marks
-map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks", silent = true })
+map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks" })
 
 -- Notifications
 -- stylua: ignore
@@ -220,19 +221,17 @@ map("n", "<leader>oN", function() Snacks.picker.notifications() end, { desc = "N
 map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "Notifications(win)" })
 
 -- LSP Symbols
-map("n", "<leader>os", function()
-  local namu = require("namu.namu_symbols")
-  namu.show()
-end, { desc = "LSP Symbols", silent = true })
+-- stylua: ignore
+map("n", "<leader>os", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
 
 -- Save all files
-map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true, silent = true })
+map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true })
 
 -- Undo tree
-map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree", silent = true })
+map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree" })
 
 -- Make file executable
-map("n", "<leader>ox", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = true })
+map("n", "<leader>ox", "<cmd>!chmod +x %<CR>", { desc = "Make file executable" })
 
 -- Yank inside function
 map("n", "<leader>oy", "yVa}", { noremap = true, desc = "Yank inside function" })
