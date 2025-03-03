@@ -13,6 +13,8 @@ local tn = {
   white = "#F4F5FF",
   fg = "#DFE3F3",
   error = "#E32A4A",
+  search = "#3D59A1",
+  green = "#B5EB79",
 }
 
 -- tokyonight - moon
@@ -50,6 +52,8 @@ return {
         -- c.green1 = tn.indigo
         c.purple = tn.purple
         c.error = tn.error
+        c.bg_search = tn.search
+        c.green = tn.green
         -- c.blue5 = tn.pink
         c.bg_statusline = c.none -- makes lualine transparent
         c.git.add = c.green
