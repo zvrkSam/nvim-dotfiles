@@ -215,7 +215,7 @@ map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "
 
 -- LSP Symbols
 -- stylua: ignore
-map("n", "<leader>os", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
+map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
 
 -- Save all files
 map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true })
