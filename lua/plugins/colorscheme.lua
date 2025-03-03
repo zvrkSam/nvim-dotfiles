@@ -69,9 +69,6 @@ return {
         -- Language specific
         -- Markdown
         hl["@markup.strong.markdown_inline"] = { fg = tn.fg, bold = true }
-        -- Lua
-        hl["@variable.member.lua"] = { fg = tn.indigo }
-        hl["@lsp.type.property.lua"] = { fg = tn.indigo }
         -- Go
         -- hl["@lsp.type.namespace.go"] = { fg = c.blue2 }
         hl["@lsp.type.namespace.go"] = { fg = c.magenta }
