@@ -67,18 +67,18 @@ end, { desc = "Toggle floating terminal" })
 map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil" })
 
 -- Note lookup
-map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true })
-map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true })
+map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true, silent = true })
+map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true, silent = true })
+-- stylua: ignore
 
 -- Lookup specific file type
-map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", noremap = true })
--- stylua: ignore
+map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
 -- map("n", "<leader>fG", "<cmd>Telescope git_files<CR>", { desc = "Find Files (git-files)", noremap = true,   })
-map("n", "<leader>fm", ":FindMD<CR>", { desc = "Find Files (md)", noremap = true })
-map("n", "<leader>fM", ":FindMDX<CR>", { desc = "Find Files (mdx)", noremap = true })
-map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", noremap = true })
-map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", noremap = true })
-map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", noremap = true })
+map("n", "<leader>fm", ":FindMD<CR>", { desc = "Find Files (md)", noremap = true, silent = true })
+map("n", "<leader>fM", ":FindMDX<CR>", { desc = "Find Files (mdx)", noremap = true, silent = true })
+map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
+map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
+map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
 
 -- lazyterm remap
 -- stylua: ignore
@@ -113,8 +113,7 @@ map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVi
 ------------------------------------
 
 -- Swap ^ and @ keybindings
-map("n", "@", "^", { noremap = true })
-map("n", "^", "@", { noremap = true })
+map("n", "@@", "^", { noremap = true })
 
 -- Delete word in normal and insert mode
 map("n", "<A-w>", "ciw", { noremap = true })
@@ -125,12 +124,6 @@ map("i", "<A-w>", "<c-o>ciw", { noremap = true })
 map("n", "<A-x>", "<Del>", { noremap = true })
 map("i", "<A-x>", "<Del>", { noremap = true })
 
--- Paste in insert mode and perseve formating
-map("i", "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>", "<c-r>+", {
-  desc = "Paste in insert mode",
-  noremap = true,
-})
-
 -- Change the first letter of word from lower to upper and vice versa
 map("i", "<A-d>", "<esc>b~ea", { noremap = true })
 map("n", "<A-d>", "<esc>b~e", { noremap = true })
@@ -139,7 +132,7 @@ map("n", "<A-d>", "<esc>b~e", { noremap = true })
 map("i", "<A-a>", "<c-o>A", { noremap = true })
 
 -- Center text in insert mode
--- map("i", "<C-z>", "<esc>zz", { noremap = true })
+map("i", "<C-z>", "<esc>zza", { noremap = true })
 
 -- Keep cursor centered while scrolling up and down
 map("n", "<C-u>", "<C-u>zz")
