@@ -224,7 +224,10 @@ map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true 
 map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree" })
 
 -- Make file executable
-map("n", "<leader>ox", "<cmd>!chmod +x %<CR>", { desc = "Make file executable" })
+map("n", "<leader>ox", function()
+  vim.cmd("e")
+  vim.cmd("!chmod 755 %")
+end, { desc = "Make file executable" })
 
 -- Yank inside function
 map("n", "<leader>oy", "yVa}", { noremap = true, desc = "Yank inside function" })
