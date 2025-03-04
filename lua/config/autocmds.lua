@@ -9,14 +9,6 @@ local usercmd = vim.api.nvim_create_user_command
 -- Prefer creating groups and assigning autocmds to groups, because it makes it easier to clear them
 augroup("mygroup", { clear = true })
 
-autocmd({ "FileType" }, {
-  pattern = { "markdown", "json" },
-  callback = function()
-    vim.wo.conceallevel = 0
-  end,
-  group = "mygroup",
-})
-
 local function search_by_file_type(command_name, file_pattern, prompt_title)
   usercmd(command_name, function()
     Snacks.picker.files({
