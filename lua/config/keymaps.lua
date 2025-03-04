@@ -201,6 +201,9 @@ end, { desc = "Toggle boolean" })
 -- Docstring
 map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
 
+-- GoDoc
+map("n", "<leader>oG", "<cmd>GoDoc<CR>", { desc = "Golang docs" })
+
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
 
