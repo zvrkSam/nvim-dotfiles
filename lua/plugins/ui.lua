@@ -20,6 +20,9 @@ return {
         style = {
           { fg = "#7aa2f7" },
         },
+        exclude_filetypes = {
+          yaml = true,
+        },
       },
       indent = {
         enable = true,
