@@ -18,7 +18,7 @@ return {
       chunk = {
         enable = true,
         style = {
-          { fg = "#7aa2f7" },
+          { fg = "#9AA6DF" },
         },
         exclude_filetypes = {
           yaml = true,
