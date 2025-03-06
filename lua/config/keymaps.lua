@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Overriding default keymap groups | delete
+-- https://github.com/LazyVim/LazyVim/discussions/1427#discussioncomment-11460296
+
 local map = vim.keymap.set
 
 -- Deleted keymaps
