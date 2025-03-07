@@ -1,0 +1,6 @@
+{
+	"src:ts": {
+		"prefix": "st",
+		"body": ["<script lang=\"ts\">", "\t$1", "</script>"]
+	}
+}

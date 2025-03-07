@@ -1,0 +1,108 @@
+{
+  "Import": {
+    "prefix": "im",
+    "body": ["import { $2 } from '${1:module}';"]
+  },
+
+  "Import Default": {
+    "prefix": "imd",
+    "body": ["import $1 from '${2:module}';"]
+  },
+
+  "Function": {
+    "prefix": "fu",
+    "body": ["function $1(){", "\t$2", "}"]
+  },
+
+  "Async Function": {
+    "prefix": "afu",
+    "body": ["async function $1(){", "\t$2", "}"]
+  },
+
+  "Export Function": {
+    "prefix": "efu",
+    "body": ["export function $1(){", "\t$2", "}"]
+  },
+
+  "Export Async Function": {
+    "prefix": "eafu",
+    "body": ["export async function $1(){", "\t$2", "}"]
+  },
+
+  "Export Default": {
+    "prefix": "ed",
+    "body": ["export default $1"]
+  },
+
+  "Interface": {
+    "prefix": "ii",
+    "body": ["interface I${1/(.)/${1:/pascalcase}/} {", "\t$2", "}"]
+  },
+
+  "Export Interface": {
+    "prefix": "eii",
+    "body": ["export interface I${1/(.)/${1:/pascalcase}/} {", "\t$2", "}"]
+  },
+
+  "Type": {
+    "prefix": "tt",
+    "body": ["type $1 = {", "\t$2", "}"]
+  },
+
+  "Export Type": {
+    "prefix": "ett",
+    "body": ["export type $1 = {", "\t$2", "}"]
+  },
+
+  "Component": {
+    "prefix": "rc",
+    "body": ["function $1() {", "\treturn <div>$2</div>;", "}"]
+  },
+
+  "Export Component": {
+    "prefix": "erc",
+    "body": ["export function $1() {", "\treturn <div>$2</div>;", "}"]
+  },
+
+  "Export Component | Interface": {
+    "prefix": "erci",
+    "body": [
+      "interface ${2:IProps} {\n",
+      "}\n",
+      "export function $1({}:${2:IProps}) {",
+      "\treturn <div>$3</div>;",
+      "}"
+    ]
+  },
+
+  "Export Default Component": {
+    "prefix": "edc",
+    "body": ["export default function $1() {", "\treturn <div>$2</div>;", "}"]
+  },
+
+  "Export Default Component | Inteface": {
+    "prefix": "edci",
+    "body": [
+      "interface ${2:IProps} {\n",
+      "}\n",
+      "export default function $1({}:${2:IProps}) {",
+      "\treturn <div>$3</div>;",
+      "}"
+    ]
+  },
+
+  "clsx": {
+    "prefix": "clx",
+    "body": ["className={clsx($1)}"]
+  },
+
+  "useState": {
+    "prefix": "us",
+    "body": ["const [$1, set${1/(.)/${1:/pascalcase}/}] = $4useState<$2>($3);"]
+  },
+
+  "useEffect": {
+    "prefix": "ue",
+    "body": ["useEffect(() => {", "\t$2", "}, [$1]);"]
+  }
+}

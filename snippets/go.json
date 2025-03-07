@@ -1,0 +1,56 @@
+{
+  "err, no return": {
+    "prefix": "er",
+    "body": ["if err != nil {", "\t$1", "\treturn $2", "}"]
+  },
+
+  "err, return err": {
+    "prefix": "ere",
+    "body": ["if err != nil {", "\treturn $1err", "}"]
+  },
+
+  "ResponseWriter/Request": {
+    "prefix": "wr",
+    "body": ["func(w http.ResponseWriter, r *http.Request) {", "\t$1", "}"]
+  },
+
+  "func ResponseWriter/Request": {
+    "prefix": "fwr",
+    "body": ["func $1(w http.ResponseWriter, r *http.Request) {", "\t$2", "}"]
+  },
+
+  "type struct { }": {
+    "prefix": "ts",
+    "body": ["type $1 struct {", "\t$2", "}"]
+  },
+
+  "type interface { }": {
+    "prefix": "ti",
+    "body": ["type $1 interface {", "\t$2", "}"]
+  },
+
+  "func (r *{}) () {}": {
+    "prefix": "fr",
+    "body": ["func ($1) $2($3) $4 {", "\t$5", "}"]
+  },
+
+  "func () {}": {
+    "prefix": "fu",
+    "body": ["func $1($2) $3 {", "\t$4", "}"]
+  },
+
+  "fmt.Sprintf": {
+    "prefix": "ffs",
+    "body": ["fmt.Sprintf(\"$1\", $2)"]
+  },
+
+  "fmt.Errorf": {
+    "prefix": "fe",
+    "body": ["fmt.Errorf(\"error in $1: %w\", err)"]
+  },
+
+  "log.Fatal": {
+    "prefix": "lf",
+    "body": ["log.Fatal(\"Error in $1:\", err)"]
+  }
+}
