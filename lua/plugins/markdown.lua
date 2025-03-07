@@ -8,6 +8,21 @@ return {
       },
     },
   },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    -- lazy = true,
+    ft = "markdown",
+    opts = {
+      workspaces = {
+        {
+          name = "notes",
+          path = "~/dev/notes/",
+        },
+      },
+      ui = { enable = false },
+    },
+  },
   { "lukas-reineke/headlines.nvim", enabled = false, dependencies = "nvim-treesitter/nvim-treesitter" },
   { "mfussenegger/nvim-lint", enabled = false },
 }
