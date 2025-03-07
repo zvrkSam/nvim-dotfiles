@@ -9,7 +9,7 @@ return {
       { "<leader>sc", function() Snacks.picker.command_history({ layout = "select" }) end, desc = "Command history" },
       { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "ivy_split" }) end, desc = "keymaps" },
-      { "<leader>/", function() Snacks.picker.grep({ layout = "vtelescope" }) end, desc = "Grep" },
+      { "<leader>/", function() Snacks.picker.grep({ layout = "ivy_split" }) end, desc = "Grep" },
       { "<leader>oR", function() Snacks.picker.registers() end, desc = "Registers" },
     },
     opts = function(_, opts)
@@ -122,6 +122,25 @@ return {
                 { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
                 -- stylua: ignore
                 { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+              },
+            },
+          },
+          ivy_split = {
+            preview = "main",
+            layout = {
+              box = "vertical",
+              backdrop = false,
+              width = 0,
+              height = 0.3,
+              position = "bottom",
+              border = "top",
+              title = " {title} {live} {flags}",
+              title_pos = "left",
+              { win = "input", height = 1, border = "bottom" },
+              {
+                box = "horizontal",
+                { win = "list", border = "none" },
+                { win = "preview", title = "{preview}", width = 0.6, border = "left" },
               },
             },
           },
