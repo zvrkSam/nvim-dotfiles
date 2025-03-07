@@ -204,6 +204,14 @@ end, { desc = "Toggle boolean" })
 -- Docstring
 map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
 
+-- Copy current file path
+map(
+  "n",
+  "<leader>oF",
+  ':let @+ = expand("%:p")<cr>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<cr>',
+  { desc = "Copy current file path", silent = true }
+)
+
 -- GoDoc
 map("n", "<leader>oG", "<cmd>GoDoc<CR>", { desc = "Golang docs" })
 
