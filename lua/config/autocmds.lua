@@ -36,7 +36,7 @@ local function grep_notes(command_name, dir, prompt_title)
       ft = "md",
       title = prompt_title,
       group = "mygroup",
-      layout = "vtelescope",
+      layout = "ivy_split",
     })
   end, {})
 end
@@ -50,5 +50,5 @@ search_by_file_type("FindMD", "*.md", "Find markdown files")
 search_by_file_type("FindMDX", "*.mdx", "Find mdx files")
 
 -- Note lookup
-search_by_directory("SearchNotes", "~/dev/notes", "Search markdown notes")
-grep_notes("GrepNotes", "~/dev/notes/", "Grep markdown files")
+search_by_directory("SearchNotes", "~/dev/notes", "Search notes by name")
+grep_notes("GrepNotes", "~/dev/notes/", "Grep notes")
