@@ -10,6 +10,7 @@ return {
       { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "ivy_split" }) end, desc = "keymaps" },
       { "<leader>/", function() Snacks.picker.grep({ layout = "vtelescope" }) end, desc = "Grep" },
+      { "<leader>oR", function() Snacks.picker.registers() end, desc = "Registers" },
     },
     opts = function(_, opts)
       ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>

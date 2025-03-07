@@ -1,3 +1,6 @@
+-- Overriding default keymap groups | delete
+-- https://github.com/LazyVim/LazyVim/discussions/1427#discussioncomment-11460296
+
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
@@ -10,6 +13,7 @@ return {
     return opts
   end,
   config = function(_, opts)
+    opts.defaults['<leader>s"'] = nil
     local wk = require("which-key")
     wk.setup(opts)
     wk.add({
