@@ -77,7 +77,7 @@ return {
         -- hl["@lsp.type.namespace.go"] = { fg = c.magenta }
         -- Toml
         hl["@property.toml"] = { fg = tnm.toml }
-        hl["@property.yaml"] = { fg = tn.indigo, bold = true }
+        hl["@property.yaml"] = { fg = c.blue2, bold = false }
 
         -- Framework specific
         hl["@tag.tsx"] = { fg = tn.darker_purple }
