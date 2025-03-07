@@ -84,9 +84,9 @@ return {
         hl["@punctuation.special.astro"] = { fg = tn.bracket_gray }
 
         -- GitSigns
-        hl.GitSignsAdd = { fg = c.green, bold = true }
-        hl.GitSignsChange = { fg = c.yellow, bold = true }
-        hl.GitSignsDelete = { fg = tnm.red, bold = true }
+        -- hl.GitSignsAdd = { fg = c.green, bold = true }
+        -- hl.GitSignsChange = { fg = c.yellow, bold = true }
+        -- hl.GitSignsDelete = { fg = tnm.red, bold = true }
 
         -- Flash
         hl.FlashMatch = { bg = tn.darker_purple, fg = tn.white }
