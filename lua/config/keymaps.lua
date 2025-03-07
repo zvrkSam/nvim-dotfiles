@@ -70,8 +70,8 @@ end, { desc = "Toggle floating terminal" })
 map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil" })
 
 -- Note lookup
-map("n", "<leader>fn", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true, silent = true })
-map("n", "<leader>fN", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true, silent = true })
+map("n", "<leader>nN", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true, silent = true })
+map("n", "<leader>nn", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true, silent = true })
 -- stylua: ignore
 
 -- Lookup specific file type
