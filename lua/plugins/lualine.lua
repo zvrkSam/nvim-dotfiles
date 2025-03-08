@@ -26,9 +26,9 @@ return {
       return count
     end
 
-    local function is_telescope_open()
+    local function is_snacks_picker_open()
       for _, win in ipairs(vim.api.nvim_list_wins()) do
-        if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "TelescopePrompt" then
+        if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "snacks_layout_box" then
           return true
         end
       end
@@ -37,7 +37,7 @@ return {
 
     -- Lualine component for buffer count
     local buffer_count = function()
-      if is_telescope_open() then
+      if is_snacks_picker_open() then
         return ""
       end
       return string.format(" %s", get_buffer_count())
@@ -72,6 +72,19 @@ return {
       lualine_c = {
         {
           function()
+            return " " .. vim.api.nvim_buf_line_count(0)
+          end,
+          separator = "",
+          color = { fg = colors.magenta },
+        },
+        {
+          buffer_count,
+          separator = "",
+          color = { fg = colors.blue },
+          padding = { left = 0, right = 0 },
+        },
+        {
+          function()
             local arrow = require("arrow.statusline")
             local text = arrow.text_for_statusline()
             local is_on_arrow = arrow.is_on_arrow_file()
@@ -86,12 +99,6 @@ return {
           color = { fg = colors.green },
           -- separator = "",
           separator = "",
-          padding = { left = 1, right = 0 },
-        },
-        {
-          buffer_count,
-          separator = "",
-          color = { fg = colors.blue },
           padding = { left = 1, right = 0 },
         },
         -- LazyVim.lualine.root_dir(),
