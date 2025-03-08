@@ -47,9 +47,9 @@ return {
 
     opts.options = {
       --        
-      section_separators = { left = "", right = "" },
+      -- section_separators = { left = "", right = "" },
       -- │ ┊    
-      component_separators = { left = "", right = "" },
+      -- component_separators = { left = "", right = "" },
       globalstatus = true,
       disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "snacks_dashboard" } },
       refresh = {
@@ -72,19 +72,6 @@ return {
       lualine_c = {
         {
           function()
-            return " " .. vim.api.nvim_buf_line_count(0)
-          end,
-          separator = "",
-          color = { fg = colors.magenta },
-        },
-        {
-          buffer_count,
-          separator = "",
-          color = { fg = colors.blue },
-          padding = { left = 0, right = 0 },
-        },
-        {
-          function()
             local arrow = require("arrow.statusline")
             local text = arrow.text_for_statusline()
             local is_on_arrow = arrow.is_on_arrow_file()
@@ -99,6 +86,12 @@ return {
           color = { fg = colors.green },
           -- separator = "",
           separator = "",
+          padding = { left = 1, right = 0 },
+        },
+        {
+          buffer_count,
+          separator = "",
+          color = { fg = colors.blue },
           padding = { left = 1, right = 0 },
         },
         -- LazyVim.lualine.root_dir(),
@@ -133,25 +126,25 @@ return {
 
     -- do not add trouble symbols if aerial is enabled
     -- And allow it to be overriden for some buffer types (see autocmds)
-    if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
-      local trouble = require("trouble")
-      local symbols = trouble.statusline({
-        mode = "symbols",
-        groups = {},
-        title = false,
-        filter = { range = true },
-        format = "{kind_icon}{symbol.name:Normal}",
-        hl_group = "lualine_c_normal",
-      })
-      table.insert(opts.sections.lualine_c, {
-        symbols and symbols.get,
-        cond = function()
-          return vim.b.trouble_lualine ~= false
-            and symbols.has()
-            and vim.bo.filetype ~= "astro"
-            and vim.bo.filetype ~= "markdown"
-        end,
-      })
-    end
+    -- if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+    --   local trouble = require("trouble")
+    --   local symbols = trouble.statusline({
+    --     mode = "symbols",
+    --     groups = {},
+    --     title = false,
+    --     filter = { range = true },
+    --     format = "{kind_icon}{symbol.name:Normal}",
+    --     hl_group = "lualine_c_normal",
+    --   })
+    --   table.insert(opts.sections.lualine_c, {
+    --     symbols and symbols.get,
+    --     cond = function()
+    --       return vim.b.trouble_lualine ~= false
+    --         and symbols.has()
+    --         and vim.bo.filetype ~= "astro"
+    --         and vim.bo.filetype ~= "markdown"
+    --     end,
+    --   })
+    -- end
   end,
 }
