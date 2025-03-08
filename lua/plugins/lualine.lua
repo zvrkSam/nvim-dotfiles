@@ -26,7 +26,7 @@ return {
       return count
     end
 
-    local function is_snacks_picker_open()
+    local function is_picker_open()
       for _, win in ipairs(vim.api.nvim_list_wins()) do
         if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "snacks_layout_box" then
           return true
@@ -37,7 +37,7 @@ return {
 
     -- Lualine component for buffer count
     local buffer_count = function()
-      if is_snacks_picker_open() then
+      if is_picker_open() then
         return ""
       end
       return string.format(" %s", get_buffer_count())
