@@ -76,7 +76,7 @@ return {
         hl["@lsp.type.namespace.go"] = { fg = c.blue2 }
         -- hl["@lsp.type.namespace.go"] = { fg = c.magenta }
         -- Toml
-        hl["@property.toml"] = { fg = tnm.toml }
+        hl["@property.toml"] = { fg = c.magenta }
         hl["@property.yaml"] = { fg = c.blue2, bold = false }
 
         -- Framework specific
