@@ -62,12 +62,6 @@ return {
         { "branch" },
         { "diff" },
         { "diagnostics" },
-        -- stylua: ignore
-        -- {
-        --   function() return require("noice").api.status.command.get() end,
-        --   cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-        --   color = LazyVim.ui.fg("Statement"),
-        -- },
       },
       lualine_c = {
         {
@@ -107,7 +101,7 @@ return {
         {
           function() return "  " .. require("dap").status() end,
           cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-          color = function() return { Snacks.util.color("Debug") }end,
+          color = function() return { Snacks.util.color("Debug") } end,
         },
         -- stylua: ignore
         {
@@ -117,9 +111,7 @@ return {
         },
       },
       lualine_x = {},
-      lualine_y = {
-        -- { "location" },
-      },
+      lualine_y = {},
       lualine_z = {},
     }
     opts.extensions = { "neo-tree", "lazy" }
