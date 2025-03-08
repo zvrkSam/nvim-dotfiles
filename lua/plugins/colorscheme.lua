@@ -6,7 +6,7 @@ local tn = {
   pink = "#F570D9",
   purple = "#9270D0",
   darker_purple = "#9C65FF",
-  visible_gray = "#70728D",
+  visible_gray = "#60638D",
   bracket_gray = "#9AA6DF",
   gutter = "#555D82",
   comment = "#5C6693",
@@ -63,7 +63,6 @@ return {
         hl.Comment = { fg = tn.comment }
         hl.Macro = { fg = tn.indigo }
         hl.DiagnosticUnnecessary = { fg = tn.visible_gray }
-        hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl["@tag.delimiter"] = { fg = tn.darker_purple }
         hl["@punctuation.delimiter"] = { fg = c.fg }
         hl["@punctuation.bracket"] = { fg = tn.bracket_gray }
@@ -71,6 +70,7 @@ return {
 
         -- Language specific
         -- Markdown
+        hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl["@markup.strong.markdown_inline"] = { fg = tn.fg, bold = true }
         -- Go
         hl["@lsp.type.namespace.go"] = { fg = c.blue2 }
