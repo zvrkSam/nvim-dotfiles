@@ -115,8 +115,8 @@ map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVi
 ----- CURSOR/TEXT MANIPULATION -----
 ------------------------------------
 
--- Swap ^ and @ keybindings
-map("n", "@@", "^", { noremap = true })
+-- This is only temporary until I find better use-case for backspace
+map("n", "<BS>", "^", { noremap = true })
 
 -- Delete word in normal and insert mode
 map("n", "<A-w>", "ciw", { noremap = true })
@@ -236,6 +236,8 @@ map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true 
 
 -- Undo tree
 map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree" })
+
+map("n", "<leader>ov", "ggVG", { desc = "Select whole file" })
 
 -- Make file executable
 map("n", "<leader>ox", function()
