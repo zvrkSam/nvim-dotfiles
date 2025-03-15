@@ -12,6 +12,42 @@ vim.keymap.del("n", "<leader>l", { noremap = true })
 vim.keymap.del("n", "<leader>L", { noremap = true })
 vim.keymap.del("n", "<leader>n", { noremap = true })
 
+------------------------------------
+----- CURSOR/TEXT MANIPULATION -----
+------------------------------------
+
+-- Put character into the blackhole register
+map("n", "x", '"_x')
+
+-- Put change into the blackhole register
+map("n", "c", '"_c')
+
+-- This is only temporary until I find better use-case for backspace
+map("n", "<BS>", "^", { noremap = true })
+
+-- Delete word in normal and insert mode
+map("n", "<A-w>", "ciw", { noremap = true })
+map("n", "<A-W>", "ciW", { noremap = true })
+map("i", "<A-w>", "<c-o>ciw", { noremap = true })
+
+-- <Delete> key functionality
+map("n", "<A-x>", "<Del>", { noremap = true })
+map("i", "<A-x>", "<Del>", { noremap = true })
+
+-- Change the first letter of word from lower to upper and vice versa
+map("i", "<A-d>", "<esc>b~ea", { noremap = true })
+map("n", "<A-d>", "<esc>b~e", { noremap = true })
+
+-- Jump to end of of the line while in insert mode
+map("i", "<A-a>", "<c-o>A", { noremap = true })
+
+-- Center text in insert mode
+map("i", "<C-z>", "<esc>zza", { noremap = true })
+
+-- Keep cursor centered while scrolling up and down
+map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz")
+
 -------------------------
 ----- WINDOW/BUFFER -----
 -------------------------
@@ -32,35 +68,6 @@ map("n", "<A-.>", "<c-w>10>") -- horizontal expand ( left )
 map("n", "<A-,>", "<c-w>10<") -- horizontal expand ( right )
 map("n", "<A-t>", "<c-W>+10") -- vertical expand ( top )
 map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
-
---------------------
------ TERMINAL -----
---------------------
-
-map({ "n", "t" }, "<A-F>", function()
-  local current_dir = vim.fn.expand("%:p:h")
-  if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
-    current_dir = vim.fn.getcwd()
-  end
-  local in_terminal = vim.bo.buftype == "terminal"
-  if in_terminal then
-    vim.cmd("hide")
-  else
-    Snacks.terminal.toggle("zsh", {
-      cwd = current_dir,
-      env = {
-        TERM = "screen-256color",
-      },
-      win = {
-        style = "terminal",
-        relative = "editor",
-        width = 0.85,
-        height = 0.90,
-        border = "rounded",
-      },
-    })
-  end
-end, { desc = "Toggle floating terminal" })
 
 ----------------------------
 ----- PICKER/FILE'S -----
@@ -98,6 +105,35 @@ map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defeniti
 -- to toggle arrow menu is the letter R
 map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mappings (save)" })
 
+--------------------
+----- TERMINAL -----
+--------------------
+
+map({ "n", "t" }, "<A-F>", function()
+  local current_dir = vim.fn.expand("%:p:h")
+  if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
+    current_dir = vim.fn.getcwd()
+  end
+  local in_terminal = vim.bo.buftype == "terminal"
+  if in_terminal then
+    vim.cmd("hide")
+  else
+    Snacks.terminal.toggle("zsh", {
+      cwd = current_dir,
+      env = {
+        TERM = "screen-256color",
+      },
+      win = {
+        style = "terminal",
+        relative = "editor",
+        width = 0.85,
+        height = 0.90,
+        border = "rounded",
+      },
+    })
+  end
+end, { desc = "Toggle floating terminal" })
+
 -------------------
 ----- UTILITY -----
 -------------------
@@ -110,36 +146,6 @@ map("n", "<leader>Ll", "<cmd>Lazy<CR>", { desc = "Lazy", noremap = true })
 map("n", "<leader>Le", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", noremap = true })
 -- stylua: ignore
 map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVim Changelog", noremap = true })
-
-------------------------------------
------ CURSOR/TEXT MANIPULATION -----
-------------------------------------
-
--- This is only temporary until I find better use-case for backspace
-map("n", "<BS>", "^", { noremap = true })
-
--- Delete word in normal and insert mode
-map("n", "<A-w>", "ciw", { noremap = true })
-map("n", "<A-W>", "ciW", { noremap = true })
-map("i", "<A-w>", "<c-o>ciw", { noremap = true })
-
--- <Delete> key functionality
-map("n", "<A-x>", "<Del>", { noremap = true })
-map("i", "<A-x>", "<Del>", { noremap = true })
-
--- Change the first letter of word from lower to upper and vice versa
-map("i", "<A-d>", "<esc>b~ea", { noremap = true })
-map("n", "<A-d>", "<esc>b~e", { noremap = true })
-
--- Jump to end of of the line while in insert mode
-map("i", "<A-a>", "<c-o>A", { noremap = true })
-
--- Center text in insert mode
-map("i", "<C-z>", "<esc>zza", { noremap = true })
-
--- Keep cursor centered while scrolling up and down
-map("n", "<C-u>", "<C-u>zz")
-map("n", "<C-d>", "<C-d>zz")
 
 ---------------
 ----- GIT -----
@@ -227,6 +233,9 @@ map("n", "<leader>oN", function() Snacks.picker.notifications() end, { desc = "N
 -- stylua: ignore
 map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "Notifications(win)" })
 
+-- Duplicate and comment out
+map("n", "<leader>oo", "yy<cmd>normal gcc<CR>p", { desc = "Duplicate and comment out" })
+
 -- LSP Symbols
 -- stylua: ignore
 map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
@@ -258,8 +267,10 @@ map("n", "<leader>oY", function()
   end
   vim.fn.setreg("+", table.concat(lines, "\n"))
 
-  Snacks.notifier.notify("Diagnostics yanked to clipboard!", "info", {
-    title = "Diagnostics",
-    timeout = 2000,
-  })
+  if #lines ~= 0 then
+    Snacks.notifier.notify("Diagnostics yanked to clipboard!", "info", {
+      title = "Diagnostics",
+      timeout = 2000,
+    })
+  end
 end, { desc = "Yank diagnostics" })
