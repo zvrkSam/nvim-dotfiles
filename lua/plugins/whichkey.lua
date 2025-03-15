@@ -22,7 +22,7 @@ return {
       { "<leader>L", group = "Lazy" },
       { "<leader>n", group = "Notes/Markdown", icon = { icon = "󱓧", color = "grey" } },
       { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
-      { "<leader>o", group = "misc options", desc = "misc options", icon = { icon = "", color = "yellow" } },
+      { "<leader>o", group = "misc commands", desc = "misc options", icon = { icon = "", color = "yellow" } },
       { "<leader>oc", icon = { icon = "", color = "grey" } },
       { "<leader>oG", icon = { icon = "󱔗", color = "blue" } },
       { "<leader>ol", icon = { icon = "󰒍", color = "red" } },
