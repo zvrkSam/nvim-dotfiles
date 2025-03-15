@@ -30,3 +30,7 @@ opt.signcolumn = "no"
 -- opt.statuscolumn = "%r%s"
 -- netrw is builtin file explorer that comes with neovim
 -- it is disabled in lazy.lua
+
+-- TODO:
+-- Neovim automatically wrapping long lines
+-- https://sbulav.github.io/til/til-neovim-autoformatting-markdown/
