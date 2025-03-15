@@ -246,6 +246,7 @@ map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true 
 -- Undo tree
 map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree" })
 
+-- Select whole file
 map("n", "<leader>ov", "ggVG", { desc = "Select whole file" })
 
 -- Make file executable
