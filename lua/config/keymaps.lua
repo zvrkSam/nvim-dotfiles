@@ -22,8 +22,9 @@ map("n", "x", '"_x')
 -- Put change into the blackhole register
 map("n", "c", '"_c')
 
--- This is only temporary until I find better use-case for backspace
-map("n", "<BS>", "^", { noremap = true })
+-- Move cursor to the begining of first character (regular ^ is hard to reach)
+map("n", "<A-e>", "^", { noremap = true })
+map("v", "<A-e>", "^", { noremap = true })
 
 -- Delete word in normal and insert mode
 map("n", "<A-w>", "ciw", { noremap = true })
