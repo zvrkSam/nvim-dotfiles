@@ -32,8 +32,8 @@ vim.opt.signcolumn = "no"
 
 -- Options for making lines be 80 characters and wrap
 -- Not sure if I like this, and there was a issue with frotmatter and .prettierrc
--- vim.opt.textwidth = 80
--- vim.opt.wrap = true
+vim.opt.textwidth = 120
+vim.opt.wrap = true
 --
 -- .prettierrc
 -- {
