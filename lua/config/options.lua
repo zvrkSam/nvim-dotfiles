@@ -30,13 +30,6 @@ vim.opt.signcolumn = "no"
 -- netrw is builtin file explorer that comes with neovim
 -- it is disabled in lazy.lua
 
--- Options for making lines be 80 characters and wrap
--- Not sure if I like this, and there was a issue with frotmatter and .prettierrc
+-- Line lenght and wraping
 vim.opt.textwidth = 120
 vim.opt.wrap = true
---
--- .prettierrc
--- {
---   "printWidth": 80,
---   "proseWrap": "always"
--- }
