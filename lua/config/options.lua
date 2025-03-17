@@ -3,9 +3,8 @@
 -- Add any additional options here
 
 -- vim.opt.hlsearch = true
-local opt = vim.opt
 
-opt.scrolloff = 20
+vim.opt.scrolloff = 20
 
 -- Copy indent from current line when starting a new line (When <CR> or 'o' or 'O')
 -- opt.autoindent = true
@@ -14,23 +13,30 @@ opt.scrolloff = 20
 -- opt.hidden = true
 
 -- Set eventignore so that tmux does not show `activity` every time we change from a window with Neovim
-opt.eventignore = "FocusLost"
+vim.opt.eventignore = "FocusLost"
 
 -- Highlight the text line of the cursor
-opt.cursorlineopt = "number"
+vim.opt.cursorlineopt = "number"
 
 -- Sets borders and popus to transparent
-opt.pumblend = 0
+vim.opt.pumblend = 0
 
 vim.g.snacks_animate = false
 
-opt.conceallevel = 0
-opt.signcolumn = "no"
+vim.opt.conceallevel = 0
+vim.opt.signcolumn = "no"
 
 -- opt.statuscolumn = "%r%s"
 -- netrw is builtin file explorer that comes with neovim
 -- it is disabled in lazy.lua
 
--- TODO:
--- Neovim automatically wrapping long lines
--- https://sbulav.github.io/til/til-neovim-autoformatting-markdown/
+-- Options for making lines be 80 characters and wrap
+-- Not sure if I like this, and there was a issue with frotmatter and .prettierrc
+-- vim.opt.textwidth = 80
+-- vim.opt.wrap = true
+--
+-- .prettierrc
+-- {
+--   "printWidth": 80,
+--   "proseWrap": "always"
+-- }
