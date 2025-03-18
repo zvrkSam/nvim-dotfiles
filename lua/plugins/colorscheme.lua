@@ -12,6 +12,7 @@ local tn = {
   comment = "#5C6693",
   white = "#F4F5FF",
   fg = "#DFE3F3",
+  tnfg = "#C0CAf5",
   error = "#E32A4A",
   search = "#3D59A1",
 }
@@ -51,6 +52,7 @@ return {
         -- c.green1 = tn.indigo
         c.purple = tn.purple
         c.error = tn.error
+        c.fg = tn.tnfg
         c.bg_search = tn.search
         -- c.blue5 = tn.pink
         c.bg_statusline = c.none -- makes lualine transparent
