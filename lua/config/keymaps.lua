@@ -211,6 +211,10 @@ end, { desc = "Toggle boolean" })
 -- Docstring
 map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
 
+-- Open Dashboard
+-- stylua: ignore
+map("n", "<leader>oD", function() Snacks.dashboard() end, { desc = "Open Dashboard" })
+
 -- Copy current file path
 map(
   "n",
