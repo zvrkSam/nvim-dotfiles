@@ -12,7 +12,8 @@ local tn = {
   comment = "#5C6693",
   white = "#F4F5FF",
   fg = "#DFE3F3",
-  green = "#BBEE72",
+  -- green = "#BBEE72",
+  green = "#BEEB7D",
   error = "#E32A4A",
   search = "#3D59A1",
 }
