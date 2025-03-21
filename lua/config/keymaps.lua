@@ -23,8 +23,7 @@ map("n", "x", '"_x')
 map("n", "c", '"_c')
 
 -- Move cursor to the begining of first character (regular ^ is hard to reach)
-map("n", "<A-e>", "^", { noremap = true })
-map("v", "<A-e>", "^", { noremap = true })
+map({ "n", "v" }, "<A-e>", "^", { noremap = true })
 
 -- Delete word in normal and insert mode
 map("n", "<A-w>", "ciw", { noremap = true })
@@ -32,8 +31,7 @@ map("n", "<A-W>", "ciW", { noremap = true })
 map("i", "<A-w>", "<c-o>ciw", { noremap = true })
 
 -- <Delete> key functionality
-map("n", "<A-x>", "<Del>", { noremap = true })
-map("i", "<A-x>", "<Del>", { noremap = true })
+map({ "n", "i" }, "<A-x>", "<Del>", { noremap = true })
 
 -- Change the first letter of word from lower to upper and vice versa
 map("i", "<A-d>", "<esc>b~ea", { noremap = true })
