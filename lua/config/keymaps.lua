@@ -241,6 +241,21 @@ map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "
 -- Duplicate and comment out
 map("n", "<leader>oo", "yy<cmd>normal gcc<CR>p", { desc = "Duplicate and comment out" })
 
+-- Clean paste
+-- Will disable it for now
+-- map("n", "<leader>oP", function()
+--   -- Get content from register 0 (most recent yank)
+--   local yanked_text = vim.fn.getreg("0")
+--   -- Remove trailing newline if present
+--   yanked_text = yanked_text:gsub("\n$", "")
+--   -- Remove leading whitespace
+--   yanked_text = yanked_text:gsub("^%s+", "")
+--   -- Store in register p
+--   vim.fn.setreg("p", yanked_text)
+--   -- Paste from register p
+--   return '"pp'
+-- end, { expr = true, desc = "Clean Paste" })
+
 -- LSP Symbols
 -- stylua: ignore
 map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
