@@ -238,6 +238,7 @@ map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "
 
 -- Duplicate and comment out
 map("n", "<leader>oo", "yy<cmd>normal gcc<CR>p", { desc = "Duplicate and comment out" })
+map("v", "<leader>oo", "y`>pgv<cmd>normal gc<CR>", { desc = "Duplicate and comment out" })
 
 -- Clean paste
 -- Will disable it for now
