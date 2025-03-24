@@ -155,10 +155,10 @@ map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVi
 -- https://github.com/sindrets/diffview.nvim
 
 -- Open Lazygit in new tmux window
--- map("n", "<leader>jg", function()
---   local git_root = LazyVim.root.git()
---   vim.fn.system("tmux new-window -c " .. vim.fn.shellescape(git_root) .. " -- lazygit")
--- end, { desc = "Lazygit in tmux (Root Dir)" })
+map("n", "<leader>gt", function()
+  local git_root = LazyVim.root.git()
+  vim.fn.system("tmux new-window -c " .. vim.fn.shellescape(git_root) .. " -- lazygit")
+end, { desc = "Lazygit in tmux (Root Dir)" })
 
 -- Neogit
 -- map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit",   })
