@@ -11,6 +11,7 @@ return {
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "ivy_split" }) end, desc = "keymaps" },
       { "<leader>/", function() Snacks.picker.grep({ layout = "ivy_split" }) end, desc = "Grep" },
       { "<leader>oR", function() Snacks.picker.registers() end, desc = "Registers" },
+      { "<leader>,", function () Snacks.picker.buffers({ layout = "ivy_split" }) end, desc = "Buffers" }
     },
     opts = function(_, opts)
       ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
