@@ -50,6 +50,7 @@ map("n", "<C-d>", "<C-d>zz")
 -------------------------
 ----- WINDOW/BUFFER -----
 -------------------------
+
 map("c", "<C-j>", "<Down>", { desc = "Next Command" })
 map("c", "<C-k>", "<Up>", { desc = "Previous Command" })
 
@@ -103,6 +104,12 @@ map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defeniti
 -- Save file to arrow
 -- to toggle arrow menu is the letter R
 map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mappings (save)" })
+
+--------------------
+----- MOVEMENT -----
+--------------------
+
+map("n", "<leader>!", ":!", { noremap = true, desc = "Filter | Shell commands" })
 
 --------------------
 ----- TERMINAL -----

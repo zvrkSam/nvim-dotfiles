@@ -18,6 +18,7 @@ return {
     wk.setup(opts)
     wk.add({
       { "<leader>t", group = "Terminal", icon = { icon = "", color = "red" } },
+      { "<leader>!", icon = { icon = "", color = "cyan" } },
       { "<leader>j", group = "Neogit/Lazygit", icon = { icon = "", color = "azure" } },
       { "<leader>L", group = "Lazy" },
       { "<leader>n", group = "Notes/Markdown", icon = { icon = "󱓧", color = "grey" } },
