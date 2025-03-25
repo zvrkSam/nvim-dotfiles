@@ -41,7 +41,7 @@ map("n", "<A-d>", "<esc>b~e", { noremap = true })
 map("i", "<A-a>", "<c-o>A", { noremap = true })
 
 -- Center text in insert mode
-map("i", "<C-z>", "<esc>zza", { noremap = true })
+map("i", "<A-z>", "<esc>zza", { noremap = true })
 
 -- Keep cursor centered while scrolling up and down
 map("n", "<C-u>", "<C-u>zz")
