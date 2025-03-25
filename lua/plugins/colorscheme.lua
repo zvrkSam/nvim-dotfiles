@@ -72,6 +72,9 @@ return {
         hl["@variable.builtin"] = { fg = c.red }
 
         -- Language specific
+        -- Web
+        hl["@punctuation.special.typescript"] = { fg = tn.pink }
+        hl["@punctuation.special.tsx"] = { fg = tn.pink }
         -- Markdown
         hl.RenderMarkdownCode = { bg = c.bg_highlight }
         hl["@markup.strong.markdown_inline"] = { fg = tn.fg, bold = true }
