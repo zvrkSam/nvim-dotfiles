@@ -29,7 +29,8 @@ return {
         },
       },
       servers = {
-        templ = {},
+        -- For the time being templ is removed
+        -- templ = {},
         astro = {},
         cssls = {
           settings = {
