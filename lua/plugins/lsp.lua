@@ -17,12 +17,16 @@
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ" }, callback = templ_format })
 -- vim.filetype.add({ extension = { templ = "templ" } })
 
+-- Virtual lines
+vim.diagnostic.config({ virtual_lines = true })
+
 return {
   {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = { enabled = false },
       diagnostics = {
+        virtual_text = false, -- Inline diagnostics
         float = {
           border = "rounded",
           source = "always",
