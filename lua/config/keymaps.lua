@@ -262,6 +262,9 @@ map("v", "<leader>oo", "y`>pgv<cmd>normal gc<CR>", { desc = "Duplicate and comme
 --   return '"pp'
 -- end, { expr = true, desc = "Clean Paste" })
 
+-- Save and quit neovim (keep layout)
+map("n", "<leader>oq", "<cmd>wqa<CR>", { desc = "Save and Quit neovim" })
+
 -- LSP Symbols
 -- stylua: ignore
 map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
