@@ -109,7 +109,10 @@ map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mapp
 ----- MOVEMENT -----
 --------------------
 
-map("n", "<leader>!", ":!", { noremap = true, desc = "Filter | Shell commands" })
+-- Shell commands
+map("n", "<leader>C", ":!", { noremap = true, desc = "Shell commands | Filter" })
+-- Search web with custom script
+map("n", "<leader>F", ":!web ", { noremap = true, desc = "Search web" })
 
 --------------------
 ----- TERMINAL -----
