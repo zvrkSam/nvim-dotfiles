@@ -17,8 +17,9 @@
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ" }, callback = templ_format })
 -- vim.filetype.add({ extension = { templ = "templ" } })
 
+-- Disabled due to constant layout shifting
 -- Virtual lines
-vim.diagnostic.config({ virtual_lines = true })
+-- vim.diagnostic.config({ virtual_lines = true })
 
 return {
   {
@@ -26,7 +27,7 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       diagnostics = {
-        virtual_text = false, -- Inline diagnostics
+        -- virtual_text = false, -- Inline diagnostics
         float = {
           border = "rounded",
           source = "always",
