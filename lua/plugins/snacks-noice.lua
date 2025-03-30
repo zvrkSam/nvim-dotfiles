@@ -80,6 +80,12 @@ return {
           explorer = {
             hidden = true,
             layout = { layout = { preset = "sidebar", preview = false, position = "right" } },
+            win = {
+              list = {
+                -- Enables you to pick where to open your file if you have splits
+                keys = { ["O"] = { { "pick_win", "jump" }, mode = { "n", "i" } } },
+              },
+            },
           },
           notifications = {
             actions = {
