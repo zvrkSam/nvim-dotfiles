@@ -25,7 +25,7 @@ return {
       { "<leader>n", group = "Notes/Markdown", icon = { icon = "󱓧", color = "grey" } },
       { "<leader>h", group = "hunks", icon = { icon = "󰊢", color = "red" } },
       { "<leader>o", group = "misc commands", desc = "misc options", icon = { icon = "", color = "green" } },
-      { "<leader>O", group = "docs", desc = "documentation commands", icon = { icon = "󱔗", color = "blue" } },
+      { "<leader>O", group = "documentation", desc = "doc commands", icon = { icon = "󱔗", color = "blue" } },
       { "<leader>Oc", icon = { icon = "", color = "grey" } },
       { "<leader>Og", icon = { icon = "", color = "blue" } },
       { "<leader>Op", icon = { icon = "", color = "yellow" } },

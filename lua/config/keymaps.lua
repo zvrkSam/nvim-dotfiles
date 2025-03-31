@@ -306,9 +306,9 @@ end, { desc = "Make file executable" })
 -- Yank inside function
 map("n", "<leader>oy", "yVa}", { noremap = true, desc = "Yank inside function" })
 
-----------------------------------
------ DOCS [O]GROUP COMMANDS -----
-----------------------------------
+--------------------------------------
+----- DOCUMENT [O]GROUP COMMANDS -----
+--------------------------------------
 
 -- Docstring
 map("n", "<leader>Oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
