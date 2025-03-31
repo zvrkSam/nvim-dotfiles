@@ -230,8 +230,9 @@ map("n", "<leader>oC", function()
   vim.fn.setreg("+", table.concat(lines, "\n"))
 
   if #lines ~= 0 then
-    Snacks.notifier.notify("Diagnostics copied to clipboard!", "trace", {
+    Snacks.notifier.notify("Diagnostics copied to clipboard!", "warn", {
       title = "Clipboard",
+      icon = "",
       timeout = 3000,
     })
   end
@@ -244,8 +245,9 @@ map("n", "<leader>oD", function() Snacks.dashboard() end, { desc = "Open Dashboa
 -- Copy current file path
 map("n", "<leader>oF", function()
   vim.cmd('let @+ = expand("%:p")')
-  Snacks.notifier.notify("Path copied to clipboard!\n" .. vim.fn.expand("%:p"), "trace", {
+  Snacks.notifier.notify("Path copied to clipboard!\n" .. vim.fn.expand("%:p"), "warn", {
     title = "Clipboard",
+    icon = "",
     timeout = 3000,
   })
 end, { desc = "Copy current file path", silent = true })
