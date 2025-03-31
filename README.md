@@ -1,8 +1,5 @@
 ## My spin on Lazyvim 💤
 
-![Lazyvim](./images/Lazyvim1.png)
-![Lazyvim](./images/Lazyvim2.png)
-
 ### Install neovim
 
 - Official docs: [BUILD.md](https://github.com/neovim/neovim/blob/master/BUILD.md)
@@ -32,3 +29,8 @@ sudo rm /usr/local/bin/nvim
 ```bash
 sudo rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 ```
+
+### Screenshots
+
+![Lazyvim](./images/Lazyvim1.png)
+![Lazyvim](./images/Lazyvim2.png)
