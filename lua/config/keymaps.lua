@@ -25,7 +25,7 @@ map("n", "c", '"_c')
 -- Move cursor to the begining of first character (regular ^ is hard to reach)
 map({ "n", "v" }, "<A-e>", "^", { noremap = true })
 
--- Delete word in normal and insert mode
+-- Change word in normal and insert mode
 map("n", "<A-w>", "ciw", { noremap = true })
 map("n", "<A-W>", "ciW", { noremap = true })
 map("i", "<A-w>", "<c-o>ciw", { noremap = true })
