@@ -33,4 +33,5 @@ sudo rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 ### Screenshots
 
 ![Lazyvim](./images/Lazyvim1.png)
+
 ![Lazyvim](./images/Lazyvim2.png)
