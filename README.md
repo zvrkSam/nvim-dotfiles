@@ -1,6 +1,6 @@
 ## :heart: Lazyvim 💤
 
-![Lazyvim](https://drive.google.com/file/d/1kZNBCO8lUcj0SjUOQ0rPrLVDNViQqj5y/view?usp=drive_link)
+![Lazyvim](./images/Lazyvim1.png)
 
 ### Install neovim
 
