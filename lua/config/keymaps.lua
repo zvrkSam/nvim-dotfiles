@@ -194,6 +194,9 @@ map("n", "<leader>nx", function()
   vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
 end, { desc = "Toggle markdown task" })
 
+-- TODO:
+-- Add keybind to bold a selected text
+
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
 ----------------------------------
