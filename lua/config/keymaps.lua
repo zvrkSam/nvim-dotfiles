@@ -222,17 +222,36 @@ end, { desc = "Toggle boolean" })
 -- Docstring
 map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
 
+-- Copy diagnostics to clipboard
+map("n", "<leader>oC", function()
+  local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+  local diagnostics = vim.diagnostic.get(0, { lnum = line })
+  local lines = {}
+  for _, d in ipairs(diagnostics) do
+    table.insert(lines, d.message)
+  end
+  vim.fn.setreg("+", table.concat(lines, "\n"))
+
+  if #lines ~= 0 then
+    Snacks.notifier.notify("Diagnostics copied to clipboard!", "trace", {
+      title = "Clipboard",
+      timeout = 3000,
+    })
+  end
+end, { desc = "Copy diagnostics" })
+
 -- Open Dashboard
 -- stylua: ignore
 map("n", "<leader>oD", function() Snacks.dashboard() end, { desc = "Open Dashboard" })
 
 -- Copy current file path
-map(
-  "n",
-  "<leader>oF",
-  ':let @+ = expand("%:p")<cr>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<cr>',
-  { desc = "Copy current file path", silent = true }
-)
+map("n", "<leader>oF", function()
+  vim.cmd('let @+ = expand("%:p")')
+  Snacks.notifier.notify("Path copied to clipboard!\n" .. vim.fn.expand("%:p"), "trace", {
+    title = "Clipboard",
+    timeout = 3000,
+  })
+end, { desc = "Copy current file path", silent = true })
 
 -- GoDoc
 map("n", "<leader>oG", "<cmd>GoDoc<CR>", { desc = "Golang docs" })
@@ -292,21 +311,3 @@ end, { desc = "Make file executable" })
 
 -- Yank inside function
 map("n", "<leader>oy", "yVa}", { noremap = true, desc = "Yank inside function" })
-
--- Yank diagnostics to clipboard
-map("n", "<leader>oY", function()
-  local line = vim.api.nvim_win_get_cursor(0)[1] - 1
-  local diagnostics = vim.diagnostic.get(0, { lnum = line })
-  local lines = {}
-  for _, d in ipairs(diagnostics) do
-    table.insert(lines, d.message)
-  end
-  vim.fn.setreg("+", table.concat(lines, "\n"))
-
-  if #lines ~= 0 then
-    Snacks.notifier.notify("Diagnostics yanked to clipboard!", "info", {
-      title = "Diagnostics",
-      timeout = 2000,
-    })
-  end
-end, { desc = "Yank diagnostics" })
