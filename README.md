@@ -1,6 +1,7 @@
-## :heart: Lazyvim 💤
+## My spin on Lazyvim 💤
 
 ![Lazyvim](./images/Lazyvim1.png)
+![Lazyvim](./images/Lazyvim2.png)
 
 ### Install neovim
 
