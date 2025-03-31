@@ -219,9 +219,6 @@ map("n", "<leader>ob", function()
   vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
 end, { desc = "Toggle boolean" })
 
--- Docstring
-map("n", "<leader>oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
-
 -- Copy diagnostics to clipboard
 map("n", "<leader>oC", function()
   local line = vim.api.nvim_win_get_cursor(0)[1] - 1
@@ -252,9 +249,6 @@ map("n", "<leader>oF", function()
     timeout = 3000,
   })
 end, { desc = "Copy current file path", silent = true })
-
--- GoDoc
-map("n", "<leader>oG", "<cmd>GoDoc<CR>", { desc = "Golang docs" })
 
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
@@ -311,3 +305,16 @@ end, { desc = "Make file executable" })
 
 -- Yank inside function
 map("n", "<leader>oy", "yVa}", { noremap = true, desc = "Yank inside function" })
+
+----------------------------------
+----- DOCS [O]GROUP COMMANDS -----
+----------------------------------
+
+-- Docstring
+map("n", "<leader>Oc", require("codedocs").insert_docs, { desc = "Insert a docstring" })
+
+-- Golang documentation
+map("n", "<leader>Og", "<cmd>GoDoc<CR>", { desc = "Golang documentation" })
+
+-- Python documentation
+map("n", "<leader>Op", "<cmd>PyDoc<CR>", { desc = "Python documentation" })
