@@ -4,7 +4,7 @@
 
 -- vim.opt.hlsearch = true
 
-vim.opt.scrolloff = 20
+vim.opt.scrolloff = 13
 
 -- Copy indent from current line when starting a new line (When <CR> or 'o' or 'O')
 -- opt.autoindent = true
