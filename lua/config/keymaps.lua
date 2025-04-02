@@ -43,6 +43,9 @@ map("i", "<A-a>", "<c-o>A", { noremap = true })
 -- Center text in insert mode
 map("i", "<A-z>", "<esc>zza", { noremap = true })
 
+-- Select whole file
+map("n", "<A-f>", "ggVG", { desc = "Select whole file" })
+
 -- Keep cursor centered while scrolling up and down
 map("n", "<C-u>", "<C-u>zz")
 map("n", "<C-d>", "<C-d>zz")
@@ -295,9 +298,6 @@ map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true 
 
 -- Undo tree
 map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree" })
-
--- Select whole file
-map("n", "<leader>ov", "ggVG", { desc = "Select whole file" })
 
 -- Make file executable
 map("n", "<leader>ox", function()
