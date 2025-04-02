@@ -1,4 +1,5 @@
 -- Tips on how to improve virtual_lines and inline diagnostics
+-- https://www.reddit.com/r/neovim/comments/1jlq1iz/showing_diagnostics_virtual_lines_only_for/
 -- https://www.reddit.com/r/neovim/comments/1jpbc7s/disable_virtual_text_if_there_is_diagnostic_in/
 -- https://www.reddit.com/r/neovim/comments/1jo9oe9/i_set_up_my_config_to_use_virtual_lines_for/
 --
