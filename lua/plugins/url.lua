@@ -32,6 +32,7 @@ return {
         end,
         mode = { "n", "x" },
       },
+      { "gX", "<cmd>Browse<cr>", mode = { "n", "x" } },
     },
     cmd = { "Browse" },
     init = function()
