@@ -72,6 +72,10 @@ map("n", "<A-,>", "<c-w>10<") -- horizontal expand ( right )
 map("n", "<A-t>", "<c-W>+10") -- vertical expand ( top )
 map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
 
+-- Swapping layout
+map("n", "<F3>", "<C-w>H<CR>", { desc = "Swap from horizontal to vertical" })
+map("n", "<F4>", "<C-w>K<CR>", { desc = "Swap from vertical to horizontal" })
+
 ----------------------------
 ----- PICKER/FILE'S -----
 ----------------------------
