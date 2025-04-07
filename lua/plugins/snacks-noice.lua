@@ -4,13 +4,12 @@ return {
     priority = 1000,
     lazy = false,
     -- stylua: ignore
-    keys = {
+    keys = { -- Default keymaps for pickers but layouts are altered
       { "<leader>:", function() Snacks.picker.command_history({ layout = "select" }) end, desc = "Command history" },
       { "<leader>sc", function() Snacks.picker.command_history({ layout = "select" }) end, desc = "Command history" },
       { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "ivy_split" }) end, desc = "keymaps" },
       { "<leader>/", function() Snacks.picker.grep({ layout = "ivy_split" }) end, desc = "Grep" },
-      { "<leader>oR", function() Snacks.picker.registers() end, desc = "Registers" },
       { "<leader>,", function () Snacks.picker.buffers({ layout = "ivy_split" }) end, desc = "Buffers" }
     },
     opts = function(_, opts)
@@ -149,6 +148,24 @@ return {
                 { win = "list", border = "none" },
                 { win = "preview", title = "{preview}", width = 0.6, border = "left" },
               },
+            },
+          },
+          lines_select = {
+            preview = false,
+            layout = {
+              backdrop = false,
+              width = 0.8,
+              min_width = 80,
+              max_width = 120,
+              height = 0.5,
+              min_height = 3,
+              box = "vertical",
+              border = "rounded",
+              title = "{title}",
+              title_pos = "center",
+              { win = "input", height = 1, border = "bottom" },
+              { win = "list", border = "none" },
+              { win = "preview", title = "{preview}", height = 0.6, border = "top" },
             },
           },
         },
