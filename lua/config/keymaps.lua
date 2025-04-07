@@ -260,7 +260,7 @@ map("n", "<leader>oF", function()
 end, { desc = "Copy current file path", silent = true })
 
 -- For all lsp's sometimes manual lsp restart is required
-map("n", "<leader>ol", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
+map("n", "<leader>oL", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
 
 -- Delete all marks
 map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks" })
