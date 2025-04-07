@@ -29,7 +29,7 @@ return {
       { "<leader>Oc", icon = { icon = "", color = "grey" } },
       { "<leader>Og", icon = { icon = "", color = "blue" } },
       { "<leader>Op", icon = { icon = "", color = "yellow" } },
-      { "<leader>ol", icon = { icon = "󰒍", color = "red" } },
+      { "<leader>or", icon = { icon = "󰒍", color = "red" } },
       { "<leader>oo", icon = { icon = "󰽐", color = "cyan" } },
       { "<leader>fa", icon = { icon = "", color = "orange" } },
       { "<leader>fg", icon = { icon = "", color = "azure" } },
