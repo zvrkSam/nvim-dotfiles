@@ -72,13 +72,17 @@ map("n", "<A-,>", "<c-w>10<") -- horizontal expand ( right )
 map("n", "<A-t>", "<c-W>+10") -- vertical expand ( top )
 map("n", "<A-s>", "<c-W>-10") -- vertical expand ( bottom )
 
+-- Go to defenition in vertical and horizontal view
+map("n", "g|", "<cmd>vertical winc ]<CR>", { desc = "Go to vertical defenition" })
+map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defenition" })
+
 -- Swapping layout
 map("n", "<F3>", "<C-w>H<CR>", { desc = "Swap from horizontal to vertical" })
 map("n", "<F4>", "<C-w>K<CR>", { desc = "Swap from vertical to horizontal" })
 
-----------------------------
+-------------------------
 ----- PICKER/FILE'S -----
-----------------------------
+-------------------------
 
 -- Oil
 map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil" })
@@ -97,16 +101,10 @@ map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", noremap = true
 map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
 map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
 
--- lazyterm remap
--- stylua: ignore
-local lazyterm = function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end
-map("n", "<leader>f?", lazyterm, { desc = "Terminal (Root Dir)" })
--- stylua: ignore
-map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
-
--- Go to defenition in vertical and horizontal view
-map("n", "g|", "<cmd>vertical winc ]<CR>", { desc = "Go to vertical defenition" })
-map("n", "g-", "<cmd>horizontal winc ]<CR>", { desc = "Go to horizontal defenition" })
+-- Search in buffer
+map("n", "<BS>", function()
+  Snacks.picker.lines({ title = "Search in buffer", layout = "lines_select" })
+end, { desc = "Search in buffer" })
 
 -- Save file to arrow
 -- to toggle arrow menu is the letter R
@@ -136,19 +134,18 @@ map({ "n", "t" }, "<A-F>", function()
   else
     Snacks.terminal.toggle("zsh", {
       cwd = current_dir,
-      env = {
-        TERM = "screen-256color",
-      },
-      win = {
-        style = "terminal",
-        relative = "editor",
-        width = 0.85,
-        height = 0.90,
-        border = "rounded",
-      },
+      env = { TERM = "screen-256color" },
+      win = { style = "terminal", relative = "editor", width = 0.85, height = 0.90, border = "rounded" },
     })
   end
 end, { desc = "Toggle floating terminal" })
+
+-- lazyterm remap
+-- stylua: ignore
+local lazyterm = function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end
+map("n", "<leader>f?", lazyterm, { desc = "Terminal (Root Dir)" })
+-- stylua: ignore
+map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 
 -------------------
 ----- UTILITY -----
@@ -259,11 +256,6 @@ map("n", "<leader>oF", function()
   })
 end, { desc = "Copy current file path", silent = true })
 
--- Search in buffer
-map("n", "<leader>ol", function()
-  Snacks.picker.lines({ title = "Search in buffer", layout = "lines_select" })
-end, { desc = "Search in buffer" })
-
 -- Delete all marks
 map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks" })
 
@@ -318,6 +310,9 @@ end, { desc = "Make file executable" })
 
 -- Yank inside function
 map("n", "<leader>oy", "ya}", { noremap = true, desc = "Yank inside function" })
+
+-- Grep dot files
+map("n", "<leader>o.", "<cmd>SearchDots<CR>", { desc = "Search dot files" })
 
 --------------------------------------
 ----- DOCUMENT [O]GROUP COMMANDS -----
