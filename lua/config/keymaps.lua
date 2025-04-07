@@ -259,6 +259,11 @@ map("n", "<leader>oF", function()
   })
 end, { desc = "Copy current file path", silent = true })
 
+-- Search in buffer
+map("n", "<leader>ol", function()
+  Snacks.picker.lines({ title = "Search in buffer", layout = "lines_select" })
+end, { desc = "Search in buffer" })
+
 -- For all lsp's sometimes manual lsp restart is required
 map("n", "<leader>oL", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
 
