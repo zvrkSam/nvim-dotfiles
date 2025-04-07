@@ -264,9 +264,6 @@ map("n", "<leader>ol", function()
   Snacks.picker.lines({ title = "Search in buffer", layout = "lines_select" })
 end, { desc = "Search in buffer" })
 
--- For all lsp's sometimes manual lsp restart is required
-map("n", "<leader>oL", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
-
 -- Delete all marks
 map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks" })
 
@@ -297,6 +294,9 @@ map("v", "<leader>oo", "y`>pgv<cmd>normal gc<CR>", { desc = "Duplicate and comme
 
 -- Save and quit neovim (keep layout)
 map("n", "<leader>oq", "<cmd>wqa<CR>", { desc = "Save and Quit neovim" })
+
+-- For all lsp's sometimes manual lsp restart is required
+map("n", "<leader>or", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
 
 -- Registers in snacks picker
 -- stylua: ignore
