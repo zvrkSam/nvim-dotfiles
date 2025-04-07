@@ -298,6 +298,10 @@ map("v", "<leader>oo", "y`>pgv<cmd>normal gc<CR>", { desc = "Duplicate and comme
 -- Save and quit neovim (keep layout)
 map("n", "<leader>oq", "<cmd>wqa<CR>", { desc = "Save and Quit neovim" })
 
+-- Registers in snacks picker
+-- stylua: ignore
+map("n", "<leader>oR", function() Snacks.picker.registers({ layout = "select"}) end, { desc = "Registers" })
+
 -- LSP Symbols
 -- stylua: ignore
 map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
