@@ -1,6 +1,6 @@
 return {
   {
-    "stevearc/oil.nvim",
+    "stevearc/oil.nvim", -- Buffer for your files and directories
     event = "VeryLazy",
     opts = {
       default_file_explorer = true,
@@ -25,7 +25,7 @@ return {
   },
   {
     -- TODO: Add timeout option for popup menu | like which-key
-    "otavioschwanck/arrow.nvim",
+    "otavioschwanck/arrow.nvim", -- Harpoon like alternative
     event = "VeryLazy",
     lazy = true,
     opts = {
@@ -37,16 +37,16 @@ return {
     },
   },
   {
-    "bassamsdata/namu.nvim",
+    "bassamsdata/namu.nvim", -- Zed like symbols picker that preserves order
     event = "VeryLazy",
     opts = {},
   },
   {
-    "mbbill/undotree",
+    "mbbill/undotree", -- See list of changes you made in a file
     lazy = false,
   },
   {
-    "Aasim-A/scrollEOF.nvim",
+    "Aasim-A/scrollEOF.nvim", -- Scrolloff for end of the file
     event = { "CursorMoved", "WinScrolled" },
     opts = {},
   },
