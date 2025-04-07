@@ -37,6 +37,11 @@ return {
     },
   },
   {
+    "bassamsdata/namu.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
     "mbbill/undotree",
     lazy = false,
   },
