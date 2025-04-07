@@ -52,3 +52,6 @@ search_by_file_type("FindMDX", "*.mdx", "Find mdx files")
 -- Note lookup
 search_by_directory("SearchNotes", "~/dev/notes", "Search notes by name")
 grep_notes("GrepNotes", "~/dev/notes/", "Grep in notes")
+
+-- Dot files lookup
+search_by_directory("SearchDots", "~/dev/dots/", "Grep dot files")
