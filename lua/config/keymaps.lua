@@ -310,7 +310,7 @@ map("n", "<leader>ox", function()
 end, { desc = "Make file executable" })
 
 -- Yank inside function
-map("n", "<leader>oy", "yVa}", { noremap = true, desc = "Yank inside function" })
+map("n", "<leader>oy", "ya}", { noremap = true, desc = "Yank inside function" })
 
 --------------------------------------
 ----- DOCUMENT [O]GROUP COMMANDS -----
