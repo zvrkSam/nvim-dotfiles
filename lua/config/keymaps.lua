@@ -269,9 +269,7 @@ map("n", "<leader>om", "<cmd>delm!<CR>", { desc = "Delete all marks" })
 
 -- Notifications
 -- stylua: ignore
-map("n", "<leader>oN", function() Snacks.picker.notifications() end, { desc = "Notifications" })
--- stylua: ignore
-map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "Notifications(win)" })
+map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "Notifications" })
 
 -- Duplicate and comment out
 map("n", "<leader>oo", "yy<cmd>normal gcc<CR>p", { desc = "Duplicate and comment out" })
