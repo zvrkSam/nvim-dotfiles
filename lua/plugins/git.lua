@@ -69,6 +69,7 @@ return {
   {
     -- https://github.com/sindrets/diffview.nvim?tab=readme-ov-file#configuration
     "sindrets/diffview.nvim",
+    event = "VeryLazy",
     opts = {},
   },
 }
