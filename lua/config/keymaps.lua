@@ -164,9 +164,11 @@ map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVi
 ----- GIT -----
 ---------------
 
--- NOTE: Diffview exists
--- :Diffview Open / Close
--- https://github.com/sindrets/diffview.nvim
+-- Close tab (Diffview uses tabs)
+map("n", "Q", ":tabclose<CR>", { desc = "Tabclose", silent = true })
+
+-- Open Diffview
+map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Diffview open" })
 
 -- Open Lazygit in new tmux window
 map("n", "<leader>gt", function()
