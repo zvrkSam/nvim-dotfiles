@@ -3,6 +3,7 @@
 ### Install neovim
 
 - Official docs: [BUILD.md](https://github.com/neovim/neovim/blob/master/BUILD.md)
+- Test
 
 ### My config
 
