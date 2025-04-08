@@ -42,6 +42,7 @@ return {
       { "<leader>fg", icon = { icon = "", color = "azure" } },
       { "<leader>ft", icon = { icon = "", color = "blue" } },
       { "<leader>fT", icon = { icon = "", color = "blue" } },
+      { "<leader>gd", icon = { icon = "", color = "azure" } },
       { "<leader>nn", icon = { icon = "", color = "grey" } },
       { "<leader>nN", icon = { icon = "", color = "grey" } },
       { "<leader>fm", icon = { icon = "", color = "grey" } },
