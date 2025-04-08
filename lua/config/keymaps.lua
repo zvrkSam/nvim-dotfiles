@@ -165,7 +165,7 @@ map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVi
 ---------------
 
 -- Close tab (Diffview uses tabs)
-map("n", "Q", ":tabclose<CR>", { desc = "Tabclose", silent = true })
+map("n", "Q", ":tabclose<CR>", { desc = "Close current tab" })
 
 -- Open Diffview
 map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Diffview open" })
