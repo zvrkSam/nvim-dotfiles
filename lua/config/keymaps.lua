@@ -314,7 +314,7 @@ end, { desc = "Make file executable" })
 map("n", "<leader>oy", "ya}", { noremap = true, desc = "Yank inside function" })
 
 -- Grep dot files
-map("n", "<leader>o.", "<cmd>SearchDots<CR>", { desc = "Search dot files" })
+-- map("n", "<leader>o.", "<cmd>SearchDots<CR>", { desc = "Search dot files" })
 
 --------------------------------------
 ----- DOCUMENT [O]GROUP COMMANDS -----
