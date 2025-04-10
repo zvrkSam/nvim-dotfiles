@@ -31,6 +31,8 @@ local tns = {
 }
 
 local rp = {
+  base = "#232136",
+  surface = "#2a273f",
   overlay = "#393552",
   muted = "Muted",
   subtle = "Subtle",
@@ -41,6 +43,7 @@ local rp = {
   pine = "Pine",
   foam = "#9FDBE6",
   iris = "Iris",
+  highlight_low = "#2a283e",
   highlight_high = "#56526e",
 }
 
@@ -49,7 +52,7 @@ local rp = {
 return {
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    lazy = false,
     opts = {
       style = "moon",
       -- style = "night",
@@ -227,6 +230,7 @@ return {
       },
       highlight_groups = {
         Visual = { bg = rp.overlay, bold = true },
+        LspReferenceRead = { bg = rp.base },
 
         -- UI
         FloatTitle = { fg = rp.love },
