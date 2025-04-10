@@ -30,6 +30,20 @@ local tns = {
   bg_dark = "#1F2335",
 }
 
+local rp = {
+  overlay = "#393552",
+  muted = "Muted",
+  subtle = "Subtle",
+  text = "Text",
+  love = "Love",
+  gold = "Gold",
+  rose = "Rose",
+  pine = "Pine",
+  foam = "#9FDBE6",
+  iris = "Iris",
+  highlight_high = "#56526e",
+}
+
 -- :Inspect and see highlights
 -- :Telescope highlights to see all of the highlights
 return {
@@ -196,7 +210,7 @@ return {
   },
   {
     "rose-pine/neovim",
-    enabled = false,
+    enabled = true,
     name = "rose-pine",
     lazy = false,
     opts = {
@@ -206,11 +220,52 @@ return {
         italic = false,
         transparency = true,
       },
+      palette = {
+        moon = {
+          foam = rp.foam,
+        },
+      },
       highlight_groups = {
+        Visual = { bg = rp.overlay, bold = true },
+
+        -- UI
+        FloatTitle = { fg = rp.love },
+        TreesitterContextLineNumber = { fg = rp.text, bold = true },
+        SnacksNotifierBorderInfo = { fg = rp.pine },
+        SnacksNotifierIconInfo = { fg = rp.pine },
+        SnacksNotifierTitleInfo = { fg = rp.pine },
+        SnacksNotifierFooterInfo = { fg = rp.pine },
+        SnacksNotifierHistoryTitle = { fg = rp.pine },
+        SnacksNotifierHistoryDateTime = { fg = rp.pine },
+
+        -- Snacks
+        SnacksDashboardHeader = { fg = rp.iris },
+        SnacksDashboardFooter = { fg = rp.iris },
+        SnacksDashboardTitle = { fg = rp.pine },
+        SnacksDashboardIcon = { fg = rp.rose },
+        SnacksDashboardDesc = { fg = rp.love },
+        SnacksDashboardSpecial = { fg = rp.gold },
+        SnacksDashboardDir = { fg = rp.subtle },
+        SnacksDashboardFile = { fg = rp.love },
+
+        -- Noice
+        NoiceCmdlineIcon = { fg = rp.love },
+        NoiceCmdlinePopupBorder = { fg = rp.muted },
+        NoiceCmdlinePopupTitleCmdline = { fg = rp.love },
+        NoiceCmdlinePopupTitleFilter = { fg = rp.love },
+        NoiceCmdlinePopupTitleLua = { fg = rp.pine },
+        NoicePopupmenuSelected = { fg = rp.pine, bold = true },
+        NoicePopupmenuMatch = { fg = rp.rose },
+        -- NoiceConfirmBorder = { fg = tn.indigo },
+
+        -- GitSigns
         CursorLineNr = { fg = tnm.red, bold = true },
-        GitSignsAdd = { fg = "foam", bold = true },
-        GitSignsChange = { fg = "rose", bold = true },
-        GitSignsDelete = { fg = "love", bold = true },
+        GitSignsAdd = { fg = rp.pine, bold = true },
+        GitSignsChange = { fg = rp.rose, bold = true },
+        GitSignsDelete = { fg = rp.love, bold = true },
+
+        -- WhichKey
+        WhichKeyTitle = { fg = rp.love },
       },
     },
   },
@@ -219,8 +274,8 @@ return {
     opts = {
       -- colorscheme = "oldworld",
       -- colorscheme = "kanagawa-paper",
-      -- colorscheme = "rose-pine",
-      colorscheme = "tokyonight",
+      colorscheme = "rose-pine",
+      -- colorscheme = "tokyonight",
     },
   },
 }
