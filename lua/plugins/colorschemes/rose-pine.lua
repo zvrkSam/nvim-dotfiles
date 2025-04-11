@@ -76,6 +76,18 @@ return {
 
       -- WhichKey
       WhichKeyTitle = { fg = rp.love },
+
+      -- Todo
+      TodoFgTODO = { fg = rp.gold },
+      TodoBgTODO = { fg = rp.base, bg = rp.gold, bold = true },
+      TodoFgWARN = { fg = rp.love },
+      TodoBgWARN = { fg = rp.base, bg = rp.love, bold = true },
+      TodoFgHACK = { fg = rp.iris },
+      TodoBgHACK = { fg = rp.base, bg = rp.iris, bold = true },
+      TodoFgNOTE = { fg = rp.rose },
+      TodoBgNOTE = { fg = rp.base, bg = rp.rose, bold = true },
+      TodoFgTEST = { fg = rp.iris },
+      TodoBgTEST = { fg = rp.base, bg = rp.iris, bold = true },
     },
   },
 }

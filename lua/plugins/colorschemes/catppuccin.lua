@@ -19,7 +19,10 @@ return {
         teal = cat.teal,
       },
     },
-    -- If you were to do catppuccin again redo all of these colors
+    integrations = {
+      noice = true,
+    },
+    -- TODO: If you were to do catppuccin again redo all of these colors
     highlight_overrides = {
       all = function(colors)
         return {
@@ -53,9 +56,6 @@ return {
           TodoBgTEST = { fg = colors.mantle, bg = colors.sapphire, style = { "bold" } },
         }
       end,
-    },
-    integrations = {
-      noice = true,
     },
   },
 }
