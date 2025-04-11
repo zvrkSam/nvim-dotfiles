@@ -20,19 +20,6 @@ return {
     },
   },
   {
-    "thesimonho/kanagawa-paper.nvim",
-    enabled = false,
-    lazy = true,
-    opts = {
-      transparent = true,
-      dimInactive = false,
-      commentStyle = { italic = false },
-      keywordStyle = { italic = false },
-      functionStyle = { italic = false },
-      typeStyle = { italic = false },
-    },
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "oldworld",
