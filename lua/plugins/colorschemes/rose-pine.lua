@@ -33,12 +33,15 @@ return {
       },
     },
     highlight_groups = {
+      -- Code
       Visual = { bg = rp.overlay, bold = true },
       LspReferenceRead = { bg = rp.base },
 
       -- UI
       FloatTitle = { fg = rp.love },
       TreesitterContextLineNumber = { fg = rp.text, bold = true },
+
+      -- Snacks
       SnacksNotifierBorderInfo = { fg = rp.pine },
       SnacksNotifierIconInfo = { fg = rp.pine },
       SnacksNotifierTitleInfo = { fg = rp.pine },
@@ -46,13 +49,13 @@ return {
       SnacksNotifierHistoryTitle = { fg = rp.pine },
       SnacksNotifierHistoryDateTime = { fg = rp.pine },
 
-      -- Snacks
+      -- Dashboard
       SnacksDashboardHeader = { fg = rp.iris },
       SnacksDashboardFooter = { fg = rp.iris },
       SnacksDashboardTitle = { fg = rp.pine },
       SnacksDashboardIcon = { fg = rp.rose },
       SnacksDashboardDesc = { fg = rp.love },
-      SnacksDashboardSpecial = { fg = rp.gold },
+      SnacksDashboardSpecial = { fg = rp.rose },
       SnacksDashboardDir = { fg = rp.subtle },
       SnacksDashboardFile = { fg = rp.love },
 
@@ -64,7 +67,6 @@ return {
       NoiceCmdlinePopupTitleLua = { fg = rp.pine },
       NoicePopupmenuSelected = { fg = rp.pine, bold = true },
       NoicePopupmenuMatch = { fg = rp.rose },
-      -- NoiceConfirmBorder = { fg = tn.indigo },
 
       -- GitSigns
       CursorLineNr = { fg = rp.iris, bold = true },
