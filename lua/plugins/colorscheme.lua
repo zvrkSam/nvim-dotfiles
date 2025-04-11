@@ -9,13 +9,13 @@ return {
     enabled = false,
     opts = {
       variant = "oled", -- default, oled, cooler
-      styles = { -- You can pass the style using the format: style = true
-        comments = { italic = false }, -- style for comments
-        keywords = { italic = false }, -- style for keywords
-        identifiers = { italic = false }, -- style for identifiers
-        functions = { italic = false }, -- style for functions
-        variables = { italic = false }, -- style for variables
-        booleans = { italic = false }, -- style for booleans
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        identifiers = { italic = false },
+        functions = { italic = false },
+        variables = { italic = false },
+        booleans = { italic = false },
       },
     },
   },
