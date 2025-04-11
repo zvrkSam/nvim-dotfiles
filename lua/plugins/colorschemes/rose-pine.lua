@@ -9,6 +9,7 @@ local rp = {
   gold = "Gold",
   rose = "Rose",
   pine = "Pine",
+  pine_light = "#4DAAD0",
   foam = "#9FDBE6",
   iris = "Iris",
   highlight_low = "#2a283e",
@@ -36,6 +37,7 @@ return {
       -- Code
       Visual = { bg = rp.overlay, bold = true },
       LspReferenceRead = { bg = rp.base },
+      ["@punctuation.bracket"] = { fg = rp.muted },
 
       -- UI
       FloatTitle = { fg = rp.love },
