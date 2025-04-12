@@ -200,8 +200,16 @@ map("n", "<leader>nx", function()
   vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
 end, { desc = "Toggle markdown task" })
 
--- TODO:
--- Add keybind to bold a selected text
+-- Bold word under cursor or select few words and bold them (.md files only)
+vim.api.nvim_create_augroup("markdown_bold", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = "markdown_bold",
+  pattern = "markdown",
+  callback = function()
+    map("n", "<leader>nb", 'ciw**<C-r>"**<Esc>', { buffer = true })
+    map("v", "<leader>nb", 'c**<C-r>"**<Esc>', { buffer = true })
+  end,
+})
 
 ----------------------------------
 ----- MISC [o]GROUP COMMANDS -----
