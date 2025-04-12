@@ -40,6 +40,9 @@ return {
       LspReferenceRead = { bg = rp.base },
       ["@punctuation.bracket"] = { fg = rp.muted },
 
+      -- Markdown
+      ["@markup.strong"] = { fg = rp.love },
+
       -- UI
       FloatTitle = { fg = rp.love },
       TreesitterContextLineNumber = { fg = rp.text, bold = true },
