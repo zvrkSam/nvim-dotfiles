@@ -4,7 +4,10 @@
 -- Golang docs in neovim
 return {
   {
-    "fredrikaverpil/godoc.nvim",
+    "jeangiraldoo/codedocs.nvim", -- Insert document strings
+  },
+  {
+    "fredrikaverpil/godoc.nvim", -- Golang documentation
     version = "*",
     event = "VeryLazy",
     build = "go install github.com/lotusirous/gostdsym/stdsym@latest",
@@ -16,7 +19,7 @@ return {
     },
   },
   {
-    "fredrikaverpil/pydoc.nvim",
+    "fredrikaverpil/pydoc.nvim", -- Python documentation
     event = "VeryLazy",
     cmd = { "PyDoc" },
     opts = {
