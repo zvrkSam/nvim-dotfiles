@@ -183,6 +183,7 @@ end, { desc = "Lazygit in tmux (Root Dir)" })
 ----- NOTES -----
 -----------------
 
+-- Toggle checked/unchecked
 map("n", "<leader>nx", function()
   local line = vim.api.nvim_get_current_line()
   local new_line
