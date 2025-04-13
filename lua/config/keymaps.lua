@@ -281,7 +281,7 @@ vim.keymap.set("n", "<leader>nb", function()
       vim.cmd("normal viw")
       vim.cmd("normal 2gsa*")
     end
-    vim.notify("Bolded current word", vim.log.levels.INFO)
+    -- vim.notify("Bolded current word", vim.log.levels.INFO)
   end
 end, { desc = "Bold text" })
 
