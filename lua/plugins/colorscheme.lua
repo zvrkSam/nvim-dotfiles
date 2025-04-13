@@ -9,7 +9,6 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "oldworld",
-      -- colorscheme = "kanagawa-paper",
       colorscheme = "rose-pine",
       -- colorscheme = "tokyonight",
     },
