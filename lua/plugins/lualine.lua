@@ -43,6 +43,9 @@ return {
       return string.format(" %s", get_buffer_count())
     end
 
+    -- Get colors for desired theme
+    -- Safely attempts to load color palettes from both tokyonight and rose-pine themes
+    -- Returns a table containing whichever theme colors are available
     local function get_theme_colors()
       local theme_colors = {}
       local tokyonight_ok, tokyonight = pcall(require, "tokyonight.colors")
@@ -60,11 +63,16 @@ return {
 
     local theme_colors = get_theme_colors()
 
+    ---@param tokyonight_key string
+    ---@param rose_pine_key string
+    ---@return string
     local function get_color(tokyonight_key, rose_pine_key)
       if theme_colors.tokyonight then
         return theme_colors.tokyonight[tokyonight_key]
       elseif theme_colors.rose_pine then
         return theme_colors.rose_pine[rose_pine_key]
+      else
+        return ""
       end
     end
 
