@@ -32,8 +32,9 @@ local tns = {
 
 return {
   "folke/tokyonight.nvim",
-  lazy = false,
+  lazy = true,
   -- name = "tokyonight",
+  enabled = false,
   opts = {
     style = "moon",
     -- style = "night",
