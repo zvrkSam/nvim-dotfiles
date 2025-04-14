@@ -22,7 +22,7 @@ return {
   "rose-pine/neovim",
   enabled = true,
   name = "rose-pine",
-  lazy = true,
+  lazy = false,
   opts = {
     variant = "auto", -- auto, main, moon, or dawn
     dark_variant = "moon",
