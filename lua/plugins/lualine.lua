@@ -43,7 +43,30 @@ return {
       return string.format(" %s", get_buffer_count())
     end
 
-    local colors = require("tokyonight.colors").setup()
+    local function get_theme_colors()
+      local theme_colors = {}
+      local tokyonight_ok, tokyonight = pcall(require, "tokyonight.colors")
+      if tokyonight_ok then
+        theme_colors.tokyonight = tokyonight.setup()
+      end
+
+      local rose_pine_ok, rose_pine = pcall(require, "rose-pine.palette")
+      if rose_pine_ok then
+        theme_colors.rose_pine = rose_pine
+      end
+
+      return theme_colors
+    end
+
+    local theme_colors = get_theme_colors()
+
+    local function get_color(tokyonight_key, rose_pine_key)
+      if theme_colors.tokyonight then
+        return theme_colors.tokyonight[tokyonight_key]
+      elseif theme_colors.rose_pine then
+        return theme_colors.rose_pine[rose_pine_key]
+      end
+    end
 
     opts.options = {
       --        
@@ -77,7 +100,7 @@ return {
               return ""
             end
           end,
-          color = { fg = colors.green },
+          color = { fg = get_color("green", "leaf") },
           -- separator = "",
           separator = "",
           padding = { left = 1, right = 0 },
@@ -85,7 +108,7 @@ return {
         {
           buffer_count,
           separator = "",
-          color = { fg = colors.blue },
+          color = { fg = get_color("blue", "foam") },
           padding = { left = 1, right = 0 },
         },
         -- LazyVim.lualine.root_dir(),
