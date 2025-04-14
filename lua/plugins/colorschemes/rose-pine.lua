@@ -9,6 +9,7 @@ local rp = {
   gold = "Gold",
   rose = "Rose",
   pine = "Pine",
+  leaf = "#79C0B3",
   pine_light = "#4DAAD0",
   -- foam = "#9FDBE6", -- original but improved
   foam = "#9FBAE6",
@@ -19,7 +20,7 @@ local rp = {
 
 return {
   "rose-pine/neovim",
-  -- enabled = false,
+  enabled = true,
   name = "rose-pine",
   lazy = true,
   opts = {
@@ -32,11 +33,13 @@ return {
     palette = {
       moon = {
         foam = rp.foam,
+        leaf = rp.leaf,
       },
     },
     highlight_groups = {
       -- Code
       Visual = { bg = rp.overlay, bold = true },
+      SpellBad = { sp = rp.love },
       LspReferenceRead = { bg = rp.base },
       ["@punctuation.bracket"] = { fg = rp.muted },
 
