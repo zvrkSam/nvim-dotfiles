@@ -151,6 +151,10 @@ map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd
 ----- UTILITY -----
 -------------------
 
+-- LSP Symbols
+-- stylua: ignore
+map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
+
 -- Trouble
 map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true })
 
@@ -375,10 +379,6 @@ map("n", "<leader>or", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
 -- Registers in snacks picker
 -- stylua: ignore
 map("n", "<leader>oR", function() Snacks.picker.registers({ layout = "select"}) end, { desc = "Registers" })
-
--- LSP Symbols
--- stylua: ignore
-map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
 
 -- Save all files
 map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true })
