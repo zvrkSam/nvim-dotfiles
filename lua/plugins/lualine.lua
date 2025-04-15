@@ -2,17 +2,16 @@ return {
   "nvim-lualine/lualine.nvim",
   -- enabled = false,
   event = "VeryLazy",
-  init = function()
-    vim.g.lualine_laststatus = vim.o.laststatus
-    if vim.fn.argc(-1) > 0 then
-      -- set an empty statusline till lualine loads
-      vim.o.statusline = " "
-    else
-      -- hide the statusline on the starter page
-      vim.o.laststatus = 0
-    end
-  end,
   opts = function(_, opts)
+    -- Get word count for markdown file
+    local function word_count()
+      if vim.bo.filetype == "markdown" then
+        return " " .. vim.fn.wordcount().words
+      else
+        return ""
+      end
+    end
+
     -- Function to get the number of open buffers using the :ls command
     local function get_buffer_count()
       local buffers = vim.fn.execute("ls")
@@ -93,6 +92,7 @@ return {
         { "branch" },
         { "diff" },
         { "diagnostics" },
+        { word_count, color = { fg = get_color("blue", "rose") }, separator = "" },
       },
       lualine_c = {
         {
