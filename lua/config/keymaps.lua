@@ -155,6 +155,10 @@ map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd
 -- stylua: ignore
 map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP Symbols" })
 
+-- Open diagnostics in float
+-- stylua: ignore
+map("n", "Z", function () vim.diagnostic.open_float() end, { noremap = true, desc = "Open diagnostic in float"})
+
 -- Trouble
 map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true })
 
