@@ -31,6 +31,10 @@ return {
       transparency = true,
     },
     palette = {
+      main = {
+        foam = rp.foam,
+        leaf = rp.leaf,
+      },
       moon = {
         foam = rp.foam,
         leaf = rp.leaf,
