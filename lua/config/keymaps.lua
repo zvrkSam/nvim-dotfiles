@@ -8,9 +8,38 @@
 local map = vim.keymap.set
 
 -- Deleted keymaps
-vim.keymap.del("n", "<leader>l", { noremap = true })
-vim.keymap.del("n", "<leader>L", { noremap = true })
-vim.keymap.del("n", "<leader>n", { noremap = true })
+vim.keymap.del("n", "<leader>l")
+vim.keymap.del("n", "<leader>L")
+vim.keymap.del("n", "<leader>n")
+
+--------------------
+----- TERMINAL -----
+--------------------
+
+-- Toggle floating terminal
+map({ "n", "t" }, "<A-F>", function()
+  local current_dir = vim.fn.expand("%:p:h")
+  if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
+    current_dir = vim.fn.getcwd()
+  end
+  local in_terminal = vim.bo.buftype == "terminal"
+  if in_terminal then
+    vim.cmd("hide")
+  else
+    Snacks.terminal.toggle("zsh", {
+      cwd = current_dir,
+      env = { TERM = "screen-256color" },
+      win = { style = "terminal", relative = "editor", width = 0.85, height = 0.90, border = "rounded" },
+    })
+  end
+end, { desc = "Toggle floating terminal" })
+
+-- Lazyterm remap
+-- stylua: ignore
+local lazyterm = function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end
+map("n", "<leader>f?", lazyterm, { desc = "Terminal (Root Dir)" })
+-- stylua: ignore
+map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 
 ------------------------------------
 ----- CURSOR/TEXT MANIPULATION -----
@@ -23,25 +52,25 @@ map("n", "x", '"_x')
 map("n", "c", '"_c')
 
 -- Move cursor to the begining of first character (regular ^ is hard to reach)
-map({ "n", "v" }, "<A-e>", "^", { noremap = true })
+map({ "n", "v" }, "<A-e>", "^")
 
 -- Change word in normal and insert mode
-map("n", "<A-w>", "ciw", { noremap = true })
-map("n", "<A-W>", "ciW", { noremap = true })
-map("i", "<A-w>", "<c-o>ciw", { noremap = true })
+map("n", "<A-w>", "ciw")
+map("n", "<A-W>", "ciW")
+map("i", "<A-w>", "<c-o>ciw")
 
 -- <Delete> key functionality
-map({ "n", "i" }, "<A-x>", "<Del>", { noremap = true })
+map({ "n", "i" }, "<A-x>", "<Del>")
 
 -- Change the first letter of word from lower to upper and vice versa
-map("i", "<A-d>", "<esc>b~ea", { noremap = true })
-map("n", "<A-d>", "<esc>b~e", { noremap = true })
+map("i", "<A-d>", "<esc>b~ea")
+map("n", "<A-d>", "<esc>b~e")
 
 -- Jump to end of of the line while in insert mode
-map("i", "<A-a>", "<c-o>A", { noremap = true })
+map("i", "<A-a>", "<c-o>A")
 
 -- Center text in insert mode
-map("i", "<A-z>", "<esc>zza", { noremap = true })
+map("i", "<A-z>", "<esc>zza")
 
 -- Select whole file
 map("n", "<A-f>", "ggVG", { desc = "Select whole file" })
@@ -50,21 +79,31 @@ map("n", "<A-f>", "ggVG", { desc = "Select whole file" })
 map("n", "<C-u>", "<C-u>zz")
 map("n", "<C-d>", "<C-d>zz")
 
+--------------------
+----- MOVEMENT -----
+--------------------
+
+-- Next Previous command in command line
+map("c", "<C-j>", "<Down>", { desc = "Next Command" })
+map("c", "<C-k>", "<Up>", { desc = "Previous Command" })
+
+-- Shell commands
+map("n", "<leader>C", ":!", { desc = "Shell commands | Filter" })
+-- Search web with custom script
+map("n", "<leader>F", ":!web ", { desc = "Search web" })
+
 -------------------------
 ----- WINDOW/BUFFER -----
 -------------------------
 
-map("c", "<C-j>", "<Down>", { desc = "Next Command" })
-map("c", "<C-k>", "<Up>", { desc = "Previous Command" })
-
 -- Delete buffer
 -- stylua: ignore
-map("n", "<leader>d", function () Snacks.bufdelete() end, { desc = "Delete buffer", noremap = true })
+map("n", "<leader>d", function () Snacks.bufdelete() end, { desc = "Delete buffer" })
 -- stylua: ignore
-map("n", "<leader>D", function () Snacks.bufdelete.other() end, { desc = "Delete all buffers", noremap = true })
+map("n", "<leader>D", function () Snacks.bufdelete.other() end, { desc = "Delete all buffers" })
 
 -- Delete window
-map("n", "<leader>W", ":close<CR>", { desc = "Delete window", noremap = true, silent = true })
+map("n", "<leader>W", ":close<CR>", { desc = "Delete window", silent = true })
 
 -- Resizing of windows
 map("n", "<A-.>", "<c-w>10>") -- horizontal expand ( left )
@@ -84,68 +123,25 @@ map("n", "<F4>", "<C-w>K<CR>", { desc = "Swap from vertical to horizontal" })
 ----- PICKER/FILE'S -----
 -------------------------
 
--- Oil
-map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil" })
-
--- Note lookup
-map("n", "<leader>nN", ":SearchNotes<CR>", { desc = "Find Notes", noremap = true, silent = true })
-map("n", "<leader>nn", ":GrepNotes<CR>", { desc = "Grep Notes", noremap = true, silent = true })
--- stylua: ignore
-
--- Lookup specific file type
-map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", noremap = true, silent = true })
--- map("n", "<leader>fG", "<cmd>Telescope git_files<CR>", { desc = "Find Files (git-files)", noremap = true,   })
-map("n", "<leader>fm", ":FindMD<CR>", { desc = "Find Files (md)", noremap = true, silent = true })
-map("n", "<leader>fM", ":FindMDX<CR>", { desc = "Find Files (mdx)", noremap = true, silent = true })
-map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", noremap = true, silent = true })
-map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", noremap = true, silent = true })
-map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", noremap = true, silent = true })
-
--- Search in buffer
+-- Line select in buffer
 map("n", "<BS>", function()
   Snacks.picker.lines({ title = "Search in buffer", layout = "lines_select" })
-end, { desc = "Search in buffer" })
+end, { desc = "Line select in buffer" })
+
+-- Oil
+map("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil" })
 
 -- Save file to arrow
 -- to toggle arrow menu is the letter R
 map("n", "<leader>a", require("arrow.persist").toggle, { desc = "Arrow File Mappings (save)" })
 
---------------------
------ MOVEMENT -----
---------------------
-
--- Shell commands
-map("n", "<leader>C", ":!", { noremap = true, desc = "Shell commands | Filter" })
--- Search web with custom script
-map("n", "<leader>F", ":!web ", { noremap = true, desc = "Search web" })
-
---------------------
------ TERMINAL -----
---------------------
-
-map({ "n", "t" }, "<A-F>", function()
-  local current_dir = vim.fn.expand("%:p:h")
-  if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
-    current_dir = vim.fn.getcwd()
-  end
-  local in_terminal = vim.bo.buftype == "terminal"
-  if in_terminal then
-    vim.cmd("hide")
-  else
-    Snacks.terminal.toggle("zsh", {
-      cwd = current_dir,
-      env = { TERM = "screen-256color" },
-      win = { style = "terminal", relative = "editor", width = 0.85, height = 0.90, border = "rounded" },
-    })
-  end
-end, { desc = "Toggle floating terminal" })
-
--- lazyterm remap
--- stylua: ignore
-local lazyterm = function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end
-map("n", "<leader>f?", lazyterm, { desc = "Terminal (Root Dir)" })
--- stylua: ignore
-map("n", "<leader>f/", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
+-- Lookup specific file type
+map("n", "<leader>fg", ":FindGo<CR>", { desc = "Find Files (go)", silent = true })
+map("n", "<leader>fm", ":FindMD<CR>", { desc = "Find Files (md)", silent = true })
+map("n", "<leader>fM", ":FindMDX<CR>", { desc = "Find Files (mdx)", silent = true })
+map("n", "<leader>ft", ":FindTS<CR>", { desc = "Find Files (ts)", silent = true })
+map("n", "<leader>fT", ":FindTSX<CR>", { desc = "Find Files (tsx)", silent = true })
+map("n", "<leader>fa", ":FindAstro<CR>", { desc = "Find Files (astro)", silent = true })
 
 -------------------
 ----- UTILITY -----
@@ -157,16 +153,16 @@ map("n", "|", function() require("namu.namu_symbols").show() end, { desc = "LSP 
 
 -- Open diagnostics in float
 -- stylua: ignore
-map("n", "Z", function () vim.diagnostic.open_float() end, { noremap = true, desc = "Open diagnostic in float"})
+map("n", "Z", function () vim.diagnostic.open_float() end, {  desc = "Open diagnostic in float"})
 
 -- Trouble
-map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", { noremap = true })
+map("n", "X", "<cmd>Trouble diagnostics toggle<CR>", {})
 
 -- Lazy
-map("n", "<leader>Ll", "<cmd>Lazy<CR>", { desc = "Lazy", noremap = true })
-map("n", "<leader>Le", "<cmd>LazyExtras<CR>", { desc = "LazyExtras", noremap = true })
+map("n", "<leader>Ll", "<cmd>Lazy<CR>", { desc = "Lazy" })
+map("n", "<leader>Le", "<cmd>LazyExtras<CR>", { desc = "LazyExtras" })
 -- stylua: ignore
-map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVim Changelog", noremap = true })
+map("n", "<leader>Ln", function() LazyVim.news.changelog() end, { desc = "LazyVim Changelog",  })
 
 ---------------
 ----- GIT -----
@@ -185,11 +181,15 @@ map("n", "<leader>gt", function()
 end, { desc = "Lazygit in tmux (Root Dir)" })
 
 -- Neogit
--- map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit",   })
+-- map("n", "<leader>jn", "<cmd>Neogit cwd=%:p:h kind=replace<CR>", { desc = "Neogit" })
 
 -----------------
 ----- NOTES -----
 -----------------
+
+-- Note lookup
+map("n", "<leader>nN", ":SearchNotes<CR>", { desc = "Find Notes", silent = true })
+map("n", "<leader>nn", ":GrepNotes<CR>", { desc = "Grep Notes", silent = true })
 
 -- Toggle checked/unchecked
 map("n", "<leader>nx", function()
@@ -227,11 +227,11 @@ vim.keymap.set("v", "<leader>nb", function()
   end
 end, { desc = "Bold text" })
 
--- -- Multiline unbold attempt
--- -- In normal mode, bold the current word under the cursor
--- -- If already bold, it will unbold the word under the cursor
--- -- If you're in a multiline bold, it will unbold it only if you're on the
--- -- first line
+-- Multiline unbold attempt
+-- In normal mode, bold the current word under the cursor
+-- If already bold, it will unbold the word under the cursor
+-- If you're in a multiline bold, it will unbold it only if you're on the
+-- first line
 vim.keymap.set("n", "<leader>nb", function()
   local cursor_pos = vim.api.nvim_win_get_cursor(0)
   local current_buffer = vim.api.nvim_get_current_buf()
@@ -359,21 +359,6 @@ map("n", "<leader>on", function() Snacks.notifier.show_history() end, { desc = "
 map("n", "<leader>oo", "yy<cmd>normal gcc<CR>p", { desc = "Duplicate and comment out" })
 map("v", "<leader>oo", "y`>pgv<cmd>normal gc<CR>", { desc = "Duplicate and comment out" })
 
--- Clean paste
--- Will disable it for now
--- map("n", "<leader>oP", function()
---   -- Get content from register 0 (most recent yank)
---   local yanked_text = vim.fn.getreg("0")
---   -- Remove trailing newline if present
---   yanked_text = yanked_text:gsub("\n$", "")
---   -- Remove leading whitespace
---   yanked_text = yanked_text:gsub("^%s+", "")
---   -- Store in register p
---   vim.fn.setreg("p", yanked_text)
---   -- Paste from register p
---   return '"pp'
--- end, { expr = true, desc = "Clean Paste" })
-
 -- Save and quit neovim (keep layout)
 map("n", "<leader>oq", "<cmd>wqa<CR>", { desc = "Save and Quit neovim" })
 
@@ -385,7 +370,7 @@ map("n", "<leader>or", "<cmd>LspRestart<CR>", { desc = "Lsp restart" })
 map("n", "<leader>oR", function() Snacks.picker.registers({ layout = "select"}) end, { desc = "Registers" })
 
 -- Save all files
-map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files", noremap = true })
+map("n", "<leader>oS", "<cmd>wa<CR>", { desc = "Save All files" })
 
 -- Undo tree
 map("n", "<leader>ou", "<cmd>UndotreeToggle<CR>", { desc = "Toggle UndoTree" })
@@ -397,10 +382,7 @@ map("n", "<leader>ox", function()
 end, { desc = "Make file executable" })
 
 -- Yank inside function
-map("n", "<leader>oy", "ya}", { noremap = true, desc = "Yank inside function" })
-
--- Grep dot files
--- map("n", "<leader>o.", "<cmd>SearchDots<CR>", { desc = "Search dot files" })
+map("n", "<leader>oy", "ya}", { desc = "Yank inside function" })
 
 --------------------------------------
 ----- DOCUMENT [O]GROUP COMMANDS -----
