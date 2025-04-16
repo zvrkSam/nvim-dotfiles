@@ -108,7 +108,7 @@ return {
               return ""
             end
           end,
-          color = { fg = get_color("green", "leaf") },
+          color = { fg = get_color("green", "gold") },
           -- separator = "",
           separator = "",
           padding = { left = 1, right = 0 },
