@@ -206,12 +206,13 @@ return {
     "folke/noice.nvim",
     opts = function(_, opts)
       opts.views = {
-        -- Bigger fonts
-        cmdline_popup = { position = { row = 30, col = "50%" } },
-        cmdline_popupmenu = { position = { row = 33, col = "50%" } },
+        -- Need to adjust this everytime font size changes
         -- Regular fonts
         -- cmdline_popup = { position = { row = 35, col = "50%" } },
         -- cmdline_popupmenu = { position = { row = 38, col = "50%" } },
+        -- Percentages
+        cmdline_popup = { position = { row = "50%", col = "50%" } },
+        cmdline_popupmenu = { position = { row = "68%", col = "50%" } },
         mini = { win_options = { winblend = 0 } },
       }
       opts.lsp = { progress = { enabled = false }, hover = { silent = true } }
