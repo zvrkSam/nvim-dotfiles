@@ -75,6 +75,9 @@ map("i", "<A-z>", "<esc>zza")
 -- Select whole file
 map("n", "<A-F>", "ggVG", { desc = "Select whole file" })
 
+-- Select whole file and yank while keeping cursor centered and in last position where the was edited
+map("n", "<A-f>", "ggVGyg;zz", { desc = "Select whole file" })
+
 -- Keep cursor centered while scrolling up and down
 map("n", "<C-u>", "<C-u>zz")
 map("n", "<C-d>", "<C-d>zz")
