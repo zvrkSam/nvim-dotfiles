@@ -17,7 +17,7 @@ vim.keymap.del("n", "<leader>n")
 --------------------
 
 -- Toggle floating terminal
-map({ "n", "t" }, "<A-F>", function()
+map({ "n", "t" }, "<A-D>", function()
   local current_dir = vim.fn.expand("%:p:h")
   if current_dir == "" or vim.fn.isdirectory(current_dir) == 0 then
     current_dir = vim.fn.getcwd()
@@ -73,7 +73,7 @@ map("i", "<A-a>", "<c-o>A")
 map("i", "<A-z>", "<esc>zza")
 
 -- Select whole file
-map("n", "<A-f>", "ggVG", { desc = "Select whole file" })
+map("n", "<A-F>", "ggVG", { desc = "Select whole file" })
 
 -- Keep cursor centered while scrolling up and down
 map("n", "<C-u>", "<C-u>zz")
