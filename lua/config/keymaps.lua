@@ -87,6 +87,9 @@ end, { desc = "Select whole file" })
 map("n", "<C-u>", "<C-u>zz")
 map("n", "<C-d>", "<C-d>zz")
 
+-- TODO: https://www.reddit.com/r/neovim/comments/1k3lhac/tiny_quality_of_life_rebind_make_j_and_k/
+-- making j k go back to original position
+
 --------------------
 ----- MOVEMENT -----
 --------------------
