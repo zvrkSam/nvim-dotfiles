@@ -27,6 +27,9 @@ return {
       indent = {
         enable = true,
         chars = { "┊" },
+        exclude_filetypes = {
+          markdown = true,
+        },
       },
     },
   },
