@@ -207,8 +207,13 @@ return {
     opts = function(_, opts)
       opts.views = {
         -- Need to adjust this everytime font size changes
-        cmdline_popup = { position = { row = 35, col = "50%" } },
-        cmdline_popupmenu = { position = { row = 38, col = "50%" } },
+        -- Bigger fonts
+        cmdline_popup = { position = { row = 30, col = "50%" } },
+        cmdline_popupmenu = { position = { row = 33, col = "50%" } },
+
+        -- Normal fonts
+        -- cmdline_popup = { position = { row = 35, col = "50%" } },
+        -- cmdline_popupmenu = { position = { row = 38, col = "50%" } },
         mini = { win_options = { winblend = 0 } },
       }
       opts.lsp = { progress = { enabled = false }, hover = { silent = true } }
