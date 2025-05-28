@@ -34,7 +34,7 @@ return {
   "folke/tokyonight.nvim",
   lazy = true,
   -- name = "tokyonight",
-  enabled = false,
+  -- enabled = false,
   opts = {
     style = "moon",
     -- style = "night",

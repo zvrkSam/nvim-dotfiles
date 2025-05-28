@@ -20,7 +20,7 @@ local rp = {
 
 return {
   "rose-pine/neovim",
-  -- enabled = false,
+  enabled = false,
   name = "rose-pine",
   lazy = false,
   opts = {
