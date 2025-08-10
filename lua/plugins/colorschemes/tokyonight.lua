@@ -38,7 +38,7 @@ return {
   opts = {
     style = "moon",
     -- style = "night",
-    transparent = true,
+    transparent = false,
     -- lualine_bold = true,
     styles = {
       comments = { italic = false },
@@ -49,6 +49,7 @@ return {
     -- list of all the colors for tokyonight
     -- https://github.com/folke/tokyonight.nvim/discussions/453
     on_colors = function(c)
+      c.bg = "#0B0B16" -- Custom background color
       -- c.green1 = tn.indigo
       c.purple = tn.purple
       c.error = tn.error
